@@ -1,0 +1,38 @@
+# Use custom format
+# Wait n milliseconds for starship to check files under the current directory.
+scan_timeout = 5
+add_newline = false
+[shell]
+# fish_indicator = ''
+fish_indicator = '[fsh](bold #459AC6)'
+zsh_indicator = '[zsh](bold #F55A2C)'
+bash_indicator = '[bsh](bold #42AF4F)'
+powershell_indicator = '[psh](bold #FFFFFF)'
+unknown_indicator = 'mystery shell'
+style = 'white bold'
+disabled = false
+
+[time]
+disabled = false
+format = '[ $time ]($style)'
+time_format = '%.3fns'
+utc_time_offset = '-3'
+
+[status]
+style = 'bold bg:red'
+symbol = '!'
+#success_symbol = '󰰢'
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+#format = '[$symbol$signal_name$maybe_int]($style) '
+#format = '[$symbol$signal_name$maybe_int]($style) '
+map_symbol = true
+disabled = false
+
+# [memory_usage]
+# disabled = false
+# threshold = -1
+# symbol = ' '
+# style = 'bold dimmed green'
+[env_var.TERM]
+style = 'fg:#493d9f'
+default = "unknown term"

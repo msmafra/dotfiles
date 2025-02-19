@@ -1,0 +1,112 @@
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    border-radius: 0.25rem;
+}
+window {
+    background-color: blue;
+}
+.frame {
+    background-color: rgba(14, 24, 54, 0.5);
+    color: rgba(160, 186, 241, 1);
+}
+grid {
+    color: rgba(130, 157, 218, 0.5);
+    background-color: rgba(14, 24, 54, 0.5);
+}
+label {
+    color: rgba(160, 186, 241, 0.5);
+    /* border: solid 2px rgba(130, 157, 218, 1); */
+    background-color: transparent;
+    /* box-shadow: inset -1px -1px; */
+}
+image {
+    color: rgba(130, 157, 218, 0.5);
+    background-color: transparent;
+}
+
+button,
+button:hover,
+button.focus,
+button:checked,
+#searchbox,
+#description {
+    border-radius: 8px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 0;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 5px;
+    transition: all 0.5s ease-in-out;
+}
+
+button {
+    font-size: 16px;
+    color: rgba(130, 157, 218, 1);
+    background-color: rgba(6, 8, 21, 0.5);
+    border: solid 2px rgba(6, 8, 21, 1);
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    font-size: 16px;
+    color: rgba(14, 24, 54, 1);
+    background-color: rgba(141, 168, 231, 1);
+    border: solid 2px rgba(141, 168, 231, 1);
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover label {
+    color: rgba(14, 24, 54, 1);
+    transition: all 0.5s ease-in-out;
+}
+
+button:focus label,
+button:checked label {
+    color: rgba(6, 8, 21, 1);
+    transition: all 0.5s ease-in-out;
+}
+
+button:focus {
+    font-size: 16px;
+    color: rgba(6, 8, 21, 1);
+    border: solid 2px rgba(141, 168, 231, 1);
+    background-color: rgba(141, 168, 231, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+button:checked {
+    border: solid 2px rgba(141, 168, 231, 1);
+    background-color: rgba(141, 168, 231, 0.5);
+    transition: all 0.5s ease-in-out;
+}
+#searchbox {
+    font-size: 16px;
+    background-color: rgba(14, 24, 54, 0.5);
+    border: solid 2px rgba(130, 157, 218, 1);
+    color: rgba(160, 186, 241, 1);
+    margin: 5px 0;
+    padding: 10px;
+    min-width: 400px;
+}
+#separator {
+    color: brown;
+    background-color: rgba(160, 186, 241, 0.5);
+    margin: 10px 500px 10px 500px;
+}
+#description {
+    font-size: 24px;
+    color: rgba(160, 186, 241, 1);
+    background-color: rgba(6, 8, 21, 0.5);
+    border: solid 2px rgba(130, 157, 218, 1);
+    margin: 1px;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+}

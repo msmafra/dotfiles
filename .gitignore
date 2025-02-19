@@ -1,0 +1,14 @@
+avatar.jpg
+avatar.png
+avatar.jpeg
+experiments/
+.vscode/
+*BACKUP*
+*.M
+*copy*
+*backup*
+wallpaper.jpg
+hyprlock-background
+themes/
+igpu
+dgpu

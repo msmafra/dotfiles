@@ -1,0 +1,19 @@
+[
+  {
+    "locked": false,
+    "mouse": false,
+    "release": false,
+    "repeat": true,
+    "non_consuming": false,
+    "has_description": true,
+    "modmask": 77,
+    "submap": "",
+    "key": "XF86audiostop",
+    "keycode": 0,
+    "catch_all": false,
+    "description": "Music player stop",
+    "dispatcher": "exec",
+    "arg": "playerctl stop",
+    "modname": "SUPER SHIFT ALT CTRL"
+  }
+]

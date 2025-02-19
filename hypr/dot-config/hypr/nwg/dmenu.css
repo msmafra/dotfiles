@@ -1,0 +1,66 @@
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    caret-color: @newtext;
+}
+
+box {
+    color: rgba(160, 186, 241, 0.6);
+    background-color: rgba(6, 8, 21, 0.8);
+    border-radius: 0rem;
+    box-shadow: 0 0 0.25rem 0 rgba(160, 186, 241, 0.2) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.2) inset;
+    background-image: linear-gradient(to top left, rgba(6, 8, 21, 0.2) 0%, rgba(12, 12, 42, 0.2) 100%);
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    min-height: 65.25rem;
+    min-width: 30rem;
+}
+
+#searchbox {
+    /* Adjust to your taste */
+    font-size: 1.5rem;
+    color: rgba(160, 186, 241, 0.6);
+    background-color: rgba(6, 8, 21, 0.8);
+    border-radius: 0rem;
+    box-shadow: 0 0 0.25rem 0 rgba(160, 186, 241, 0.2) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.2) inset;
+    background-image: linear-gradient(to top left, rgba(6, 8, 21, 0.2) 0%, rgba(12, 12, 42, 0.2) 100%);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+}
+
+/* Menu items */
+#commands {
+    padding: 0.25rem;
+    font-size: 1.5rem;
+}
+
+#command:hover {
+    font-size: 1.5rem;
+    /* color: @buttonhover; */
+    color: darker(rgb(157, 198, 234));
+    text-shadow: none;
+    box-shadow: 0 0 0.5rem 0 @tertiarytext inset, 0 0 0 0.125rem rgba(141, 168, 231, 1) inset;
+
+    background-blend-mode: multiply;
+    background-image: linear-gradient(to bottom right, rgba(6, 8, 21, 0.2) 0%, rgba(160, 186, 241, 0.2) 10%);
+}
+
+#commands:focus {
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.0625rem 0 @tertiarytext inset, 0 0 0 0.0625rem rgba(141, 168, 231, 1) inset;
+    outline: 0.25rem dotted @newtext;
+    background-image: linear-gradient(to bottom right, rgba(6, 8, 21, 0.1) 0%, darker(@tertiarytext) 100%);
+}
+
+#commands:active {
+    border-radius: 0.5rem;
+    outline: 0.0625rem dotted red;
+    background-color: red;
+}

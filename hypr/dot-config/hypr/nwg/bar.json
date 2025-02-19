@@ -1,0 +1,17 @@
+[
+ {
+   "label": "Capture Window",
+   "exec": "hyprshot --mode window --output-folder ~/Imagens/Screenshots -- loupe",
+   "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+ },
+ {
+   "label": "Capture Region",
+   "exec": "hyprshot --mode region --output-folder ~/Imagens/Screenshots -- loupe",
+   "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+ },
+ {
+   "label": "Capture Output",
+   "exec": "hyprshot --mode output --output-folder ~/Imagens/Screenshots -- loupe",
+   "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+ }
+]

@@ -1,0 +1,2 @@
+export UWSM_USE_SESSION_SLICE=true
+export UWSM_APP_UNIT_TYPE=service

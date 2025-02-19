@@ -1,0 +1,6 @@
+theme = "Ayu Mirage"
+window-decoration = false
+gtk-titlebar = false
+shell-integration-features = no-cursor
+cursor-style = "block"
+background-opacity = 0.95

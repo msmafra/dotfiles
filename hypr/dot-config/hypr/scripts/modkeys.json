@@ -1,0 +1,66 @@
+[
+	{
+		"modmask": 0,
+		"modname": ""
+	},
+	{
+		"modmask": 1,
+		"modname": "SHIFT"
+	},
+	{
+		"modmask": 2,
+		"modname": "CAPSLOCK"
+	},
+	{
+		"modmask": 4,
+		"modname": "CTRL"
+	},
+	{
+		"modmask": 5,
+		"modname": "CTRL SHIFT"
+	},
+	{
+		"modmask": 8,
+		"modname": "ALT"
+	},
+	{
+		"modmask": 9,
+		"modname": "ALT SHIFT"
+	},
+	{
+		"modmask": 13,
+		"modname": "SHIFT ALT CTRL"
+	},
+	{
+		"modmask": 64,
+		"modname": "SUPER"
+	},
+	{
+		"modmask": 65,
+		"modname": "SUPER SHIFT"
+	},
+	{
+		"modmask": 68,
+		"modname": "SUPER CTRL"
+	},
+	{
+		"modmask": 69,
+		"modname": "SUPER SHIFT CTRL"
+	},
+	{
+		"modmask": 72,
+		"modname": "SUPER ALT"
+	},
+	{
+		"modmask": 73,
+		"modname": "SUPER SHIFT ALT"
+	},
+	{
+		"modmask": 76,
+		"modname": "SUPER ALT CTRL"
+	},
+	{
+		"modmask": 77,
+		"modname": "SUPER SHIFT ALT CTRL"
+	}
+]

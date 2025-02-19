@@ -1,0 +1,549 @@
+{
+    "id": "acrilicbar",
+    "exclusive": true,
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "reload_style_on_change": true,
+    "include": [
+        "$HOME/.config/hypr/waybar/output.jsonc"
+    ],
+    "modules-left": [
+        "custom/appmenu",
+        "group/group-appicons",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "custom/separator",
+        "clock",
+        "custom/separator",
+        "idle_inhibitor",
+        "custom/separator",
+        "group/group-privacy",
+        "gamemode"
+    ],
+    "modules-right": [
+        "hyprland/submap",
+        "group/group-tools",
+        "network",
+        "bluetooth",
+        "battery",
+        "power-profiles-daemon",
+        "custom/swaync",
+        "custom/power"
+    ],
+    "hyprland/workspaces": {
+        "active-only": false,
+        "all-outputs": false,
+        "show-special": true,
+        "special-visible-only": false,
+        "sort-by": "default",
+        "on-click": "activate",
+        "include": [
+            "$HOME/.config/hypr/waybar/workspaces.jsonc"
+        ],
+        "format": "{name}",
+        "format-window-separator": " | ",
+        "format-icons": {
+            "1": "󰎤",
+            "2": "󰎧",
+            "3": "󰎪",
+            "4": "󰎭",
+            "5": "󰎱",
+            "6": "󰎳",
+            "7": "󰎶",
+            "8": "󰎹",
+            "9": "󰎼",
+            "10": "󰽽",
+            "urgent": "!",
+            "active": "*",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+        "separate-outputs": true,
+        "format": "{}",
+        "icon": true,
+        "icon-size": 12
+    },
+    "hyprland/submap": {
+        "format": "󰌏 {}",
+        "rotate": "5",
+        "default-submap": "true",
+        "max-length": 8,
+        "tooltip": true,
+        "tooltip-format": "󰌏 {} is active. Press ESC to exit.",
+        "alway-on": true
+    },
+    "hyprland/language": {
+        "format": "{short} {variant}"
+    },
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "format": "{:L%a %d %R}",
+        "today-format": "<b>{}</b>",
+        "on-click": "gnome-calendar",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 6,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "{}",
+                "days": "{}",
+                "weeks": "{}",
+                "weekdays": "{}",
+                "today": "{}"
+            }
+        }
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        },
+        "tooltip": true,
+        "tooltip-format-deactivated": "Sleep/screen lock is not blocked",
+        "tooltip-format-activated": "Sleep/screen lock is now blocked",
+        "start-activated": false,
+        "timeout": 20
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "N {icon}",
+            "capslock": "C {icon}"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "temperature": {
+        "critical-threshold": 93,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "memory": {
+        "format": " {}%",
+        "format-alt": " {used}/{total} GiB",
+        "interval": 5
+    },
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "format-alt": "󰍛 {avg_frequency} GHz",
+        "interval": 5
+    },
+    "disk": {
+        "format": "󰋊 {}%",
+        "format-alt": "󰋊 {used}/{total} GiB",
+        "interval": 20,
+        "path": "/"
+    },
+    "network": {
+        "interval": 30,
+        "on-click-right": "nm-connection-editor --show",
+        "on-scroll-up": "nmcli radio wifi on",
+        "on-scroll-down": "nmcli radio wifi off",
+        "tooltip": true,
+        "format-wifi": "{icon}",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "format-ethernet": "󰱓",
+        "format-linked": "󰛵",
+        "format-disconnected": "󰲛",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-linked": "{ifname} (No IP)",
+        "tooltip-format-ethernet": "{ifname} via {gwaddr} - {bandwidthUpBytes}/{bandwidthDownBytes}/{bandwidthTotalBytes}",
+        "tooltip-format-wifi": "{icon} {essid} ({frequency}GHz 󰹤: {signalStrength}%/{signaldBm}dBm)",
+        "tooltip-format-disconnected": "Disconnected!"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "󰾆",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰾆"
+        }
+    },
+    "group/group-dockish": {
+        "orientation": "inherit",
+        "drawer": {
+            "click-to-reveal": false,
+            "transition-duration": 600,
+            "children-class": "drawer-child",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "hyprland/workspaces",
+            "wlr/taskbar",
+            "tray"
+        ]
+    },
+    "group/group-statuses": {
+        "orientation": "inherit",
+        "drawer": {
+            "click-to-reveal": true,
+            "transition-duration": 800,
+            "children-class": "drawer-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/statuses-button",
+            "temperature",
+            "cpu",
+            "disk",
+            "memory"
+        ]
+    },
+    "group/group-backlight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "click-to-reveal": true,
+            "transition-duration": 800,
+            "children-class": "drawer-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+    "group/group-tools": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 800,
+            "children-class": "tools-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tools-button",
+            "custom/kill",
+            "custom/hyprpicker",
+            "custom/clipboard_list",
+            "custom/backup",
+            "custom/wallpaper"
+        ]
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-icons": [
+            "󰹐",
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󱩑",
+            "󱩒",
+            "󱩓",
+            "󱩔",
+            "󱩕",
+            "󱩖",
+            "󰛨"
+        ],
+        "scroll-step": 1,
+        "tooltip": true,
+        "tooltip-format": "Click to control the brightness"
+    },
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "half": 50,
+            "warning": 25,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-icons": [
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁿",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{capacity}% | {timeTo}",
+        "max-length": 25
+    },
+    "group/group-appicons": {
+        "orientation": "horizontal",
+        "drawer": {
+            "click-to-reveal": false,
+            "transition-duration": 500,
+            "children-class": "drawer-child",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "wlr/taskbar",
+            "tray"
+        ]
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "all-outputs": "false",
+        "icon-size": 16,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "minimize"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5,
+        "show-passive-items": true,
+        "smooth-scrolling-threshold": 1,
+        "reverse-direction": true
+    },
+    "group/group-audio": {
+        "orientation": "horizontal",
+        "tooltip": true,
+        "tooltip-format": "Click to control volume or Scroll up and down",
+        "on-click-right": "cosmic-settings sound",
+        "drawer": {
+            "click-to-reveal": false,
+            "transition-duration": 800,
+            "children-class": "drawer-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "wireplumber",
+            "pulseaudio/slider",
+            "custom/myxer"
+        ]
+    },
+    "wireplumber": {
+        "format": "{icon}",
+        "format-muted": "󰸈",
+        "on-click-right": "cosmic-settings sound",
+        "tooltip": true,
+        "tooltip-format": "Click or scroll to control the volume",
+        "format-icons": [
+            "󰕿",
+            "󰖀",
+            "󰕾"
+        ]
+    },
+    "pulseaudio/slider": {
+        "min": 5,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "{volume}%",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "group/group-privacy": {
+        "orientation": "inherit",
+        "drawer": {},
+        "modules": [
+            "privacy"
+        ]
+    },
+    "privacy": {
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-out",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            }
+        ]
+    },
+    "bluetooth": {
+        "format": "",
+        "format-on": "󰂯",
+        "format-off": "󰂲",
+        "format-disabled": "",
+        "format-connected": "󰂱",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "gamemode": {
+        "format": "{glyph}",
+        "format-alt": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 3600,
+        "exec": "curl --silent 'https://wttr.in/?format=+%c'"
+    },
+    "custom/appmenu": {
+        "format": "{icon}",
+        "format-icons": [
+            ""
+            // ""
+            // ""
+            // ""
+        ],
+        "tooltip": false,
+        "tooltip-format": "Applications menu and search",
+        "on-click": "hyprctl dispatch -- exec /usr/bin/nwg-drawer -open",
+        "on-click-middle": "pkill -9 nwg-drawer"
+    },
+    "custom/search": {
+        "format": "󱁴",
+        "tooltip": false,
+        "on-click-release": "nwg-drawer -open"
+    },
+    "custom/power": {
+        "format": " {icon} ",
+        "format-icons": [
+            "⏻"
+        ],
+        "on-click": "$HOME/.config/hypr/scripts/wlogout.sh",
+        "tooltip-format": "<small>󰚦 Desligar|  Reiniciar |  Sair |  Trancar | 󰒲  Suspender |  Hibernar </small>"
+    },
+    "custom/swaync": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰮫",
+            "none": "󰮫",
+            "dnd-notification": "󰮫",
+            "dnd-none": "󰮫",
+            "inhibited-notification": "󰮫",
+            "inhibited-none": "󰮫",
+            "dnd-inhibited-notification": "󰮫",
+            "dnd-inhibited-none": "󰮫"
+        },
+        "return-type": "json",
+        "exec-if": "command -v swaync-client",
+        "exec": "swaync-client --subscribe-waybar --count",
+        "on-click": "swaync-client --toggle-panel --subscribe-waybar --count",
+        "on-click-right": "swaync-client --toggle-panel --subscribe-waybar --count",
+        "escape": true
+    },
+    "custom/tools-button": {
+        "format": "󱁤"
+    },
+    "custom/statuses-button": {
+        "format": ""
+    },
+    "custom/backup": {
+        "format": "󱛟",
+        "tooltip": true,
+        "tooltip-format": "click runs btrbk snapshot\nright click runs btrbk run\nmiddle click runs btrbk clean",
+        "exec-on-event": true,
+        "on-click": "$HOME/Projects/backup-cli.sh snapshot",
+        "on-click-right": "$HOME/Projects/backup-cli.sh run",
+        "on-middle-click": "$HOME/Projects/backup-cli.sh clean"
+    },
+    "custom/myxer": {
+        "format": "󰀰",
+        "tooltip": true,
+        "tooltip-format": "More granular audio controls",
+        "exec-on-event": true,
+        "on-click": "Myxer",
+        "on-click-right": "pavucontrol"
+    },
+    "custom/wallpaper": {
+        "format": "󰸉",
+        "tooltip": true,
+        "tooltip-format": "Changes the wallpaper (random)",
+        "exec-on-event": true,
+        "on-click": "~/.config/hypr/scripts/backgrounds.sh"
+    },
+    "custom/separator": {
+        // "format": ""
+        // "format": ""
+        "format": " "
+    },
+    "custom/kill": {
+        "on-click": "hyprctl kill",
+        "format": " 󱓇 ",
+        "orientation": "horizontal",
+        "tooltip": true,
+        "tooltip-format": " 󱓇  Kill window mode: To kill any window. Be careful!"
+    },
+    "custom/playerctl": {
+        "format": "{icon}",
+        "return-type": "json",
+        "exec": "playerctl --player=mpd -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl --player=mpd play-pause",
+        "on-click-middle": "playerctl --player=mpd previous",
+        "on-click-right": "playerctl --player=mpd next",
+        "format-icons": {
+            "Playing": "<span foreground='#46c880'> </span>",
+            "Paused": "<span foreground='#cdd6f4'> </span>"
+        }
+    },
+    "custom/playerlabel": {
+        "format": "<span>{}</span>",
+        "return-type": "json",
+        "max-length": 48,
+        "exec": "playerctl --player=mpd -a metadata --format '{\"text\": \"{{title}} - {{markup_escape(artist)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(artist)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click": "playerctl --player=mpd play-pause",
+        "on-click-middle": "playerctl --player=mpd previous",
+        "on-click-right": "playerctl --player=mpd next"
+    },
+    "custom/clipboard_list": {
+        "on-click": "copyq",
+        "format": "󰅍",
+        "tooltip-format": "Clipboard list"
+    },
+    "custom/hyprpicker": {
+        "on-click": "hyprpicker --autocopy --format=rgb",
+        "format": "󰈊",
+        "orientation": "horizontal"
+    }
+}

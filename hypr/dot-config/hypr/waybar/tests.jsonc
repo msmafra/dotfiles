@@ -1,0 +1,227 @@
+{
+    "id": "testbar",
+    "exclusive": true,
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "reload_style_on_change": true,
+    "modules-left": [
+        "hyprland/workspaces",
+        "wlr/taskbar"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "temperature",
+        "backlight",
+        "hyprland/language",
+        "battery",
+        "tray",
+        "custom/clock"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate"
+    },
+    "hyprland/window": {
+        "max-length": 200,
+        "separate-outputs": true
+    },
+    "hyprland/language": {
+        "format": "{short} {variant}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Asia/Tbilisi",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a, %Y/%b/%d, %H:%M}"
+    },
+    "custom/clock": {
+        "interval": 10,
+        "exec": "TZ=Asia/Tbilisi date +'%a, %Y/%b/%d, %H:%M'"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false,
+        "on-click": "xfce4-taskmanager"
+    },
+    "memory": {
+        "format": "{used:0.1f}G ",
+        "on-click": "xfce4-taskmanager"
+    },
+    "temperature": {
+        // "thermal-zone": 0,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "on-click": "fancontrol_gui"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "",
+        "format-alt": "{ipaddr}/{cidr} ",
+        "on-click-middle": "nm-connection-editor",
+        "on-click-right": "networkmanager_dmenu"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pavucontrol-qt"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/menu-button": {
+        "format": "\ue732",
+        // "on-click": "wofi --show drun --allow-images -W 480 -O alphabetical",
+        "on-click": "nwg-menu -va top"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueberry"
+    },
+    "custom/window-close": {
+        "format": "",
+        "on-click": ""
+    },
+    "custom/adaptive-sync": {
+        "format": " ",
+        "on-click": "",
+        "on-click-right": ""
+    },
+    "custom/weather": {
+        "exec": "cat /tmp/weather_last.txt",
+        "interval": 5,
+        "format": "{}",
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 24,
+        // "icon-theme": "Papirus",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "fullscreen",
+    }
+}

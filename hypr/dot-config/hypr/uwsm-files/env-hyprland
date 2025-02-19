@@ -1,0 +1,17 @@
+# For UWSM ~/.config/uwsm/env-hyprland
+# Cursor
+export HYPRCURSOR_THEME=Bibata-Modern-Classic
+export HYPRCURSOR_SIZE=48
+# Aquamarine
+#export AQ_DRM_DEVICES=$conf_dir/igpu:$conf_dir/dgpu
+# Apps
+export BROWSER=vivaldi
+export TERMINAL=kitty
+export EDITOR=micro
+export VISUAL=zed
+export FILEMANAGER=nautilus
+export XDG_UTILS_TERMINAL=kitty
+export XDG_UTILS_BROWSER=vivaldi
+export XDG_UTILS_FILEMANAGER=nautilus
+# micro editor number of colours
+export MICRO_TRUECOLOR=1

@@ -1,0 +1,75 @@
+/* inspired by https://github.com/stefonarch/lxqt-wlogout/blob/master/style.css */
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: "Iosevka", "Symbols Nerd Font";
+    font-feature-settings: '"tnum", "ss01", "ss02", "ss07", "ss08", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+    font-weight: 900;
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+}
+
+@import url("../waybar/palette.css");
+@import url("../waybar/animations.css");
+
+window {
+    background-color: alpha(@deep-blue, 0.5);
+}
+
+button {
+    font-size: 2rem;
+    color: alpha(@laranja, 0.2);
+    background-color: alpha(@space-blue, 0.9);
+    border: solid 0.125rem alpha(@abobora, 0.3);
+    border-radius: 0.2rem;
+    margin: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: 30%;
+}
+
+/* label {
+	font-size: 1rem;
+} */
+
+label:focus,
+label:hover {
+    color: alpha(@space-blue, 1);
+}
+
+button:hover {
+    color: alpha(@abobora, 0.75);
+    border: solid 0.125rem alpha(@laranja, 0.5);
+    background: alpha(@laranja, 0.15);
+    border-radius: 0.2rem;
+    margin: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 30%;
+    box-shadow: 0 0 3rem 0 alpha(@laranja, 0.2) inset, inset 0 0 0 0.25rem alpha(@abobora, 0.2);
+}
+
+#lock {
+    background-image: image(url("icons/lock-cyber.png"));
+}
+
+#logout {
+    background-image: image(url("icons/logout-cyber.png"));
+}
+
+#suspend {
+    background-image: image(url("icons/suspend-cyber.png"));
+}
+
+#hibernate {
+    background-image: image(url("icons/hibernate-cyber.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/shutdown-cyber.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/reboot-cyber.png"));
+}

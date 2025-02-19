@@ -1,0 +1,19 @@
+[Default Applications]
+x-scheme-handler/https=re.sonny.Junction.desktop
+x-scheme-handler/http=re.sonny.Junction.desktop
+image/avif=org.gnome.Loupe.desktop
+image/png=org.gnome.Loupe.desktop
+image/webp=org.gnome.Loupe.desktop
+image/jpeg=org.gnome.Loupe.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/mp4=mpv.desktop
+
+[Added Associations]
+image/avif=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;
+image/webp=org.gnome.Loupe.desktop;
+image/jpeg=org.gnome.Loupe.desktop;
+video/x-matroska=mpv.desktop;
+video/webm=mpv.desktop;
+video/mp4=mpv.desktop;

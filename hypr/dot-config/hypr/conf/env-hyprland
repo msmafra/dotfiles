@@ -1,0 +1,40 @@
+# For UWSM ~/.config/uwsm/env-hyprland
+# Hyprland envs
+export HYPRCURSOR_THEME=Bibata-Modern-Classic
+export HYPRCURSOR_SIZE=48
+# Aquamarine envs
+#export AQ_MGPU_NO_EXPLICIT=0
+#export AQ_NO_MODIFIERS=0
+#export AQ_DRM_DEVICES=$confDir/igpu:$confDir/dgpu
+# Fixing problems with $PATH
+# export PATH=/home/coop/.atuin/bin:/home/coop/go/bin:/home/coop/.local/bin:/home/coop/.cargo/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt:$PATH
+#export XDG_SESSION_TYPE=wayland
+export EGL_PLATFORM=wayland # based on CachyOS's
+# VAAPI
+export NVD_BACKEND=direct
+# Apps
+export BROWSER=vivaldi
+export TERMINAL=ghostty
+export EDITOR=micro
+export VISUAL=code
+export FILEMANAGER=nautilus
+# micro editor number of colours
+export MICRO_TRUECOLOR=1
+# XDG
+export XDG_DESKTOP_DIR="$HOME/Área de trabalho"
+export XDG_DOWNLOAD_DIR="$HOME/Downloads"
+export XDG_TEMPLATES_DIR="$HOME/Modelos"
+export XDG_PUBLICSHARE_DIR="$HOME/Público"
+export XDG_DOCUMENTS_DIR="$HOME/Documentos"
+export XDG_MUSIC_DIR="$HOME/Músicas"
+export XDG_PICTURES_DIR="$HOME/Imagens"
+export XDG_VIDEOS_DIR="$HOME/Vídeos"
+export XDG_UTILS_TERMINAL=ghostty
+export XDG_UTILS_BROWSER=vivaldi
+export XDG_UTILS_FILEMANAGER=nautilus
+# Mozilla
+# export MOZ_ENABLE_WAYLAND=1
+# FCITX (??)
+#export XMODIFIERS=@im=fcitx
+#export GTK_IM_MODULE=fcitx #recommended to be disable by fcitx5
+#export QT_IM_MODULE=fcitx

@@ -1,0 +1,8 @@
+{
+  "\\.pdf$": "evince",
+  "\\.svg$": "inkscape",
+  "\\.(jpg|png|tiff|gif)$": "loupe",
+  "\\.(mp3|ogg|flac|wav|wma|m4a)$": "flatpak run com.github.taiko2k.tauonmb",
+  "\\.(avi|mp4|mkv|mov|wav)$": "mpv",
+  "\\.(doc|docx|xls|xlsx)$": "libreoffice"
+}

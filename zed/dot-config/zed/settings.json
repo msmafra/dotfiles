@@ -1,0 +1,35 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "SpaceMono Nerd Font",
+  "buffer_font_features": {
+    // is this really working? I dunno!
+    "zero": true,
+    "tnum": true,
+    "ss01": true,
+    "ss02": true,
+    "ss03": true,
+    "cv01": true
+  },
+  "buffer_font_fallbacks": [
+    "JetBrainsMono Nerd Font",
+    "Symbols Nerd Font"
+  ],
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Atelier Sulphurpool Dark"
+  },
+  "always_treat_brackets_as_autoclosed": false,
+  "prettier": {
+    "trailingComma": "es5"
+  }
+}
