@@ -4,7 +4,7 @@ SETUVAR --export MARONNE:1000
 SETUVAR --export SHELL:/usr/bin/fish
 SETUVAR --export UID:1000
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_plugins:\x23jorgebucaran/fisher
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:4D5566

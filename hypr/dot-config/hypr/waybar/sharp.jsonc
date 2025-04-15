@@ -11,12 +11,11 @@
   ],
   "modules-left": [
     "custom/appmenu",
-    "group/group-appicons",
+    "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
     "custom/hyprbars",
-    "hyprland/workspaces",
     "custom/separator",
     "clock",
     "custom/separator",
@@ -27,7 +26,8 @@
     "hyprland/submap"
   ],
   "modules-right": [
-    "group/group-tools",
+    // "group/group-tools",
+    "group/group-appicons",
     "wireplumber",
     "network",
     "bluetooth",
@@ -494,7 +494,7 @@
   "custom/backup": {
     "format": "󱛟",
     "tooltip": true,
-    "tooltip-format": "click runs btrbk snapshot\nright click runs btrbk run\nmiddle click runs btrbk clean",
+    "tooltip-format": "click: runs btrbk snapshot\nright click: runs btrbk run\nmiddle click: runs btrbk clean",
     "exec-on-event": true,
     "on-click": "uwsm app -- $HOME/Projects/backup-cli.sh snapshot",
     "on-click-right": "uwsm app -- $HOME/Projects/backup-cli.sh run",

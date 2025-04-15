@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-# Script to use hyprshot and satty to take sscreen captures
-# without having giant lines inside Hyprland files
-# bindd = , PRINT, Screen capture with hyprshot clicking on the desired monitor to choose, exec,
-# # # hyprshot --raw --mode output --clipboard-only; wl-paste | satty -f - --copy-command wl-copy --action-on-enter save-to-file --corner-roundness 0 --output-filename "$XDG_PICTURES_DIR/Screenshots/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-# bindd = $mainMod, PRINT, Screen capture a window with hyprshot + satty, exec,
-# # # hyprshot --raw --mode window --clipboard-only; wl-paste | satty -f - --copy-command wl-copy --action-on-enter save-to-file --corner-roundness 0 --output-filename "$XDG_PICTURES_DIR/Screenshots/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
-# bindd = $mainMod SHIFT, PRINT, Screen capture a region with hyprshot + satty, exec,
-# # # hyprshot --raw --mode region --clipboard-only; wl-paste | satty -f - --copy-command wl-copy --action-on-enter save-to-file --corner-roundness 0 --output-filename "$XDG_PICTURES_DIR/Screenshots/Screenshot-$(date +%Y-%m-%d_%H-%M-%S).png"
+#wf-recorder -g "$(slurp)" -o "$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .name')" --file mercadolivre-falso-frete-gratis.mp4
 take_it() {
     local method
     local file_name
@@ -29,7 +22,7 @@ take_it() {
     # echo "
     # $method
     # $dest_dir
-    # ${dest_file}
+    # $dest_file
     # $file_name
     # ${accepted[*]}
     # "
@@ -44,8 +37,8 @@ take_it() {
         case "${method}" in
         screen)
             # Printscreen
-            hyprshot --raw --mode output | satty -f - --copy-command wl-copy --output-filename "${dest_file}"
-            notify-send --urgency=normal "Screen Captured" "Should be save to ${dest_file}"
+            hyprshot --raw --mode output | satty -f - --copy-command wl-copy --output-filename "$dest_file"
+            notify-send --urgency=normal "Screen Captured" "Should be save to $dest_file"
             ;;
         window)
             # Ctrl + Printscreen
@@ -58,13 +51,13 @@ take_it() {
             notify-send --urgency=normal "Region Captured" "Should be save to ${dest_file}"
             ;;
         quick)
-            # Printscreen
-            hyprshot --mode active --mode window --output-folder "${dest_dir}" --filename "/${file_name}"
+            # Super + Ctrl + Printscreen
+            hyprshot --raw --mode active --mode window
             notify-send --urgency=normal "Active window Captured" "Should be save to ${dest_file}"
             ;;
         *)
-            # ALT + Printscreen
-            hyprshot --mode active --mode output --output-folder "${dest_dir}" --filename "${file_name}"
+            # Super + Shift + Printscreen
+            hyprshot --raw --mode active --mode output
             notify-send --urgency=normal "Active screen Captured" "Should be save to ${dest_file}"
             ;;
         esac

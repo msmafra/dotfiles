@@ -99,7 +99,8 @@ window#waybar.floating .modules-center {
 }
 
 window#waybar.fullscreen {
-    background-color: alpha(@laranja, 0.82);
+    background-color: alpha(@space-blue, 0.8);
+    background-blend-mode: color-dodge;
 }
 
 window#waybar.swallowing .workspaces {

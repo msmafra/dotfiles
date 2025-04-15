@@ -39,7 +39,7 @@ not_concord() {
         doas ln -fs "${ARTFACT_DIR}/Discord" "/usr/local/bin/discord"
 
         sed -i "s#Exec=/usr/share/discord/Discord#Exec=discord#g" "$HOME/.local/share/applications/discord.desktop"
-        sed -i "s#Path=/usr/bin#Path=/usr/loca/bin#g" "$HOME/.local/share/applications/discord.desktop"
+        sed -i "s#Path=/usr/bin#Path=/usr/local/bin#g" "$HOME/.local/share/applications/discord.desktop"
         sed -i "s#Icon=discord#Icon=$HOME/.local/share/icons/hicolor/256x256/apps/discord.png#g" "$HOME/.local/share/applications/discord.desktop"
     else
         printf "Discord is already in the latest stable version (%s)\n" "${GET_VERSION}"

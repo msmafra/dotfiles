@@ -6,25 +6,30 @@
     animation-timing-function: steps(12);
     animation-duration: 0.3s;
     transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
-    border-radius: 0.25rem;
+    border-radius: 0rem;
 }
+
 window {
     background-color: blue;
 }
+
 .frame {
-    background-color: rgba(14, 24, 54, 0.5);
+    background-color: rgba(14, 24, 54, 1);
     color: rgba(160, 186, 241, 1);
 }
+
 grid {
     color: rgba(130, 157, 218, 0.5);
-    background-color: rgba(14, 24, 54, 0.5);
+    background-color: rgba(14, 24, 54, 1);
 }
+
 label {
     color: rgba(160, 186, 241, 0.5);
     /* border: solid 2px rgba(130, 157, 218, 1); */
     background-color: transparent;
     /* box-shadow: inset -1px -1px; */
 }
+
 image {
     color: rgba(130, 157, 218, 0.5);
     background-color: transparent;
@@ -36,7 +41,7 @@ button.focus,
 button:checked,
 #searchbox,
 #description {
-    border-radius: 8px;
+    border-radius: 0rem;
     background-repeat: no-repeat;
     background-position: left;
     background-size: 0;
@@ -80,11 +85,13 @@ button:focus {
     background-color: rgba(141, 168, 231, 0.5);
     transition: all 0.5s ease-in-out;
 }
+
 button:checked {
     border: solid 2px rgba(141, 168, 231, 1);
     background-color: rgba(141, 168, 231, 0.5);
     transition: all 0.5s ease-in-out;
 }
+
 #searchbox {
     font-size: 16px;
     background-color: rgba(14, 24, 54, 0.5);
@@ -94,11 +101,13 @@ button:checked {
     padding: 10px;
     min-width: 400px;
 }
+
 #separator {
     color: brown;
     background-color: rgba(160, 186, 241, 0.5);
     margin: 10px 500px 10px 500px;
 }
+
 #description {
     font-size: 24px;
     color: rgba(160, 186, 241, 1);

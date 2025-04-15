@@ -29,7 +29,6 @@ gradually() {
 
     cur_temp="$(pgrep --list-full hyprsunset | cut --delimiter=" " --fields=4)"
     tar_temp="7500"
-
     i="${cur_temp}"
 
     while [ "${i}" -le "${tar_temp}" ]; do

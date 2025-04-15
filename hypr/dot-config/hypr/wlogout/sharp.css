@@ -4,13 +4,17 @@
 @import "../waybar/animations.css";
 
 window {
-    background-color: alpha(@defaultbackground, 0.75);
+    background-color: alpha(@alternatebackground, 0.5);
 }
 
 button {
-    color: alpha(@workspacebutton, 0.5);
-    background-color: transparent;
-    background-blend-mode: color-burn;
+    color: alpha(@vividtext, 0.5);
+    background: transparent;
+    background-color: alpha(@alternatebackground, 0.6);
+    box-shadow:
+        0 0 0.5rem 0 alpha(@lighttext, 0.4) inset,
+        0 0 0 0.125rem alpha(@vividtext, 0.4) inset;
+    background-blend-mode: overlay;
     border: solid 0.0625rem alpha(@buttonhover, 1);
     border-radius: 0.1rem;
     margin: 1.5rem;
@@ -20,27 +24,19 @@ button {
 }
 
 button:hover {
-    color: alpha(@buttonhover, 1);
-    background-color: transparent;
+    color: alpha(@lighttext, 1);
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.6);
     box-shadow:
-        0 0 0.5rem 0 alpha(@tertiarytext, 0.4) inset,
-        0 0 0 0.125rem alpha(@secondarytext, 0.4) inset;
-    background-blend-mode: color-burn;
-    border: solid 0.0625rem alpha(@buttonhover, 0.75);
+        0 0 0.5rem 0 alpha(@lighttext, 0.4) inset,
+        0 0 0 0.125rem alpha(@vividtext, 0.4) inset;
+    background-blend-mode: normal;
+    border: solid 0.0625rem alpha(@lighttext, 0.75);
     border-radius: 0.1rem;
     margin: 1.5rem;
     background-repeat: no-repeat;
     background-position: center 40%;
     background-size: 30%;
-}
-
-/* label {
-	font-size: 1rem;
-} */
-
-label:focus,
-label:hover {
-    color: rgba(6, 8, 21, 1);
 }
 
 #lock {
@@ -65,12 +61,4 @@ label:hover {
 
 #reboot {
     background-image: image(url("icons/reboot-new.png"));
-}
-
-#item1 {
-    color: rgb(12, 12, 42);
-}
-
-#item2 {
-    color: rgb(10, 10, 29);
 }

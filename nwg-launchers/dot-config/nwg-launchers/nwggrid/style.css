@@ -1,4 +1,6 @@
-button, label, image {
+button,
+label,
+image {
     background: none;
     border-style: none;
     box-shadow: none;
@@ -6,13 +8,30 @@ button, label, image {
 }
 
 button {
-    padding: 5px;
-    margin: 5px;
-    text-shadow: none;
+    font-size: 16px;
+    color: rgba(160, 186, 241, 0.6);
+    border: none;
+    border: solid 2px rgba(6, 8, 21, 0.3);
+    border-radius: 8px;
+    background: none;
+    background-color: rgba(6, 8, 21, 0.3);
+    /* background-repeat: no-repeat; */
+    /* background-position: left; */
+    /* background-size: 1%; */
+    /* text-shadow: none; */
 }
 
 button:hover {
-    background-color: rgba (255, 255, 255, 0.1);
+    font-size: 16px;
+    color: rgba(6, 8, 21, 0.6);
+    border: none;
+    border: solid 2px rgba(160, 186, 241, 1.0);
+    background: none;
+    background-color: rgba(160, 186, 241, 1.0);
+    /* background-repeat: no-repeat; */
+    /* background-position: left; */
+    /* background-size: 1%; */
+    /* text-shadow: none; */
 }
 
 button:focus {
@@ -25,10 +44,10 @@ button:checked {
 
 #searchbox {
     background: none;
-    border-color: #999;
-    color: #ccc;
+    border-color: rgba(160, 186, 241, 1);
+    color: rgba(160, 186, 241, 1);
     margin-top: 20px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
 }
 
 #separator {
