@@ -1,21 +1,9 @@
-# Hyprland dotfile and such (WIP) ... endlessly... probably 😜
+# Hyprland dotfiles and such (WIP) ... endlessly... probably 😜
 
+## My dot files
 This is all done over Fedora Workstation 40 (now 42). So Gnome is used to set everything and is kept installed in case of "rare" (😅) breaking change on Hyprland side.
 
-
-
-
-
-
-
 https://github.com/user-attachments/assets/b8375f97-4df1-4d8d-85f7-69ab288239b7
-
-
-
-
-
-
-
 
 ## To "magically" restore the configuration files, GNU stow is needed.
 If it is already installed, a simulation/dry-run can be useful since if some filse of folders already exist they won't be replace/updated.
