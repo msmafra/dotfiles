@@ -1,0 +1,14 @@
+{
+  "modules-center": [
+    "custom/hyprbars",
+    "hyprland/workspaces",
+    "custom/separator",
+    "clock",
+    "custom/separator",
+    "idle_inhibitor",
+    "custom/separator",
+    "group/group-privacy",
+    "gamemode",
+    "hyprland/submap"
+  ]
+}

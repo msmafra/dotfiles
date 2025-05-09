@@ -1,5 +1,5 @@
 {
-  "id": "plainbar",
+  "id": "dusklight",
   "exclusive": true,
   "layer": "top",
   "position": "top",
@@ -568,13 +568,12 @@
   "custom/hyprbars": {
     "escape": true,
     "interval": 1,
-    // "exec-if": "~/.config/scripts/hyprbars.sh",
     "exec": "$HOME/.config/hypr/scripts/hyprbars.sh",
     "on-click": "$HOME/.config/hypr/scripts/hyprbars.sh toggle",
     "format": "{icon}",
     "format-icons": {
-      "Enabled": "",
-      "Disabled": ""
+      "Enabled": "󰍵",
+      "Disabled": "󰅗"
     },
     "return-type": "json",
     "tooltip": true,
@@ -584,8 +583,8 @@
     "on-click": "uwsm app -- gnome-characters",
     "format": "{icon}",
     "format-icons": {
-      "Enabled": "",
-      "Disabled": ""
+      "Enabled": "C",
+      "Disabled": "c"
     },
     "return-type": "json",
     "tooltip": true,

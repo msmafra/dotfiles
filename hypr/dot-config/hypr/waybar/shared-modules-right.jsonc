@@ -1,0 +1,12 @@
+{
+  "modules-right": [
+    "group/group-tools",
+    "wireplumber",
+    "network",
+    "bluetooth",
+    "group/group-battery",
+    "power-profiles-daemon",
+    "custom/swaync",
+    "custom/power"
+  ]
+}

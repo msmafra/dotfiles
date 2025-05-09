@@ -1,0 +1,8 @@
+{
+  "modules-left": [
+    "custom/appmenu",
+    "custom/search",
+    "group/group-appicons",
+    "hyprland/window"
+  ]
+}

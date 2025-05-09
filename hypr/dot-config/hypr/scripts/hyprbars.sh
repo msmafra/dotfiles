@@ -16,14 +16,14 @@ toggle_bars() {
     local -a PLUGINS
 
     COMMAND="${1}"
-    RUNNING="$(hyprctl -j plugin list | jq -r '.[] | .name')"
+    RUNNING="$(hyprctl -j plugin list | jq --raw-output '.[] | select(.name == "hyprbars") | .name')"
     PLUGINS_PATH="/usr/lib64/hyprland"
     PLUGINS=(
         "libhyprbars.so"
     )
 
     if [[ $RUNNING = "hyprbars" ]]; then
-        ICON=""
+        ICON="󰖯"
         STATUS="Enabled"
         MESSAGE="Bar enabled $ICON"
     else

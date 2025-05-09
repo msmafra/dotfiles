@@ -71,17 +71,17 @@ window#waybar.empty {
 
 window#waybar.empty #clock,
 window#waybar.empty #workspaces button {
-    color: alpha(@borderbright, 1);
+    color: alpha(@borderlight, 0.51);
     text-shadow: -1px -1px 1px alpha(@shadow, 1);
 }
 
 window#waybar.empty #workspaces button.visible,
 window#waybar.empty #workspaces button.active {
-    color: alpha(@borderbright, 1);
+    color: alpha(@borderlight, 0.51);
     background-color: alpha(@mainbackground, 0.4);
     background-image: linear-gradient(to top,
             alpha(@mainbackground, 0.3) 10%,
-            alpha(@borderbright, 0.3) 100%);
+            alpha(@borderlight, 0.3) 100%);
     background-blend-mode: color-burn;
 }
 
@@ -134,41 +134,27 @@ window#waybar.swallowing .workspaces {
         0 0 0 0.0625rem alpha(@lightborder, 0.1) inset;
     background-image: linear-gradient(to bottom right,
             alpha(@mainbackground, 0.2) 50%,
-            alpha(@borderbright, 0.1) 100%);
-}
-
-#workspaces button.special {
-    color: @mainforeground;
-}
-
-#workspaces button.persistent {
-    color: alpha(@brightext, 1);
-}
-
-#workspaces button.urgent {
-    background-color: alpha(@peachy, 0.85);
-    box-shadow: 0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset,
-        0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset;
-}
-
-#workspaces button.empty {
-    color: alpha(@nothing, 1);
+            alpha(@borderlight, 0.1) 100%);
+    background-blend-mode: color-burn;
 }
 
 #workspaces button.visible {
-    color: alpha(@brightext, 1);
+    color: alpha(@mainbackground, 0.7);
     box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.45) inset,
         0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.45) inset;
+    background-color: alpha(@secondaryforeground, 0.5);
+    background-blend-mode: overlay;
 }
 
 #workspaces button.active {
-    background-color: alpha(@mainforeground, 0.3);
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 0.5);
     background-image: linear-gradient(to top,
             alpha(@borderlight, 0.15) 10%,
             alpha(@borderlight, 0.15) 100%);
-    background-blend-mode: color-burn;
-    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.9) inset,
-        0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.9) inset;
+    background-blend-mode: overlay;
+    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.4) inset,
+        0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.4) inset;
 }
 
 #workspaces button:hover,
@@ -180,22 +166,45 @@ window#waybar.swallowing .workspaces {
     background-color: transparent;
     border-radius: 0.1rem;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
     text-shadow: -1px -1px 1px alpha(@borderlight, 0.1);
     background-image: linear-gradient(to top,
-            alpha(@mainbackground, 0.2) 10%,
-            alpha(@borderbright, 0.1) 100%);
+            alpha(@mainbackground, 0.4) 10%,
+            alpha(@borderlight, 0.3) 100%);
     background-blend-mode: color-burn;
 }
 
+#workspaces button.special {
+    color: @mainforeground;
+}
+
+/* #workspaces button.persistent {
+    color: alpha(@brightext, 1);
+} */
+
+#workspaces button.urgent {
+    background-color: alpha(@peachy, 0.85);
+    box-shadow: 0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset,
+        0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset;
+}
+
+#workspaces button.empty {
+    color: alpha(@secondaryforeground, 0.3);
+    background-color: alpha(@borderlight, 0.1);
+    background-image: linear-gradient(to top,
+            alpha(@borderlight, 0.1) 10%,
+            alpha(@borderlight, 0.1) 100%);
+    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.1) inset,
+        0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.1) inset;
+    background-blend-mode: multiply;
+}
+
 #workspaces button.urgent:hover {
-    color: rgb(107, 34, 50);
+    color: alpha(@mainred, 1);
 }
 
 #workspaces button.hidden {
-    color: rgb(196, 140, 108);
-    background-color: rgba(186, 188, 201, 1);
-    border: 0.15rem solid rgba(186, 188, 201, 1);
+    color: alpha(@peachy, 1);
 }
 
 #backlight,
@@ -248,12 +257,12 @@ window#waybar.swallowing .workspaces {
 
 #taskbar button:hover {
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        inset 0 0 0 0.0625rem alpha(@borderbright, 0.3);
+        inset 0 0 0 0.0625rem alpha(@borderlight, 0.3);
 }
 
 #taskbar button.active:hover {
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
 }
 
 #taskbar button.active {
@@ -269,7 +278,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar button.fullscreen {
-    background-color: @borderbright;
+    background-color: @borderlight;
 }
 
 #taskbar.empty {
@@ -293,8 +302,8 @@ window#waybar.swallowing .workspaces {
 }
 
 #privacy:hover {
-    box-shadow: 0 0 0.5rem 0 rgba(107, 34, 50, 0.3) inset,
-        0 0 0 0.0625rem rgba(231, 148, 141, 0.3) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@darkerred, 0.3) inset,
+        0 0 0 0.0625rem alpha(@darkred, 0.3) inset;
 }
 
 #privacy-item {
@@ -304,7 +313,7 @@ window#waybar.swallowing .workspaces {
 #privacy-item.screenshare,
 #privacy-item.audio-in,
 #privacy-item.audio-out {
-    color: rgb(255, 101, 0);
+    color: alpha(@dl-fg-orange, 1);
     animation: blink 3s steps(12) infinite alternate;
 }
 
@@ -314,7 +323,7 @@ window#waybar.swallowing .workspaces {
 
 #backlight-slider trough,
 #pulseaudio-slider trough {
-    background-color: @borderbright;
+    background-color: alpha(@borderlight, 1);
     min-height: 0.625rem;
     min-width: 15rem;
     border-radius: 0.1rem;
@@ -322,7 +331,7 @@ window#waybar.swallowing .workspaces {
 
 #backlight-slider highlight,
 #pulseaudio-slider highlight {
-    background-color: @borderbright;
+    background-color: alpha(@borderlight, 1);
     min-width: 0.25rem;
     border-radius: 0.1rem;
 }
@@ -332,8 +341,6 @@ window#waybar.swallowing .workspaces {
     font-weight: 600;
     border-radius: 0.1rem;
 }
-
-
 
 #battery:hover,
 #backlight:hover,
@@ -396,7 +403,7 @@ window#waybar.swallowing .workspaces {
     color: alpha(@borderlight, 0.31);
     background-color: transparent;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
 }
 
 #custom-swaync.none {
@@ -423,7 +430,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #power-profiles-daemon:hover {
-    color: rgb(0, 255, 156);
+    color: alpha(@limegreen, 1);
 }
 
 #power-profiles-daemon.performance {
@@ -432,7 +439,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #power-profiles-daemon.performance:hover {
-    color: @maincritical;
+    color: alpha(@maincritical, 1);
 }
 
 #power-profiles-daemon.balanced {
@@ -441,7 +448,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #power-profiles-daemon.balanced:hover {
-    color: rgba(67, 79, 255, 1);
+    color: alpha(@vividtext, 1);
 }
 
 #power-profiles-daemon.power-saver {
@@ -450,16 +457,16 @@ window#waybar.swallowing .workspaces {
 }
 
 #power-profiles-daemon.power-saver:hover {
-    color: rgba(0, 246, 0, 1);
+    color: alpha(@greenish, 1);
 }
 
 #custom-kill {
-    color: @maincritical;
+    color: alpha(@maincritical, 1);
     padding: 0 0.25rem 0 0.25rem;
 }
 
 #custom-kill:hover {
-    color: rgb(233, 119, 119);
+    color: alpha(@darkrose, 1);
     background-color: transparent;
 }
 
@@ -492,28 +499,28 @@ window#waybar.swallowing .workspaces {
 #custom-power:hover {
     background-color: transparent;
     box-shadow: 0 0 0.0625rem 0 @borderlight inset,
-        0 0 0 0.0625rem rgba(141, 168, 231, 1) inset;
+        0 0 0 0.0625rem alpha(@secondarytext, 1) inset;
     background-blend-mode: screen, multiply;
     background-image: linear-gradient(to top left,
             alpha(@mainbackground, 0.2) 0%,
-            rgba(160, 186, 241, 0.2) 100%);
+            alpha(@tertiarytext, 0.2) 100%);
     border-radius: 0 0.1rem 0.1rem 0;
 }
 
 #custom-clipboard_list {
-    color: rgb(228, 224, 225);
+    color: alpha(@rose, 1);
 }
 
 #custom-hyprpicker {
-    color: rgb(41, 95, 152);
+    color: alpha(@groundblue, 1);
 }
 
 #custom-wallpaper {
-    color: rgb(17, 106, 123);
+    color: alpha(@lightteal, 1);
 }
 
 #custom-backup {
-    color: rgb(142, 172, 205);
+    color: alpha(@workspacebutton, 1);
 }
 
 #custom-search,
@@ -533,7 +540,7 @@ window#waybar.swallowing .workspaces {
 #custom-clipboard_list:hover,
 #custom-backup:hover,
 #custom-myxer:hover {
-    color: @borderbright;
+    color: @borderlight;
 }
 
 #group-backlight label,
@@ -553,23 +560,23 @@ window#waybar.swallowing .workspaces {
 }
 
 #temperature {
-    color: rgba(230, 55, 55, 1);
+    color: alpha(@darkred, 1);
 }
 
 #temperature.critical {
-    background-color: rgba(235, 77, 75, 0.3);
+    background-color: alpha(@mainred, 1);
 }
 
 #cpu {
-    color: rgba(118, 161, 241, 1);
+    color: alpha(@alternatetext, 1);
 }
 
 #disk {
-    color: rgba(132, 225, 232, 1);
+    color: alpha(@borderlight, 1);
 }
 
 #memory {
-    color: rgba(231, 162, 35, 1);
+    color: alpha(@yellow, 1);
 }
 
 #group-battery {
@@ -595,7 +602,7 @@ window#waybar.swallowing .workspaces {
 
 #battery.charging,
 #battery.capacity .charging {
-    color: @borderbright;
+    color: @borderlight;
     animation: blink 4s steps(12) infinite alternate;
 }
 
@@ -606,17 +613,17 @@ window#waybar.swallowing .workspaces {
 
 #battery.warning:not(.charging),
 #battery.capacity .warning:not(.charging) {
-    color: rgba(249, 134, 68, 1);
+    color: alpha(@orange, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 #battery.critical:not(.charging) {
-    color: @maincritical;
+    color: alpha(@maincritical, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 #battery.discharging {
-    color: @borderbright;
+    color: alpha(@borderlight, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
@@ -639,13 +646,13 @@ window#waybar.battery-warning {
 }
 
 #tray menu {
-    color: @borderbright;
+    color: @borderlight;
     background-color: @mainbackground;
     padding: 0.5rem;
     margin: 0.5rem;
     border-radius: 0.1rem;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
 }
 
 #tray menu label {
@@ -722,7 +729,7 @@ window#waybar.battery-warning {
 }
 
 #user image {
-    background-color: @borderbright;
+    background-color: @borderlight;
     padding: 0.3rem;
     border-radius: 0.1rem;
 }
@@ -733,12 +740,12 @@ tooltip {
     border: 0.0625rem solid alpha(@borderlight, 0.62);
     border-radius: 0.1rem;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
 }
 
 tooltip label {
     font-size: 1rem;
-    color: @borderbright;
+    color: @borderlight;
     padding: 0 1rem 0 1rem;
 }
 
@@ -756,7 +763,7 @@ tooltip label {
     padding: 0rem;
     margin: 0.5rem 0 0.5rem 0;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
 }
 
 #custom-hyprbars {
@@ -766,8 +773,8 @@ tooltip label {
     padding: 0 0.5rem 0 0.5rem;
     margin: 0.125rem;
     text-shadow: -1px -1px 1px alpha(@borderlight, 0.3);
-    box-shadow: 0 0 0.5rem 0 rgba(22, 22, 80, 0.1) inset,
-        0 0 0 0.0625rem rgba(72, 125, 192, 0.1) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@brightlight, 0.3) inset,
+        0 0 0 0.0625rem alpha(@brightlight, 0.3) inset;
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
@@ -778,18 +785,17 @@ tooltip label {
     border-radius: 0rem;
     background-color: transparent;
     box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
     text-shadow: -1px -1px 1px alpha(@borderlight, 0.1);
     background-image: linear-gradient(to top,
             alpha(@mainbackground, 0.2) 10%,
-            alpha(@borderbright, 0.1) 100%);
+            alpha(@borderlight, 0.1) 100%);
     background-blend-mode: color-burn;
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
 #custom-hyprbars.Disabled {
     color: alpha(@borderlight, 0.55);
-    font-weight: 600;
 }
 
 #custom-hyprbars.Enabled {

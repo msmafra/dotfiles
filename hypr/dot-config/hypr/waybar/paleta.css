@@ -10,6 +10,7 @@
     color: rgb(29, 19, 70);
 }
 
+
 #cor {
     color: rgb(29, 22, 79);
 }
@@ -96,6 +97,10 @@
 
 #cor {
     color: rgb(94, 38, 99);
+}
+
+#vivid-navy {
+    color: rgb(0, 26, 110);
 }
 
 #cor {
@@ -377,7 +382,9 @@
 #cor {
     color: rgb(167, 103, 176);
 }
-
+#cor {
+    color: rgb(81, 101, 197)
+}
 #cor {
     color: rgb(35, 104, 161);
 }
@@ -573,3 +580,266 @@
 #cor {
     color: rgb(229, 249, 251);
 }
+
+
+
+#color {
+    color: rgb(63, 70, 157)
+}
+
+;
+
+#color {
+    color: rgb(77, 95, 171)
+}
+
+;
+
+#color {
+    color: rgb(81, 101, 197)
+}
+
+;
+
+#color {
+    color: rgb(125, 177, 241)
+}
+
+;
+
+
+#color {
+    color: rgb(53, 132, 228);
+}
+
+#tertiarybackground {
+    color: rgb(12, 12, 42);
+}
+
+#tertiarytext {
+    color: rgb(160, 186, 241);
+}
+
+#bluetext {
+    color: rgb(11, 47, 105);
+}
+
+#cor {
+    color: rgb(128, 185, 229);
+}
+
+#light-blue {
+    color: rgb(174, 203, 250);
+}
+
+#quarternarybackground {
+    color: rgb(14, 14, 54);
+}
+
+#cor {
+    color: rgb(20, 10, 60);
+}
+
+#pastel-navy {
+    color: rgb(62, 88, 121);
+}
+
+#pastel-navy {
+    color: rgb(0, 26, 110);
+}
+
+#cor {
+    color: rgb(45, 30, 82);
+}
+
+#bright-blue {
+    color: rgb(1, 204, 255);
+}
+
+#lighttext {
+    color: rgb(109, 151, 221);
+}
+
+#mainbackground {
+    color: rgb(29, 19, 70);
+}
+
+#secondarybackground {
+    color: rgb(29, 22, 79);
+}
+
+#mainforeground {
+    color: rgb(63, 70, 157);
+}
+
+#secondaryforeground {
+    color: rgb(77, 95, 171);
+}
+
+#brightext {
+    color: rgb(81, 101, 197);
+}
+
+#borderlight {
+    color: rgb(125, 177, 241);
+}
+
+#borderbright {
+    color: rgb(128, 185, 229);
+}
+
+#alternatebackground {
+    color: rgb(20, 10, 60);
+}
+
+test {
+    color: rgb(205, 214, 244);
+    /* #cdd6f4; */
+    color: rgb(180, 190, 254);
+    /* #b4befe */
+    color: rgb(203, 166, 247);
+    /* #cba6f7 */
+    color: rgb(17, 17, 27);
+    /* #11111b; */
+    color: rgb(30, 30, 46);
+    /* #1e1e2e; */
+}
+
+#text-shadow {
+    color: rgb(60, 86, 41);
+}
+
+#navy {
+    color: rgb(33, 53, 85);
+}
+
+#pastel-navy {
+    color: rgb(62, 88, 121);
+}
+
+#vivid-navy {
+    color: rgb(0, 26, 110);
+}
+
+#pastel-vivid-navy {
+    color: rgb(7, 71, 153);
+}
+
+#purple {
+    color: rgb(45, 30, 82);
+}
+
+#alpha {
+    color: rgb(22, 19, 34);
+}
+
+#alpha {
+    color: rgb(205, 214, 244);
+}
+
+#box1 {
+    color: rgb(22, 19, 34);
+}
+
+test {
+    color: rgb(42, 48, 122);
+    color: rgb(45, 44, 131);
+    color: rgb(207, 34, 50);
+    color: rgb(238, 67, 76);
+
+
+    color: rgba(141, 168, 231, 1);
+    color: rgba(10, 13, 29, 1);
+    color: rgba(160, 186, 241, 1);
+    color: rgba(150, 167, 208, 1);
+    color: rgba(12, 18, 42, 1);
+    color: rgb(255, 220, 222);
+    color: rgb(233, 119, 119);
+    color: rgba(185, 139, 149, 1);
+    color: rgba(171, 106, 151, 1);
+    color: rgb(119, 8, 15);
+    color: rgba(193, 18, 31, 1);
+    color: rgba(33, 48, 106, 1);
+    color: rgba(87, 133, 228, 1);
+    color: rgba(157, 198, 234, 1);
+    color: rgba(45, 45, 144, 1);
+        color: rgba(0, 246, 0, 1);
+        color: rgb(119, 67, 219);
+        color: rgb(67, 79, 255);
+        color: rgb(21, 26, 45);
+        color: rgb(207, 34, 50);
+        color: rgb(238, 67, 76);
+        color: rgb(107, 34, 50);
+        color: rgb(21, 26, 45);
+        color: rgb(87, 133, 228);
+        color: rgb(72, 125, 192);
+        color: rgb(255, 101, 0);
+        /*dusklight*/
+        color: rgb(7, 9, 33);
+        color: rgb(4, 20, 46);
+        color: rgb(25, 29, 55);
+        color: rgb(255, 128, 0);
+        color: rgb(153, 223, 255);
+        color: rgb(233, 248, 255);
+        /*tests*/
+            color: rgb(255, 101, 0);
+            color: rgb(107, 34, 50);
+            color: rgb(231, 148, 141)
+
+
+}
+#custom-clipboard_list {
+    color: rgb(228, 224, 225);
+}
+
+#custom-hyprpicker {
+    color: rgb(41, 95, 152);
+}
+
+#custom-wallpaper {
+    color: rgb(17, 106, 123);
+}
+
+#custom-backup {
+    color: rgb(142, 172, 205);
+}
+#temperature {
+    color: rgba(230, 55, 55, 1);
+}
+
+#temperature.critical {
+    background-color: rgba(235, 77, 75, 0.3);
+}
+
+#cpu {
+    color: rgba(118, 161, 241, 1);
+}
+
+#disk {
+    color: rgba(132, 225, 232, 1);
+}
+
+#memory {
+    color: rgba(231, 162, 35, 1);
+}
+
+
+
+
+#cpu {
+    color: rgba(118, 161, 241, 1);
+}
+
+#disk {
+    color: rgba(132, 225, 232, 1);
+}
+
+#memory {
+    color: rgba(231, 162, 35, 1);
+}
+
+#color { color: rgba(107, 34, 50, 03); }
+#color { color: rgba(231, 148, 141, 03); }
+#color {color: rgba(249, 134, 68, 1);}
+#color { color: rgba(22, 22, 80, 0.1);}
+#color { color: rgba(72, 125, 192, 0.1);}

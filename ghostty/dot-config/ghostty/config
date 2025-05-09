@@ -1,1 +1,6 @@
 theme = "AdventureTime"
+keybind=clear
+keybind = unconsumed:shift+up=adjust_selection:up
+keybind = unconsumed:shift+down=adjust_selection:down
+keybind = unconsumed:shift+left=adjust_selection:left
+keybind = unconsumed:shift+right=adjust_selection:right

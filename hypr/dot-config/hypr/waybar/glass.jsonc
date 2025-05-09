@@ -3,38 +3,14 @@
   "exclusive": true,
   "layer": "top",
   "position": "top",
-  "height": 32,
+  "height": 34,
   "width": "",
   "reload_style_on_change": true,
   "include": [
-    "$HOME/.config/hypr/waybar/output.jsonc"
-  ],
-  "modules-left": [
-    "custom/appmenu",
-    "group/group-appicons",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "custom/hyprbars",
-    "hyprland/workspaces",
-    "custom/separator",
-    "clock",
-    "custom/separator",
-    "idle_inhibitor",
-    "custom/separator",
-    "group/group-privacy",
-    "gamemode",
-    "hyprland/submap"
-  ],
-  "modules-right": [
-    "group/group-tools",
-    "wireplumber",
-    "network",
-    "bluetooth",
-    "group/group-battery",
-    "power-profiles-daemon",
-    "custom/swaync",
-    "custom/power"
+    "$HOME/.config/hypr/waybar/shared-outputs.jsonc",
+    "$HOME/.config/hypr/waybar/shared-modules-left.jsonc",
+    "$HOME/.config/hypr/waybar/shared-modules-center.jsonc",
+    "$HOME/.config/hypr/waybar/shared-modules-right.jsonc"
   ],
   "hyprland/workspaces": {
     "active-only": false,
@@ -46,7 +22,7 @@
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "include": [
-      "$HOME/.config/hypr/waybar/workspaces.jsonc"
+      "$HOME/.config/hypr/waybar/shared-workspaces.jsonc"
     ],
     "format": "{name}",
     "format-window-separator": " | ",
@@ -88,7 +64,7 @@
     "timezone": "America/Sao_Paulo",
     "format": "{:L%a %d %R}",
     "today-format": "<b>{}</b>",
-    "on-click": "uwsm app -- gnome-calendar",
+    "on-click": "uwsm app -- $HOME/.config/hypr/scripts/calendar.sh",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode": "month",
@@ -101,9 +77,9 @@
         "days": "{}",
         "weeks": "{}",
         "weekdays": "{}",
-        "today": "{}",
-      },
-    },
+        "today": "{}"
+      }
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -122,12 +98,12 @@
     "capslock": true,
     "format": {
       "numlock": "N {icon}",
-      "capslock": "C {icon}",
+      "capslock": "C {icon}"
     },
     "format-icons": {
       "locked": "",
-      "unlocked": "",
-    },
+      "unlocked": ""
+    }
   },
   "network": {
     "interval": 60,
@@ -151,7 +127,7 @@
     "tooltip-format-wifi": "{icon} {essid} ({frequency}GHz 󰹤: {signalStrength}%/{signaldBm}dBm)",
     "tooltip-format-linked": "{ifname} (No IP)",
     "tooltip-format-ethernet": "{ifname} via {gwaddr} - {bandwidthUpBytes}/{bandwidthDownBytes}/{bandwidthTotalBytes}",
-    "tooltip-format-disconnected": "Disconnected!",
+    "tooltip-format-disconnected": "Disconnected!"
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -161,8 +137,8 @@
       "default": "󰡳",
       "performance": "󰡴",
       "balanced": "󰡵",
-      "power-saver": "󰡳",
-    },
+      "power-saver": "󰡳"
+    }
   },
   "group/group-dockish": {
     "orientation": "inherit",
@@ -170,13 +146,13 @@
       "click-to-reveal": false,
       "transition-duration": 600,
       "children-class": "drawer-child",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
     },
     "modules": [
       "hyprland/workspaces",
       "wlr/taskbar",
       "tray"
-    ],
+    ]
   },
   "group/group-statuses": {
     "orientation": "inherit",
@@ -184,15 +160,15 @@
       "click-to-reveal": true,
       "transition-duration": 800,
       "children-class": "drawer-child",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/statuses-button",
       "temperature",
       "cpu",
       "disk",
-      "memory",
-    ],
+      "memory"
+    ]
   },
   "group/group-backlight": {
     "orientation": "horizontal",
@@ -200,12 +176,12 @@
       "click-to-reveal": true,
       "transition-duration": 800,
       "children-class": "drawer-child",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "backlight",
       "backlight/slider"
-    ],
+    ]
   },
   "backlight": {
     "format": "{icon}",
@@ -224,19 +200,19 @@
     ],
     "scroll-step": 1,
     "tooltip": true,
-    "tooltip-format": "Click to control the brightness",
+    "tooltip-format": "Click to control the brightness"
   },
   "backlight/slider": {
     "min": 5,
     "max": 100,
-    "orientation": "horizontal",
+    "orientation": "horizontal"
   },
   "group/group-tools": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 800,
       "children-class": "tools-child",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/tools-button",
@@ -244,8 +220,8 @@
       "custom/hyprpicker",
       "custom/clipboard_list",
       "custom/backup",
-      "custom/wallpaper",
-    ],
+      "custom/wallpaper"
+    ]
   },
   "group/group-battery": {
     "orientation": "inherit",
@@ -253,12 +229,12 @@
       "click-to-reveal": false,
       "transition-duration": 200,
       "children-class": "drawer-child",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
     },
     "modules": [
       "battery",
       "battery#capacity"
-    ],
+    ]
   },
   "battery": {
     "interval": 60,
@@ -267,7 +243,7 @@
       "good": 75,
       "half": 50,
       "warning": 25,
-      "critical": 15,
+      "critical": 15
     },
     "rotate": 0,
     "format": "{icon}",
@@ -279,7 +255,7 @@
       ""
     ],
     "tooltip-format": "{capacity}% | {timeTo}",
-    "max-length": 5,
+    "max-length": 5
   },
   "battery#capacity": {
     "interval": 60,
@@ -288,7 +264,7 @@
       "good": 75,
       "half": 50,
       "warning": 25,
-      "critical": 15,
+      "critical": 15
     },
     "rotate": 0,
     "format": "{capacity}%"
@@ -299,12 +275,12 @@
       "click-to-reveal": false,
       "transition-duration": 500,
       "children-class": "drawer-child",
-      "transition-left-to-right": true,
+      "transition-left-to-right": true
     },
     "modules": [
       "wlr/taskbar",
       "tray"
-    ],
+    ]
   },
   "wlr/taskbar": {
     "format": "{icon}",
@@ -313,14 +289,14 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "on-click-right": "minimize",
+    "on-click-right": "minimize"
   },
   "tray": {
     "icon-size": 16,
     "spacing": 5,
     "show-passive-items": true,
     "smooth-scrolling-threshold": 1,
-    "reverse-direction": true,
+    "reverse-direction": true
   },
   "group/group-audio": {
     "orientation": "horizontal",
@@ -331,13 +307,13 @@
       "click-to-reveal": false,
       "transition-duration": 800,
       "children-class": "drawer-child",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "wireplumber",
       "pulseaudio/slider",
       "custom/myxer"
-    ],
+    ]
   },
   "wireplumber": {
     "format": "{icon}",
@@ -345,20 +321,18 @@
     "on-click": "uwsm app -- swaync-client --toggle-panel --subscribe-waybar --count",
     "on-middle-click": "uwsm app -- Myxer",
     "on-click-right": "uwsm app -- cosmic-settings sound",
-    // "on-scroll-up": "",
-    // "on-scroll-down": "",
     "tooltip": true,
     "tooltip-format": "Click or scroll to control the volume",
     "format-icons": [
       "󰕿",
       "󰖀",
       "󰕾"
-    ],
+    ]
   },
   "pulseaudio/slider": {
     "min": 5,
     "max": 100,
-    "orientation": "horizontal",
+    "orientation": "horizontal"
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -373,7 +347,7 @@
       "default": [
         "",
         ""
-      ],
+      ]
     },
     "on-click": "uwsm app -- pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "uwsm app -- pavucontrol"
@@ -383,26 +357,26 @@
     "drawer": {},
     "modules": [
       "privacy"
-    ],
+    ]
   },
   "privacy": {
     "modules": [
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 24
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 24
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24,
-      },
-    ],
+        "tooltip-icon-size": 24
+      }
+    ]
   },
   "bluetooth": {
     "format": "{status}",
@@ -430,14 +404,14 @@
     "icon-spacing": 4,
     "icon-size": 20,
     "tooltip": true,
-    "tooltip-format": "Games running: {count}",
+    "tooltip-format": "Games running: {count}"
   },
   "custom/weather": {
     "format": "{}",
     "format-alt": "{alt}: {}",
     "format-alt-click": "click-right",
     "interval": 3600,
-    "exec": "uwsm app -- curl --silent 'https://wttr.in/?format=+%c'",
+    "exec": "uwsm app -- curl --silent 'https://wttr.in/?format=+%c'"
   },
   "custom/appmenu": {
     "format": "{icon}",
@@ -450,12 +424,12 @@
     "tooltip": false,
     "tooltip-format": "Applications menu and search",
     "on-click": "uwsm app -- /usr/bin/nwg-drawer -open",
-    "on-click-middle": "pkill -9 nwg-drawer",
+    "on-click-middle": "pkill -9 nwg-drawer"
   },
   "custom/search": {
-    "format": "󱁴",
+    "format": "󰨭",
     "tooltip": false,
-    "on-click-release": "uwsm app -- nwg-drawer -open",
+    "on-click-release": "uwsm app -- flatpak run io.github.cboxdoerfer.FSearch"
   },
   "custom/power": {
     "format": " {icon} ",
@@ -463,7 +437,7 @@
       "⏻"
     ],
     "on-click": "uwsm app -- $HOME/.config/hypr/scripts/wlogout.sh",
-    "tooltip-format": "<small>󰚦 Desligar|  Reiniciar |  Sair |  Trancar | 󰒲  Suspender |  Hibernar </small>",
+    "tooltip-format": "<small>󰚦 Desligar|  Reiniciar |  Sair |  Trancar | 󰒲  Suspender |  Hibernar </small>"
   },
   "custom/swaync": {
     "tooltip": false,
@@ -476,29 +450,29 @@
       "inhibited-notification": "󱅳",
       "inhibited-none": "󱅴",
       "dnd-inhibited-notification": "󰚣",
-      "dnd-inhibited-none": "󱙎",
+      "dnd-inhibited-none": "󱙎"
     },
     "return-type": "json",
     "exec-if": "command -v swaync-client",
     "exec": "swaync-client --subscribe-waybar --count",
     "on-click": "swaync-client --toggle-panel --subscribe-waybar --count",
     "on-click-right": "swaync-client --toggle-panel --subscribe-waybar --count",
-    "escape": true,
+    "escape": true
   },
   "custom/tools-button": {
-    "format": "",
+    "format": ""
   },
   "custom/statuses-button": {
-    "format": "",
+    "format": ""
   },
   "custom/backup": {
     "format": "󱛟",
     "tooltip": true,
-    "tooltip-format": "click runs btrbk snapshot\nright click runs btrbk run\nmiddle click runs btrbk clean",
+    "tooltip-format": "click: runs btrbk snapshot\nright click: runs btrbk run\nmiddle click: runs btrbk clean",
     "exec-on-event": true,
     "on-click": "uwsm app -- $HOME/Projects/backup-cli.sh snapshot",
     "on-click-right": "uwsm app -- $HOME/Projects/backup-cli.sh run",
-    "on-middle-click": "uwsm app -- $HOME/Projects/backup-cli.sh clean",
+    "on-middle-click": "uwsm app -- $HOME/Projects/backup-cli.sh clean"
   },
   "custom/myxer": {
     "format": "󰀰",

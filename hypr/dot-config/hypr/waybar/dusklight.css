@@ -4,15 +4,15 @@
 
 window#waybar {
     font-size: 1rem;
-    color: alpha(@mainforeground, 1);
-    background-color: alpha(@mainbackground, 0.9);
-    border-radius: 0.5rem;
+    color: alpha(@dl-fg-gray, 0.8);
+    background-color: alpha(@dl-bg-darkest, 0.9);
+    border-radius: 0rem;
     box-shadow:
-        0 0 0.5rem 0 alpha(@mainforeground, 0.82) inset,
-        0 0 0 0.0625rem alpha(@mainforeground, 0.82) inset;
+        0 0 0.5rem 0 alpha(@dl-bg-darkest, 1) inset,
+        0 0 0 0.0625rem alpha(@dl-bg-darkest, 1) inset;
     background-image: linear-gradient(to bottom left,
-            alpha(@secondarybackground, 1) 10%,
-            alpha(@secondarybackground, 1) 100%);
+            alpha(@dl-bg-dark, 1) 10%,
+            alpha(@dl-bg-normal, 1) 100%);
     background-blend-mode: darken;
 }
 
@@ -22,23 +22,23 @@ window#waybar {
 
 #window label {
     font-size: 0.7rem;
-    color: alpha(@mainforeground, 1);
+    color: alpha(@dl-fg-gray, 0.8);
 }
 
 .modules-left {
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 0.1rem 0.1rem 0;
 }
 
 .modules-center {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 .modules-right {
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 0.1rem 0.1rem 0;
 }
 
 #custom-power {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@dl-fg-gray, 1);
 }
 
 .modules-left,
@@ -46,14 +46,14 @@ window#waybar {
 .modules-right {
     background-color: transparent;
     box-shadow:
-        0 0 0.5rem 0 alpha(@mainforeground, 1) inset,
-        0 0 0 0.0625rem alpha(@mainforeground, 1) inset;
+        0 0 0.5rem 0 alpha(@dl-fg-orange, 0.35) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.35) inset;
 }
 
 .modules-left widget,
 .modules-center widget,
 .modules-right widget {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 .modules-left label,
@@ -65,58 +65,58 @@ window#waybar {
 
 window#waybar.empty {
     font-size: 1rem;
-    background-color: alpha(@secondarybackground, 0.1);
+    background-color: alpha(@dl-bg-dark, 0.1);
     background-blend-mode: multiply;
 }
 
 window#waybar.empty #clock,
 window#waybar.empty #workspaces button {
-    color: alpha(@borderbright, 1);
-    text-shadow: -1px -1px 1px alpha(@shadow, 1);
+    color: alpha(@dl-fg-orange, 0.8);
+    text-shadow: -1px -1px 1px alpha(@dl-bg-dark, 1);
 }
 
 window#waybar.empty #workspaces button.visible,
 window#waybar.empty #workspaces button.active {
-    color: alpha(@borderbright, 1);
-    background-color: alpha(@mainbackground, 0.4);
+    color: alpha(@dl-fg-orange, 0.8);
+    background-color: alpha(@dl-bg-normal, 0.4);
     background-image: linear-gradient(to top,
-            alpha(@mainbackground, 0.3) 10%,
-            alpha(@borderbright, 0.3) 100%);
+            alpha(@dl-bg-normal, 1) 10%,
+            alpha(@dl-bg-normal, 1) 100%);
     background-blend-mode: color-burn;
 }
 
 window#waybar.solo {
     background: transparent;
-    background-color: alpha(@secondarybackground, 0.3);
+    background-color: alpha(@dl-bg-dark, 0.3);
     background-blend-mode: multiply;
     background-image: linear-gradient(to bottom right,
-            alpha(@solo, 0.6) 5%,
-            alpha(@solo, 0.4) 20%);
+            alpha(@dl-bg-normal, 0.6) 5%,
+            alpha(@dl-bg-normal, 0.4) 20%);
 }
 
 window#waybar.floating .modules-left,
 window#waybar.floating .modules-right,
 window#waybar.floating .modules-center {
-    background: alpha(@alternatebackground, 0.1);
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.7) inset;
+    background: alpha(@dl-bg-dark, 0.1);
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.7) inset;
     background-image: linear-gradient(to bottom right,
-            alpha(@floating, 1) 50%,
-            alpha(@floating, 1) 100%);
-    background-blend-mode: color-dodge;
+            alpha(@dl-bg-normal, 0.51) 50%,
+            alpha(@dl-bg-normal, 0.51) 100%);
+    background-blend-mode: overlay;
 }
 
 window#waybar.fullscreen {
-    background-color: alpha(@mainbackground, 0.82);
+    background-color: alpha(@dl-bg-darkest, 0.82);
 }
 
 window#waybar.swallowing .workspaces {
-    box-shadow: 0 0 0.5rem 0 alpha(@peachy, 1) inset,
-        0 0 0 0.0625rem alpha(@peachy, 1) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 1) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 1) inset;
 }
 
 #workspaces {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0.0625rem;
 }
 
@@ -126,49 +126,71 @@ window#waybar.swallowing .workspaces {
 }
 
 #workspaces button {
-    color: alpha(@secondaryforeground, 1);
-    border-radius: 0.5rem;
+    color: alpha(@dl-bg-normal, 1);
+    border-radius: 0.1rem;
     padding: 0.25rem;
     margin: 0.125rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@brightborder, 0.1) inset,
-        0 0 0 0.0625rem alpha(@lightborder, 0.1) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.1) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.1) inset;
     background-image: linear-gradient(to bottom right,
-            alpha(@mainbackground, 0.2) 50%,
-            alpha(@borderbright, 0.1) 100%);
+            alpha(@dl-bg-normal, 0.5) 50%,
+            alpha(@dl-bg-dark, 0.5) 100%);
 }
 
 #workspaces button.special {
-    color: @mainforeground;
+    color: alpha(@dl-fg-orange, 0.5);
 }
 
 #workspaces button.persistent {
-    color: alpha(@brightext, 1);
+    color: alpha(@dl-fg-orange, 0.5);
 }
 
 #workspaces button.urgent {
-    background-color: alpha(@peachy, 0.85);
-    box-shadow: 0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset,
-        0.0625rem 0.0625rem 0 0 alpha(@peachy, 0.85) inset;
+    color: alpha(@dl-bg-darkest, 0.8);
+    background-color: alpha(@dl-fg-orange, 0.7);
+    box-shadow: 0.0625rem 0.0625rem 0 0 alpha(@dl-fg-orange, 0.8) inset,
+        0.0625rem 0.0625rem 0 0 alpha(@dl-fg-orange, 0.8) inset;
+    background-blend-mode: overlay;
+    /*
+    background-blend-mode
+    normal       |
+    multiply     |
+    screen       |
+    overlay      |
+    darken       |
+    lighten      |
+    color-dodge  |
+    color-burn   |
+    hard-light   |
+    soft-light   |
+    difference   |
+    exclusion    |
+    hue          |
+    saturation   | not accepted in GTK3 based ones at least
+    color        |
+    luminosity
+    */
 }
 
 #workspaces button.empty {
-    color: alpha(@nothing, 1);
+    color: alpha(@dl-bg-darkest, 1);
 }
 
 #workspaces button.visible {
-    color: alpha(@brightext, 1);
-    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.45) inset,
-        0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.45) inset;
+    color: alpha(@dl-bg-normal, 1);
+    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@dl-fg-orange, 0.15) inset,
+        0 0.0625rem 0 0.0625rem alpha(@dl-fg-orange, 0.15) inset;
 }
 
 #workspaces button.active {
-    background-color: alpha(@mainforeground, 0.3);
+    color: alpha(@dl-fg-gray, 0.8);
+    background-color: alpha(@dl-fg-orange, 0.3);
     background-image: linear-gradient(to top,
-            alpha(@borderlight, 0.15) 10%,
-            alpha(@borderlight, 0.15) 100%);
-    background-blend-mode: color-burn;
-    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@borderlight, 0.9) inset,
-        0 0.0625rem 0 0.0625rem alpha(@borderlight, 0.9) inset;
+            alpha(@dl-fg-orange, 0.15) 10%,
+            alpha(@dl-fg-orange, 0.15) 100%);
+    background-blend-mode: color-dodge;
+    box-shadow: 0 0 0.0625rem 0.0625rem alpha(@dl-fg-orange, 0.5) inset,
+        0 0.0625rem 0 0.0625rem alpha(@dl-fg-orange, 0.5) inset;
 }
 
 #workspaces button:hover,
@@ -176,26 +198,28 @@ window#waybar.swallowing .workspaces {
 #workspaces button.visible:hover,
 #workspaces button.active:hover,
 #workspaces button.empty:hover {
-    color: alpha(@buttonhover, 1);
+    color: alpha(@dl-fg-gray, 0.8);
     background-color: transparent;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
-    text-shadow: -1px -1px 1px alpha(@borderlight, 0.1);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.1) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
+    text-shadow: -1px -1px 1px alpha(@dl-fg-orange, 0.1);
     background-image: linear-gradient(to top,
-            alpha(@mainbackground, 0.2) 10%,
-            alpha(@borderbright, 0.1) 100%);
+            alpha(@dl-bg-darkest, 0.2) 10%,
+            alpha(@dl-fg-orange, 0.1) 100%);
     background-blend-mode: color-burn;
 }
 
 #workspaces button.urgent:hover {
-    color: rgb(107, 34, 50);
+    color: alpha(@dl-bg-orange, 1);
+    background-color: alpha(@dl-bg-dark, 1);
+    background-blend-mode: color-burn;
 }
 
 #workspaces button.hidden {
-    color: rgb(196, 140, 108);
-    background-color: rgba(186, 188, 201, 1);
-    border: 0.15rem solid rgba(186, 188, 201, 1);
+    color: alpha(@dl-fg-blue, 1);
+    background-color: alpha(@dl-fg-blue, 0.7);
+    border: 0.15rem solid alpha(@dl-fg-blue, 0.4);
 }
 
 #backlight,
@@ -220,8 +244,6 @@ window#waybar.swallowing .workspaces {
 #tray,
 #wireplumber {
     font-weight: 500;
-    color: alpha(@secondaryforeground, 0.6);
-    background-color: transparent;
 }
 
 #wireplumber {
@@ -229,7 +251,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0 0.25rem 0 0.25rem;
     margin: 0 0.0625rem 0 0.0625rem;
 }
@@ -241,19 +263,19 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar button {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0 0.375rem 0 0.375rem;
     margin: 0 0.0625rem 0 0.0625rem;
 }
 
 #taskbar button:hover {
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        inset 0 0 0 0.0625rem alpha(@borderbright, 0.3);
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        inset 0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3);
 }
 
 #taskbar button.active:hover {
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
 }
 
 #taskbar button.active {
@@ -261,7 +283,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar button.minimized {
-    background-color: @mainbackground;
+    background-color: alpha(@dl-bg-darkest, 1);
 }
 
 #taskbar button.maximized {
@@ -269,7 +291,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar button.fullscreen {
-    background-color: @borderbright;
+    background-color: alpha(@dl-fg-orange, 1);
 }
 
 #taskbar.empty {
@@ -283,18 +305,18 @@ window#waybar.swallowing .workspaces {
 }
 
 #group-privacy {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0 0.25rem 0 0.25rem;
     margin: 0.3rem;
 }
 
 #privacy {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #privacy:hover {
-    box-shadow: 0 0 0.5rem 0 rgba(107, 34, 50, 0.3) inset,
-        0 0 0 0.0625rem rgba(231, 148, 141, 0.3) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-bg-darkest, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-bg-dark, 0.3) inset;
 }
 
 #privacy-item {
@@ -304,7 +326,7 @@ window#waybar.swallowing .workspaces {
 #privacy-item.screenshare,
 #privacy-item.audio-in,
 #privacy-item.audio-out {
-    color: rgb(255, 101, 0);
+    color: alpha(@dl-fg-orange, 1);
     animation: blink 3s steps(12) infinite alternate;
 }
 
@@ -314,23 +336,23 @@ window#waybar.swallowing .workspaces {
 
 #backlight-slider trough,
 #pulseaudio-slider trough {
-    background-color: @borderbright;
+    background-color: alpha(@dl-fg-orange, 1);
     min-height: 0.625rem;
     min-width: 15rem;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #backlight-slider highlight,
 #pulseaudio-slider highlight {
-    background-color: @borderbright;
+    background-color: alpha(@dl-fg-orange, 1);
     min-width: 0.25rem;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #clock {
     font-size: 0.85rem;
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 
@@ -354,14 +376,14 @@ window#waybar.swallowing .workspaces {
 #bluetooth.connected:hover,
 #bluetooth.discoverable:hover,
 #bluetooth.discovering:hover {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@dl-fg-gray, 0.4);
     background-color: transparent;
 }
 
 #idle_inhibitor {
     font-size: 1rem;
     font-weight: 900;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0 0.25rem 0 0.25rem;
     margin: 0.25rem;
 }
@@ -379,11 +401,11 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-swaync {
-    color: alpha(@secondaryforeground, 0.8);
+    color: alpha(@dl-fg-gray, 0.8);
 }
 
 #custom-swaync.notification {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@dl-fg-gray, 0.8);
 }
 
 #custom-swaync.none:hover,
@@ -393,81 +415,73 @@ window#waybar.swallowing .workspaces {
 #custom-swaync.inhibited-none:hover,
 #custom-swaync.dnd-inhibited-notification:hover,
 #custom-swaync.dnd-inhibited-none:hover {
-    color: alpha(@borderlight, 0.31);
+    color: alpha(@dl-fg-gray, 0.6);
     background-color: transparent;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
 }
 
 #custom-swaync.none {
-    color: alpha(@borderlight, 1);
+    color: alpha(@dl-fg-blue, 0.8);
 }
 
 #custom-swaync.dnd-notification {
-    color: alpha(@borderlight, 0.7);
+    color: alpha(@dl-fg-gray, 0.6);
 }
 
 #custom-swaync.dnd-none {
-    color: alpha(@borderlight, 0.3);
+    color: alpha(@dl-fg-gray, 0.3);
 }
 
 #custom-swaync.inhibited-notification,
 #custom-swaync.inhibited-none,
 #custom-swaync.dnd-inhibited-notification,
 #custom-swaync.dnd-inhibited-none {
-    color: alpha(@borderlight, 0.2);
+    color: alpha(@dl-fg-blue, 0.2);
 }
 
 #power-profiles-daemon {
     font-size: 1.2rem;
 }
 
-#power-profiles-daemon:hover {
-    color: rgb(0, 255, 156);
+#power-profiles-daemon:hover,
+#power-profiles-daemon.performance:hover,
+#power-profiles-daemon.balanced:hover,
+#power-profiles-daemon.power-saver:hover {
+    color: alpha(@dl-fg-orange, 1);
 }
 
 #power-profiles-daemon.performance {
     font-size: 1.2rem;
-    color: alpha(@peachy, 1);
-}
-
-#power-profiles-daemon.performance:hover {
-    color: @maincritical;
+    color: alpha(@dl-fg-orange, 1);
 }
 
 #power-profiles-daemon.balanced {
     font-size: 1.2rem;
-    color: alpha(@brightext, 1);
-}
-
-#power-profiles-daemon.balanced:hover {
-    color: rgba(67, 79, 255, 1);
+    color: alpha(@dl-bg-normal, 1);
 }
 
 #power-profiles-daemon.power-saver {
     font-size: 1.2rem;
-    color: alpha(@brightext, 1);
-}
-
-#power-profiles-daemon.power-saver:hover {
-    color: rgba(0, 246, 0, 1);
+    color: alpha(@dl-bg-normal, 1);
 }
 
 #custom-kill {
-    color: @maincritical;
+    color: alpha(@dl-bg-orange, 1);
     padding: 0 0.25rem 0 0.25rem;
 }
 
 #custom-kill:hover {
-    color: rgb(233, 119, 119);
-    background-color: transparent;
+    color: alpha(@dl-fg-orange, 1);
+    background-color: alpha(@dl-fg-orange, 1);
+    background-blend-mode: overlay;
 }
 
 #custom-appmenu,
 #custom-power {
     font-size: 1.3rem;
     font-weight: 900;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #custom-appmenu {
@@ -481,39 +495,30 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-power:hover {
-    color: alpha(@peachy, 1);
+    color: alpha(@dl-fg-orange, 1);
 }
 
 #custom-appmenu:hover {
-    color: alpha(@lighttext, 1);
+    color: alpha(@dl-fg-orange, 0.5);
 }
 
 #custom-appmenu:hover,
 #custom-power:hover {
     background-color: transparent;
-    box-shadow: 0 0 0.0625rem 0 @borderlight inset,
-        0 0 0 0.0625rem rgba(141, 168, 231, 1) inset;
+    box-shadow: 0 0 0.0625rem 0 @dl-fg-orange inset,
+        0 0 0 0.0625rem @dl-fg-orange inset;
     background-blend-mode: screen, multiply;
     background-image: linear-gradient(to top left,
-            alpha(@mainbackground, 0.2) 0%,
-            rgba(160, 186, 241, 0.2) 100%);
+            alpha(@dl-bg-darkest, 0.4) 0%,
+            alpha(@dl-bg-normal, 0.4) 100%);
     border-radius: 0 0.1rem 0.1rem 0;
 }
 
-#custom-clipboard_list {
-    color: rgb(228, 224, 225);
-}
-
-#custom-hyprpicker {
-    color: rgb(41, 95, 152);
-}
-
-#custom-wallpaper {
-    color: rgb(17, 106, 123);
-}
-
+#custom-clipboard_list,
+#custom-hyprpicker,
+#custom-wallpaper,
 #custom-backup {
-    color: rgb(142, 172, 205);
+    color: alpha(@dl-fg-orange, 1);
 }
 
 #custom-search,
@@ -524,7 +529,7 @@ window#waybar.swallowing .workspaces {
 #custom-myxer {
     font-size: 1rem;
     background-color: transparent;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #custom-search:hover,
@@ -533,7 +538,7 @@ window#waybar.swallowing .workspaces {
 #custom-clipboard_list:hover,
 #custom-backup:hover,
 #custom-myxer:hover {
-    color: @borderbright;
+    color: alpha(@dl-fg-orange, 1);
 }
 
 #group-backlight label,
@@ -552,24 +557,12 @@ window#waybar.swallowing .workspaces {
     background-color: transparent;
 }
 
-#temperature {
-    color: rgba(230, 55, 55, 1);
-}
-
-#temperature.critical {
-    background-color: rgba(235, 77, 75, 0.3);
-}
-
-#cpu {
-    color: rgba(118, 161, 241, 1);
-}
-
-#disk {
-    color: rgba(132, 225, 232, 1);
-}
-
+#temperature.critical,
+#cpu,
+#disk,
 #memory {
-    color: rgba(231, 162, 35, 1);
+    color: alpha(@dl-fg-orange, 1);
+    background-color: alpha(@dl-bg-normal, 1);
 }
 
 #group-battery {
@@ -595,57 +588,61 @@ window#waybar.swallowing .workspaces {
 
 #battery.charging,
 #battery.capacity .charging {
-    color: @borderbright;
+    color: alpha(@dl-fg-orange, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 #battery.half:not(.charging) {
-    color: @discharging;
+    color: alpha(@dl-fg-orange, 1);
     animation: blink 4s steps(12) infinite alternate;
+    background-color: alpha(@dl-fg-orange, 1);
+    background-blend-mode: overlay;
 }
 
 #battery.warning:not(.charging),
 #battery.capacity .warning:not(.charging) {
-    color: rgba(249, 134, 68, 1);
+    color: alpha(@dl-fg-gray, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 #battery.critical:not(.charging) {
-    color: @maincritical;
+    color: alpha(@dl-fg-blue, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 #battery.discharging {
-    color: @borderbright;
+    color: alpha(@dl-fg-orange, 1);
     animation: blink 4s steps(12) infinite alternate;
 }
 
 window#waybar.battery-critical {
-    background-color: alpha(@quarternarycritical, 0.8);
+    background-color: alpha(@dl-fg-orange, 0.3);
+    background-blend-mode: overlay;
 }
 
 window#waybar.battery-warning {
-    background-color: alpha(@laranja, 0.1);
+    background-color: alpha(@dl-fg-orange, 0.3);
+    background-blend-mode: overlay;
 }
 
 #tray {
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0.125rem;
 }
 
 #tray widget {
     background-color: transparent;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 #tray menu {
-    color: @borderbright;
-    background-color: @mainbackground;
+    color: alpha(@dl-fg-orange, 1);
+    background-color: alpha(@dl-bg-darkest, 1);
     padding: 0.5rem;
     margin: 0.5rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+    border-radius: 0.1rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
 }
 
 #tray menu label {
@@ -655,7 +652,7 @@ window#waybar.battery-warning {
 }
 
 #tray menu label:hover {
-    color: @secondarycritical;
+    color: alpha(@dl-fg-blue, 1);
 }
 
 #tray>.passive {
@@ -664,57 +661,57 @@ window#waybar.battery-warning {
 }
 
 #tray>.active {
-    border-bottom: 0.125rem solid @greenlight;
-    border-radius: 0.5rem;
+    border-bottom: 0.125rem solid alpha(@dl-fg-blue, 1);
+    border-radius: 0.1rem;
 }
 
 #tray>.needs-attention {
-    border: 0.15rem solid @attention;
-}
-
-#network {
-    font-size: 1.3rem;
-    padding: 0 0.5rem 0 0.5rem;
-    margin: 0.125rem;
-    border-radius: 0.5rem;
+    border: 0.15rem solid alpha(@dl-fg-orange, 1);
 }
 
 #bluetooth {
     font-size: 1.1rem;
 }
 
+#network {
+    font-size: 1.3rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.125rem;
+    border-radius: 0.1rem;
+}
+
 #network.disabled,
 #bluetooth.disabled {
-    color: alpha(@peachy, 0.3);
+    color: alpha(@dl-fg-gray, 0.4);
 }
 
 #network.disconnected,
 #bluetooth.off {
-    color: alpha(@peachy, 0.7);
+    color: alpha(@dl-fg-gray, 0.4);
 }
 
 #network.wifi,
 #bluetooth.on {
-    color: alpha(@secondaryforeground, 0.7);
+    color: alpha(@dl-fg-gray, 0.6);
 }
 
 #network.linked,
 #bluetooth.connected {
-    color: alpha(@secondaryforeground, 0.7);
+    color: alpha(@dl-fg-gray, 0.6);
 }
 
 #bluetooth.discoverable,
 #bluetooth.discovering {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@dl-fg-gray, 0.6);
 }
 
 #network.ethernet,
 #bluetooth.pairable {
-    color: alpha(@secondaryforeground, 0.7);
+    color: alpha(@dl-fg-gray, 0.6);
 }
 
 #gamemode.running {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@dl-bg-blue, 1);
 }
 
 #user image .avatar {
@@ -722,76 +719,77 @@ window#waybar.battery-warning {
 }
 
 #user image {
-    background-color: @borderbright;
+    background-color: alpha(@dl-fg-orange, 1);
     padding: 0.3rem;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
 }
 
 tooltip {
-    background-color: alpha(@mainbackground, 0.82);
+    background-color: alpha(@dl-bg-darkest, 0.82);
     margin: 0.5rem;
-    border: 0.0625rem solid alpha(@borderlight, 0.62);
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+    border: 0.0625rem solid alpha(@dl-fg-orange, 0.62);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
 }
 
 tooltip label {
     font-size: 1rem;
-    color: @borderbright;
+    color: alpha(@dl-fg-gray, 0.8);
     padding: 0 1rem 0 1rem;
 }
 
 #submap {
     font-size: 0.8rem;
     font-weight: 900;
-    color: alpha(@peachy, 1);
+    color: alpha(@dl-fg-gray, 1);
     min-width: 8rem;
     animation: blink 3s steps(12) infinite alternate;
 }
 
 #custom-separator {
     font-size: 0;
-    color: alpha(@lighttext, 0.5);
+    color: alpha(@dl-fg-gray, 0.8);
     padding: 0rem;
     margin: 0.5rem 0 0.5rem 0;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
 }
 
 #custom-hyprbars {
     font-size: 1.3rem;
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 0.1rem;
     padding: 0 0.5rem 0 0.5rem;
     margin: 0.125rem;
-    text-shadow: -1px -1px 1px alpha(@borderlight, 0.3);
-    box-shadow: 0 0 0.5rem 0 rgba(22, 22, 80, 0.1) inset,
-        0 0 0 0.0625rem rgba(72, 125, 192, 0.1) inset;
+    text-shadow: -1px -1px 1px alpha(@dl-fg-orange, 0.3);
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.1) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.1) inset;
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
 #custom-hyprbars:hover,
 #custom-hyprbars.Disabled:hover,
 #custom-hyprbars.Enabled:hover {
-    color: alpha(@buttonhover, 1);
+    color: alpha(@dl-fg-gray, 0.8);
     border-radius: 0rem;
     background-color: transparent;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderbright, 0.3) inset;
-    text-shadow: -1px -1px 1px alpha(@borderlight, 0.1);
+    box-shadow: 0 0 0.5rem 0 alpha(@dl-fg-orange, 0.3) inset,
+        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.3) inset;
+    text-shadow: -1px -1px 1px alpha(@dl-fg-orange, 0.1);
     background-image: linear-gradient(to top,
-            alpha(@mainbackground, 0.2) 10%,
-            alpha(@borderbright, 0.1) 100%);
+            alpha(@dl-bg-darkest, 0.2) 10%,
+            alpha(@dl-fg-orange, 0.1) 100%);
     background-blend-mode: color-burn;
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
 #custom-hyprbars.Disabled {
-    color: alpha(@borderlight, 0.55);
+    color: alpha(@dl-fg-orange, 0.55);
     font-weight: 600;
 }
 
 #custom-hyprbars.Enabled {
-    color: alpha(@borderlight, 0.8);
+    color: alpha(@dl-fg-orange, 0.8);
+    font-weight: 600;
 }

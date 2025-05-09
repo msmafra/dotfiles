@@ -1,0 +1,21 @@
+{
+  "timezone": "America/Sao_Paulo",
+  "format": "{:L%a %d %R}",
+  "today-format": "<b>{}</b>",
+  "on-click": "uwsm app -- $HOME/.config/hypr/scripts/calendar.sh",
+  "tooltip-format": "<tt><big>{calendar}</big></tt>",
+  "calendar": {
+    "mode": "month",
+    "mode-mon-col": 6,
+    "weeks-pos": "left",
+    "on-scroll": 1,
+    "on-click-right": "mode",
+    "format": {
+      "months": "{}",
+      "days": "{}",
+      "weeks": "{}",
+      "weekdays": "{}",
+      "today": "{}"
+    }
+  }
+}
