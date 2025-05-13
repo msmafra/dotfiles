@@ -1,5 +1,6 @@
 @define-color mainbackground rgb(29, 19, 70);
 @define-color secondarybackground rgb(29, 22, 79);
+@define-color darkestbackground rgb(8, 10, 11);
 @define-color mainforeground rgb(63, 70, 157);
 @define-color secondaryforeground rgb(77, 95, 171);
 @define-color brightext rgb(81, 101, 197);

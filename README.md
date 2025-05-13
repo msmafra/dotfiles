@@ -9,9 +9,9 @@ https://github.com/user-attachments/assets/b8375f97-4df1-4d8d-85f7-69ab288239b7
 If it is already installed, a simulation/dry-run can be useful since if some filse of folders already exist they won't be replace/updated.
 ```
 cd ~/Dowloads
-git clone https://github.com/zum/dotfiles
+git clone https://github.com/zumnebel/dotfiles
 cd dotfiles
-stow -n -v 2 --dotfiles -t ~/ 
+stow -n -v 2 --dotfiles -t ~/
 ```
 
 ### What is used here that need to be installed on Fedora Workstation 40 and up
@@ -58,7 +58,7 @@ stow -n -v 2 --dotfiles -t ~/
 1) https://colorhunt.co/palette/
 
 ### Enabling the COPRs
-Unfortunetly not all packages are available or updates enough in the Fedora Repos, so some COPRs are needed.
+Unfortunately, not all packages are available, or updates are reasonably quick enough in the Fedora Repos, so some COPRs are needed.
 
 ```
 doas dnf copr enable pgdev/ghostty -y
@@ -72,7 +72,7 @@ doas dnf copr enable tofik/nwg-shell -y
 doas dnf copr enable atim/starship -y
 ```
 
-For some wild reason, dnf doesn't (or wasn't at the time) accepting to install the hyprland and hyprland-plugins packages, or individual hyprland plugins, on the same installation command line.
+For some wild reason, DNF doesn't accept (or wasn't at the time) to install the hyprland and hyprland-plugins packages, or individual hyprland plugins, on the same installation command line.
 ```
 doas dnf install hyprland -y
 
@@ -84,7 +84,7 @@ doas dnf install hyprland-plugin-hyprbars -y
 To use PPM with Satty  gdk-pixbuf2-modules-extra is needed. It can be installed directly your with the vips package
 
 ```
-doas dnf -y install stow hyprlock hypridle hyprpaper hyprlock hyprshot hyprdim hyprsunset cliphist waybar waypaper blueman network-manager-applet xwaylandvideobridge udiskie mpv feh zoxide jq qt6ct qt5ct qt6-qtwayland qt5-qtwayland copyq lsd ImageMagick GraphicsMagick swww wlogout wl-paste wl-clipboard wl-copy nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk micro restic bat cosmic-term starship swaync cargo satty vips uwsm
+doas dnf -y install stow hyprlock hypridle hyprpaper hyprlock hyprshot hyprdim hyprsunset cliphist waybar waypaper blueman network-manager-applet xwaylandvideobridge udiskie mpv feh zoxide jq qt6ct qt5ct qt6-qtwayland qt5-qtwayland copyq lsd ImageMagick GraphicsMagick swww wlogout wl-paste wl-clipboard wl-copy nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk micro restic bat cosmic-term starship swaync cargo satty vips uwsm breeze-gtk plasma-breeze
 ```
 
 ### Installing Atuin.
@@ -99,7 +99,7 @@ Installing fonts. Inter, Iosevka and JetbrainMono can be installed from Fedora r
 
 ```
 doas dnf -y copr enable peterwu/iosevka
-doas dnf -y install rsms-inter{,-vf}-fonts jetbrains-mono-fonts-all iosevka-etoile-fonts 
+doas dnf -y install rsms-inter{,-vf}-fonts jetbrains-mono-fonts-all iosevka-etoile-fonts
 ```
 Or manuall for a more updated version if needed.
 ```

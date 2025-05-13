@@ -23,13 +23,13 @@ toggle_bars() {
     )
 
     if [[ $RUNNING = "hyprbars" ]]; then
-        ICON="󰖯"
+        ICON=""
         STATUS="Enabled"
-        MESSAGE="Bar enabled $ICON"
+        MESSAGE="Bar enabled ${ICON}"
     else
-        ICON=""
+        ICON=""
         STATUS="Disabled"
-        MESSAGE="Bar disabled $ICON"
+        MESSAGE="Bar disabled ${ICON}"
     fi
 
     if [[ "${COMMAND}" = "toggle" ]]; then

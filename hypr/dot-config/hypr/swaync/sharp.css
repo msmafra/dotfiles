@@ -3,7 +3,19 @@
 @import "../waybar/animations.css";
 
 window {
-    background-color: alpha(@mainbackground, 0.41);
+    font-size: 1rem;
+    color: alpha(@mainforeground, 1);
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0rem;
+    /* box-shadow:
+        0 0 0.5rem 0 alpha(@mainforeground, 0.2) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.2) inset; */
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 1) 10%,
+            alpha(@secondarybackground, 1) 100%);
+    background-blend-mode: darken;
+    box-shadow: 0 -0.125rem alpha(@mainforeground, 0.2) inset,
+        0 -0.125rem alpha(@mainforeground, 0.2) inset;
 }
 
 trough highlight {

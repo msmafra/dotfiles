@@ -28,8 +28,6 @@ get_user_dirs() {
         echo "${leh}"
     done
 
-    exit 1
-
     if [[ -z ${1} ]]; then
         printf "Use one of: %s" "${artifact_format[*]}"
         exit 1

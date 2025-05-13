@@ -1,5 +1,5 @@
 {
-  "id": "sharpbar",
+  "id": "flattenbar",
   "exclusive": true,
   "layer": "top",
   "position": "top",
@@ -25,7 +25,7 @@
       "$HOME/.config/hypr/waybar/shared-workspaces.jsonc"
     ],
     "format": "{name}",
-    "format-window-separator": " | ",
+    // "format-window-separator": " | ",
     "format-icons": {
       "1": "󰎤",
       "2": "󰎧",
@@ -62,7 +62,7 @@
   },
   "clock": {
     "timezone": "America/Sao_Paulo",
-    "format": "{:L%a %d %R}",
+    "format": "{:L%a %d de %b %R}",
     "today-format": "<b>{}</b>",
     "on-click": "uwsm app -- $HOME/.config/hypr/scripts/calendar.sh",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
@@ -158,7 +158,7 @@
     "orientation": "inherit",
     "drawer": {
       "click-to-reveal": true,
-      "transition-duration": 800,
+      "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": false
     },
@@ -174,7 +174,7 @@
     "orientation": "horizontal",
     "drawer": {
       "click-to-reveal": true,
-      "transition-duration": 800,
+      "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": false
     },
@@ -210,7 +210,7 @@
   "group/group-tools": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 800,
+      "transition-duration": 600,
       "children-class": "tools-child",
       "transition-left-to-right": false
     },
@@ -227,7 +227,7 @@
     "orientation": "inherit",
     "drawer": {
       "click-to-reveal": false,
-      "transition-duration": 200,
+      "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": true
     },
@@ -273,7 +273,7 @@
     "orientation": "horizontal",
     "drawer": {
       "click-to-reveal": false,
-      "transition-duration": 500,
+      "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": true
     },
@@ -305,7 +305,7 @@
     "on-click-right": "cosmic-settings sound",
     "drawer": {
       "click-to-reveal": false,
-      "transition-duration": 800,
+      "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": false
     },
@@ -471,9 +471,9 @@
     "tooltip": true,
     "tooltip-format": "click: runs btrbk snapshot\nright click: runs btrbk run\nmiddle click: runs btrbk clean",
     "exec-on-event": true,
-    "on-click": "hyprctl dispatch exec \"[workspace name:Backup silent;float;size 90% 90%] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh snapshot\"",
-    "on-click-right": "hyprctl dispatch exec \"[workspace name:Backup silent;float;size 90% 90%] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh run\"",
-    "on-middle-click": "hyprctl dispatch exec \"[workspace name:Backup silent;float;size 90% 90%] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh clean\""
+    "on-click": "hyprctl dispatch exec \"[workspace name:Backup silent;] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh snapshot\"",
+    "on-click-right": "hyprctl dispatch exec \"[workspace name:Backup silent;] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh run\"",
+    "on-middle-click": "hyprctl dispatch exec \"[workspace name:Backup silent;] kitty --hold $HOME/.config/hypr/scripts/backup-cli.sh clean\""
   },
   "custom/myxer": {
     "format": "󰀰",
@@ -513,7 +513,7 @@
     "format-icons": {
       "Playing": "<span foreground='#46c880'> </span>",
       "Paused": "<span foreground='#cdd6f4'> </span>"
-    },
+    }
   },
   "custom/playerlabel": {
     "format": "<span>{}</span>",
@@ -532,14 +532,14 @@
   "custom/hyprpicker": {
     "on-click": "uwsm app -- hyprpicker --autocopy --format=rgb",
     "format": "󰈊",
-    "orientation": "horizontal",
+    "orientation": "horizontal"
   },
   "custom/nvidia": {
     "exec": "uwsm app -- nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
     "on-click": "uwsm app -- nvidia-smi --query-gpu=temperature.gpu --format=csv,nounits,noheader | sed 's/\\([0-9]\\+\\), \\([0-9]\\+\\)/\\1% 🌡️\\2°C/g'",
     "exec-on-event": true,
     "format": "󰚗 {}",
-    "interval": 2,
+    "interval": 2
   },
   "temperature": {
     "critical-threshold": 93,
@@ -548,17 +548,17 @@
       "",
       "",
       ""
-    ],
+    ]
   },
   "memory": {
     "format": " {}%",
     "format-alt": " {used}/{total} GiB",
-    "interval": 5,
+    "interval": 5
   },
   "cpu": {
     "format": "󰍛 {usage}%",
     "format-alt": "󰍛 {avg_frequency} GHz",
-    "interval": 5,
+    "interval": 5
   },
   "disk": {
     "format": "󰋊 {}%",
@@ -569,7 +569,6 @@
   "custom/hyprbars": {
     "escape": true,
     "interval": 1,
-    // "exec-if": "~/.config/scripts/hyprbars.sh",
     "exec": "$HOME/.config/hypr/scripts/hyprbars.sh",
     "on-click": "$HOME/.config/hypr/scripts/hyprbars.sh toggle",
     "format": "{icon}",

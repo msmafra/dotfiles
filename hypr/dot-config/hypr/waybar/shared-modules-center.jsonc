@@ -1,12 +1,10 @@
 {
   "modules-center": [
     "custom/hyprbars",
-    "hyprland/workspaces",
-    "custom/separator",
+    // "hyprland/workspaces",
+    // "group/group-dockish",
     "clock",
-    "custom/separator",
     "idle_inhibitor",
-    "custom/separator",
     "group/group-privacy",
     "gamemode",
     "hyprland/submap"
