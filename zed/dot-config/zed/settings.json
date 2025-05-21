@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-thinking-latest"
@@ -21,7 +21,7 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": false
+    "enabled_in_text_threads": false
   },
   "features": {
     "edit_prediction_provider": "zed"

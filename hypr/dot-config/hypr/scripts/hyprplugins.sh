@@ -13,37 +13,43 @@ toggle_bars() {
     local STATUS
     local STATUS
     local PLUGINS_PATH
-    local -a PLUGINS
+    local -A PLUGINS
+
+    if [[ "${#*}" -lt 2 ]]; then
+        echo "two parameters are needed"
+
+    fi
 
     COMMAND="${1}"
-    RUNNING="$(hyprctl -j plugin list | jq --raw-output '.[] | select(.name == "hyprbars") | .name')"
+    PLUGIN="${2}"
     PLUGINS_PATH="/usr/lib64/hyprland"
+    RUNNING="$(hyprctl -j plugin list | jq --raw-output ".[] | select(.name | contains(\""${PLUGIN}\"")) | .name")"
     PLUGINS=(
-        "libhyprbars.so"
+        ["bars"]="libhyprbars.so"
+        ["borders"]="libborders-plus-plus.so"
     )
-    # 󰔢
-    # 󰨚
-    if [[ ${RUNNING} = "hyprbars" ]]; then
-        ICON="󰔢"
+
+    if [[ ${RUNNING} =~ "${PLUGINS[${PLUGIN}]}" ]]; then
+        ICON=""
         STATUS="Enabled"
-        MESSAGE="Bar enabled ${ICON}"
+        MESSAGE="${PLUGIN} enabled ${ICON}"
     else
-        ICON="󰨚"
+        ICON=""
         STATUS="Disabled"
-        MESSAGE="Bar disabled ${ICON}"
+        MESSAGE="${PLUGIN} disabled ${ICON}"
     fi
 
     if [[ "${COMMAND}" = "toggle" ]]; then
         case "${STATUS}" in
         "Enabled")
-            hyprctl plugin unload "${PLUGINS_PATH}/${PLUGINS[0]}" 1>&2 >/dev/null
+            hyprctl plugin unload "${PLUGINS_PATH}/${PLUGINS[${PLUGIN}]}" 1>&2 >/dev/null
             ;;
         "Disabled")
-            hyprctl plugin load "${PLUGINS_PATH}/${PLUGINS[0]}" 1>&2 >/dev/null
+            hyprctl plugin load "${PLUGINS_PATH}/${PLUGINS[${PLUGIN}]}" 1>&2 >/dev/null
             ;;
         esac
     fi
     printf "{\"text\": \"%s\", \"alt\": \"%s\", \"tooltip\": \"%s\", \"class\": \"%s\" }" "${MESSAGE}" "${STATUS}" "${MESSAGE}" "${STATUS}" | jq --unbuffered --compact-output
 
 }
-toggle_bars "${@}"
+# toggle_bars "${@}"

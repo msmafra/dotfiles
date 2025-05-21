@@ -3,6 +3,7 @@
 @define-color darkestbackground rgb(8, 10, 11);
 @define-color mainforeground rgb(63, 70, 157);
 @define-color secondaryforeground rgb(77, 95, 171);
+/* @define-color mainforeground rgb(164, 178, 234); */
 @define-color brightext rgb(81, 101, 197);
 @define-color vividtext rgb(67, 79, 255);
 @define-color alternatetext rgb(119, 67, 219);

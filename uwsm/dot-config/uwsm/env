@@ -1,32 +1,31 @@
-# QT
+# General
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DBUS_REMOTE=1
 export QT_QPA_PLATFORMTHEME="qt6ct"
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_CURSOR_THEME="Bibata-Modern-Classic"
 export QT_CURSOR_SIZE=48
-#export GTK_THEME="adw-gtk3-dark"
-# XCURSOR
+export QT_WAYLAND_FORCE_DPI=physical
+exprot STEAM_FORCE_DESKTOPUI_SCALING=1
 export XCURSOR_SIZE=48
-# GDK
 export GDK_SCALE=1
-# Toolkit Backend
 export GDK_BACKEND="wayland"
 export CLUTTER_BACKEND="wayland"
-#export QT_QPA_PLATFORM="xcb" # unfortunetly for Enpass
-#export QT_QPA_PLATFORM="wayland"
 export SDL_VIDEODRIVER="wayland,x11,windows" # important to keep for some games. For example ones with Easy Anti Cheat
 # NVIDIA
+export EGL_PLATFORM="wayland"
+export GSK_RENDERER="ngl"
+export NVD_BACKEND="direct"
+export LIBVA_DRIVER_NAME="nvidia"
 export GBM_BACKEND="nvidia-drm"
 export __GLX_VENDOR_LIBRARY_NAME="nvidia"
-export LIBVA_DRIVER_NAME="nvidia"
-export EGL_PLATFORM="wayland"
+export __GL_VRR_ALLOWED="1"
+export __GL_GSYNC_ALLOWED="1"
 # VAAPI
-export NVD_BACKEND="direct"
-MOZ_DISABLE_RDD_SANDBOX=1
-_EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+#_EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
 # Tests
 export _GTK_THEME_VARIANT="dark"
-#export QT_STYLE_OVERRIDE="qt6ct-style"
 export QT_WAYLAND_DECORATION="Adwaita-dark"
-#export ELECTRON_OZONE_PLATFORM_HINT=auto
+export ELECTRON_OZONE_PLATFORM_HINT=auto
 PATH="$HOME/.local/bin:$HOME/bin:/opt:$PATH"

@@ -111,7 +111,7 @@
     "on-click-right": "uwsm app -- nm-connection-editor --show",
     "tooltip": true,
     "format": "{icon}",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "format-wifi": "{icon}",
     "format-icons": [
       "󰤯",
@@ -181,6 +181,19 @@
     "modules": [
       "backlight",
       "backlight/slider"
+    ]
+  },
+  "group/group-workspaces-tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "click-to-reveal": false,
+      "transition-duration": 600,
+      "children-class": "drawer-child",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "hyprland/workspaces",
+      "tray"
     ]
   },
   "backlight": {
@@ -319,7 +332,7 @@
     "format": "{icon}",
     "format-muted": "󰸈",
     "on-click": "uwsm app -- swaync-client --toggle-panel --subscribe-waybar --count",
-    "on-middle-click": "uwsm app -- Myxer",
+    "on-middle-click": "uwsm app -- $HOME/.config/hypr/scripts/audioctl.sh",
     "on-click-right": "uwsm app -- cosmic-settings sound",
     "tooltip": true,
     "tooltip-format": "Click or scroll to control the volume",
@@ -423,13 +436,23 @@
     ],
     "tooltip": false,
     "tooltip-format": "Applications menu and search",
-    "on-click": "uwsm app -- /usr/bin/nwg-drawer -open",
+    "on-click": "uwsm app -- nwg-drawer -nocats -nofs -k -s $HOME/.config/hypr/nwg/drawer-current.css -closebtn right -fm $FILEMANGER -wm hyprland -pbpoweroff \"systemctl poweroff -i\" -pblock \"loginctl lock-session\" -pbreboot \"systemctl reboot -i\" -pbexit \"loginctl terminate-session $XDG_SESSION_ID\"",
     "on-click-middle": "pkill -9 nwg-drawer"
   },
   "custom/search": {
+    "format": "󱝩",
+    "tooltip": false,
+    "on-click-release": "uwsm app -- nwg-drawer -nocats -k -mt 200 -mr 200 -mb 200 -ml 200 -s $HOME/.config/hypr/nwg/drawer-current.css -closebtn right -fm $FILEMANAGER -wm hyprland"
+  },
+  "custom/fsearch": {
     "format": "󰨭",
     "tooltip": false,
     "on-click-release": "uwsm app -- flatpak run io.github.cboxdoerfer.FSearch"
+  },
+  "custom/quicklaunch": {
+    "format": "󱓟",
+    "tooltip": false,
+    "on-click-release": "uwsm app -s a -- fuzzel --config $HOME/.config/hypr/fuzzel/fuzzel.ini"
   },
   "custom/power": {
     "format": " {icon} ",
@@ -461,7 +484,7 @@
     "escape": true
   },
   "custom/tools-button": {
-    "format": ""
+    "format": "󱁤"
   },
   "custom/statuses-button": {
     "format": ""
@@ -573,8 +596,22 @@
     "on-click": "$HOME/.config/hypr/scripts/hyprbars.sh toggle",
     "format": "{icon}",
     "format-icons": {
-      "Enabled": "",
-      "Disabled": ""
+      "Enabled": "󰔢",
+      "Disabled": "󰨚"
+    },
+    "return-type": "json",
+    "tooltip": true,
+    "tooltip-format": "{}\nClick to toggle it."
+  },
+  "custom/borderplusplus": {
+    "escape": true,
+    "interval": 1,
+    "exec": "$HOME/.config/hypr/scripts/hyprplugins.sh",
+    "on-click": "$HOME/.config/hypr/scripts/hyprplugins.sh toggle",
+    "format": "{icon}",
+    "format-icons": {
+      "Enabled": "",
+      "Disabled": ""
     },
     "return-type": "json",
     "tooltip": true,
@@ -584,8 +621,8 @@
     "on-click": "uwsm app -- gnome-characters",
     "format": "{icon}",
     "format-icons": {
-      "Enabled": "",
-      "Disabled": ""
+      "Enabled": "C",
+      "Disabled": "c"
     },
     "return-type": "json",
     "tooltip": true,

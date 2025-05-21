@@ -3,43 +3,33 @@
 @import url("animations.css");
 
 window#waybar {
-    font-size: 1rem;
     color: alpha(@mainforeground, 1);
     background-color: alpha(@mainbackground, 0.9);
-    border-radius: 0rem;
-    /* box-shadow:
-        0 0 0.5rem 0 alpha(@mainforeground, 0.2) inset,
-        0 0 0 0.0625rem alpha(@mainforeground, 0.2) inset; */
+    border-radius: 0rem 0rem 0.5rem 0.5rem;
     background-image: linear-gradient(to bottom left,
             alpha(@secondarybackground, 1) 10%,
             alpha(@secondarybackground, 1) 100%);
-    background-blend-mode: darken;
-    box-shadow: 0 -0.125rem alpha(@mainforeground, 0.2) inset,
-        0 -0.125rem alpha(@mainforeground, 0.2) inset;
-}
-
-.module {
-    background: transparent;
+    background-blend-mode: overlay;
+    /* border: #fff solid 1px; */
 }
 
 #window label {
-    /* font-size: 0.5rem; */
-    color: alpha(@mainforeground, 1);
+    font-size: 1rem;
+    color: alpha(@mainforeground, 0.51);
+    background-color: red;
+}
+
+.module {
+    font-size: 1.4rem;
+    background: transparent;
 }
 
 label.module {
     padding: 0 0.0625rem;
-    box-shadow: inset 0 -0.0625rem;
 }
 
 box.module button:hover {
-    box-shadow: inset 0 -0.0625rem #ffffff;
-}
-
-.modules-left,
-.modules-center,
-.modules-right {
-    border-radius: 0.125rem 0 0 0.125rem;
+    color: #fff;
 }
 
 #custom-power {
@@ -49,37 +39,34 @@ box.module button:hover {
 .modules-left,
 .modules-center,
 .modules-right {
-    margin: 0.25rem;
-    padding: 0.0625rem;
-    background-color: transparent;
-    box-shadow: 0 -0.0625rem alpha(@mainforeground, 1) inset;
+    margin: 0rem;
+    padding: 0.25rem 0 0 0;
 }
 
-/* .modules-left widget,
+.modules-left widget,
 .modules-center widget,
 .modules-right widget {
-    margin: 1rem;
-    padding: 0.125rem;
-    border-radius: 0.1rem;
-} */
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    background: transparent;
+    background-color: alpha(@mainbackground, 0.21);
+}
 
 .modules-left label,
 .modules-center label,
 .modules-right label {
-    padding: 0 0.5rem 0 0.5rem;
-    /* margin: 0.00625rem; */
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0 0.0625rem 0 0.0625rem;
 }
 
 window#waybar.empty {
     font-size: 1rem;
-    background-color: alpha(@secondarybackground, 0.1);
-    background-blend-mode: multiply;
+    background-color: alpha(@secondarybackground, 0.5);
+    background-blend-mode: overlay;
 }
 
 window#waybar.empty #clock,
 window#waybar.empty #workspaces button {
     color: alpha(@borderlight, 0.51);
-    text-shadow: -0.0625rem -0.0625rem 0.0625rem alpha(@shadow, 1);
 }
 
 window#waybar.empty #workspaces button.visible,
@@ -90,7 +77,6 @@ window#waybar.empty #workspaces button.active {
             alpha(@mainbackground, 0.3) 10%,
             alpha(@borderlight, 0.3) 100%);
     background-blend-mode: color-burn;
-    box-shadow: 0 -0.0625rem alpha(@critical, 1) inset;
 }
 
 window#waybar.solo {
@@ -106,8 +92,6 @@ window#waybar.floating .modules-left,
 window#waybar.floating .modules-right,
 window#waybar.floating .modules-center {
     background: alpha(@alternatebackground, 0.1);
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.7) inset;
     background-image: linear-gradient(to bottom right,
             alpha(@floating, 1) 50%,
             alpha(@floating, 1) 100%);
@@ -124,30 +108,30 @@ window#waybar.swallowing .workspaces {
 }
 
 #workspaces {
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0.03125rem;
+    background: transparent;
+    background-color: alpha(@mainbackground, 0.21);
 }
 
 #workspaces label {
     font-size: 1rem;
-    /* font-weight: 600; */
 }
 
 #workspaces label:hover {
     font-size: 1.8rem;
-    /* font-weight: 600; */
 }
 
 #workspaces button {
     color: alpha(@secondaryforeground, 1);
-    border-radius: 0.125rem;
-    padding: 0.03125rem;
-    margin: 0.125rem;
-    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.1) inset;
+    padding: 0 0.3125rem 0 0.3125rem;
+    margin: 0.25rem;
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
     background-image: linear-gradient(to bottom right,
             alpha(@mainbackground, 0.2) 50%,
             alpha(@borderlight, 0.1) 100%);
     background-blend-mode: color-burn;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #workspaces button:hover,
@@ -156,59 +140,33 @@ window#waybar.swallowing .workspaces {
 #workspaces button.active:hover,
 #workspaces button.empty:hover {
     color: alpha(@buttonhover, 1);
-    background-color: transparent;
-    border-radius: 0rem;
-    box-shadow: 0 -0.5rem alpha(@buttonhover, 0.5) inset;
-    /* text-shadow: -0.0625rem -0.0625rem 0.0625rem alpha(@borderlight, 0.1); */
-    text-shadow: -0.125rem -0.0625rem 0.0625rem alpha(@buttonhover, 0.1);
-    background-image: linear-gradient(to top,
-            alpha(@mainbackground, 0.4) 10%,
-            alpha(@borderlight, 0.3) 100%);
-    background-blend-mode: color-burn;
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 1) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.5);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.4) 50%,
+            alpha(@borderlight, 0.8) 100%);
+    background-blend-mode: overlay;
 }
 
 #workspaces button.visible {
     color: alpha(@mainbackground, 0.7);
-    border-radius: 0rem;
     background-color: alpha(@secondaryforeground, 0.7);
     background-blend-mode: overlay;
-    /* text-shadow: 0 -0.0625rem alpha(@buttonhover, 0.3); */
-    box-shadow: 0 -0.25rem alpha(@buttonhover, 0.3) inset;
 }
-
-/* #workspaces button label {
-    font-size: 1.1rem;
-} */
-
-/* #workspaces button:hover label {
-    font-size: 1.1rem;
-} */
 
 #workspaces button.active {
     color: alpha(@mainbackground, 1);
-    border-radius: 0rem;
     background-color: alpha(@mainforeground, 0.7);
     background-image: linear-gradient(to top,
             alpha(@borderlight, 0.15) 10%,
             alpha(@borderlight, 0.15) 100%);
     background-blend-mode: overlay;
-    /* text-shadow: 0 -0.0625rem alpha(@buttonhover, 0.7); */
-    box-shadow: 0 -0.25rem alpha(@darkestbackground, 0.5) inset;
 }
 
 #workspaces button.special {
     color: @mainforeground;
 }
-
-/* #workspaces button.hosting-monitor {
-    color: alpha(@mainforeground, 1);
-    background-color: alpha(@mainbackground, 1);
-    background-blend-mode: lighten;
-} */
-
-/* #workspaces button.persistent {
-    color: alpha(@brightext, 1);
-} */
 
 #workspaces button.urgent {
     background-color: alpha(@peachy, 0.85);
@@ -256,17 +214,15 @@ window#waybar.swallowing .workspaces {
 #wireplumber {
     color: alpha(@secondaryforeground, 1);
     background-color: transparent;
-    /* box-shadow: 0 -0.125rem alpha(@brightlight, 1) inset; */
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #wireplumber {
     font-size: 1.5rem;
-    /* font-weight: 600; */
 }
 
 #taskbar {
-    border-radius: 0;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0 0.125rem 0 0.125rem;
     margin: 0 0.0625rem 0 0.0625rem;
 }
@@ -277,7 +233,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar button {
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0 0.25rem 0 0.25rem;
     margin: 0 0.0625rem 0 0.0625rem;
 }
@@ -317,13 +273,13 @@ window#waybar.swallowing .workspaces {
 }
 
 #group-privacy {
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0 0.25rem 0 0.25rem;
     margin: 0.3rem;
 }
 
 #privacy {
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #privacy:hover {
@@ -350,20 +306,19 @@ window#waybar.swallowing .workspaces {
     background-color: alpha(@borderlight, 1);
     min-height: 0.625rem;
     min-width: 15rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #backlight-slider highlight,
 #pulseaudio-slider highlight {
     background-color: alpha(@borderlight, 1);
     min-width: 0.25rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #clock {
     font-size: 0.9rem;
-    /* font-weight: 600; */
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     box-shadow: none;
 }
 
@@ -392,17 +347,13 @@ window#waybar.swallowing .workspaces {
 
 #idle_inhibitor {
     font-size: 1rem;
-    /* font-weight: 600; */
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0 0.125rem 0 0.125rem;
     margin: 0.0625rem;
-    box-shadow: 0 -0.125rem alpha(@brightext, 1) inset;
 }
 
 #idle_inhibitor:hover {
     background-blend-mode: color-burn;
-    text-shadow: 0 -0.0625rem alpha(@buttonhover, 0.7);
-    box-shadow: 0 -0.25rem alpha(@buttonhover, 0.7) inset;
 }
 
 #idle_inhibitor.activated {
@@ -413,12 +364,10 @@ window#waybar.swallowing .workspaces {
     opacity: 0.4;
 }
 
-#custom-swaync {
-    color: alpha(@secondaryforeground, 0.8);
-}
-
+#custom-swaync,
 #custom-swaync.notification {
-    color: alpha(@secondaryforeground, 1);
+    color: alpha(@secondaryforeground, 0.31);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #custom-swaync.none:hover,
@@ -428,10 +377,9 @@ window#waybar.swallowing .workspaces {
 #custom-swaync.inhibited-none:hover,
 #custom-swaync.dnd-inhibited-notification:hover,
 #custom-swaync.dnd-inhibited-none:hover {
-    color: alpha(@borderlight, 0.31);
-    background-color: transparent;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
+    color: alpha(@mainbackground, 0.8);
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.8);
 }
 
 #custom-swaync.none {
@@ -439,18 +387,18 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-swaync.dnd-notification {
-    color: alpha(@borderlight, 0.7);
+    color: alpha(@borderlight, 0.8);
 }
 
 #custom-swaync.dnd-none {
-    color: alpha(@borderlight, 0.3);
+    color: alpha(@borderlight, 0.8);
 }
 
 #custom-swaync.inhibited-notification,
 #custom-swaync.inhibited-none,
 #custom-swaync.dnd-inhibited-notification,
 #custom-swaync.dnd-inhibited-none {
-    color: alpha(@borderlight, 0.2);
+    color: alpha(@borderlight, 0.8);
 }
 
 #power-profiles-daemon {
@@ -502,12 +450,14 @@ window#waybar.swallowing .workspaces {
 #custom-power {
     font-size: 1.2rem;
     /* font-weight: 600; */
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #custom-appmenu {
+    font-weight: 700;
     padding: 0 1rem 0 1rem;
     margin: 0 0.25rem 0 0;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #custom-power {
@@ -523,16 +473,15 @@ window#waybar.swallowing .workspaces {
     color: alpha(@lighttext, 1);
 }
 
+/* border-radius: 0.2rem 0.35rem 0.2rem 0.35rem; */
 #custom-appmenu:hover,
 #custom-power:hover {
     background-color: transparent;
-    box-shadow: 0 0 0.0625rem 0 @borderlight inset,
-        0 0 0 0.0625rem alpha(@secondarytext, 1) inset;
-    background-blend-mode: screen, multiply;
+    /* background-blend-mode: screen, multiply; */
+    background-blend-mode: lighten;
     background-image: linear-gradient(to top left,
-            alpha(@mainbackground, 0.2) 0%,
-            alpha(@tertiarytext, 0.2) 100%);
-    border-radius: 0 0.1rem 0.1rem 0;
+            alpha(@secondaryforeground, 0.4) 0%,
+            alpha(@mainforeground, 0.4) 100%);
 }
 
 #custom-clipboard_list {
@@ -552,23 +501,36 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-search,
+#custom-fsearch,
+#custom-quicklaunch,
 #custom-kill,
 #custom-hyprpicker,
 #custom-clipboard_list,
 #custom-backup,
 #custom-myxer {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
     background-color: transparent;
-    border-radius: 0.1rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0.5rem 0 0.125rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #custom-search:hover,
+#custom-fsearch:hover,
+#custom-quicklaunch:hover,
 #custom-tools-button:hover,
 #custom-hyprpicker:hover,
 #custom-clipboard_list:hover,
 #custom-backup:hover,
 #custom-myxer:hover {
-    color: @borderlight;
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 1);
+}
+
+.tools-child {
+    background: transparent;
+    background-color: alpha(red, 0.6);
 }
 
 #group-backlight label,
@@ -580,11 +542,7 @@ window#waybar.swallowing .workspaces {
 
 .drawer-child {
     padding: 0 0.25rem 0 0.25rem;
-    background-color: transparent;
-}
-
-.tools-child {
-    background-color: transparent;
+    background: transparent;
 }
 
 #temperature {
@@ -625,7 +583,6 @@ window#waybar.swallowing .workspaces {
 
 #battery.capacity {
     font-size: 0.7rem;
-    /* font-weight: 600; */
 }
 
 #battery.charging,
@@ -664,23 +621,22 @@ window#waybar.battery-warning {
 }
 
 #tray {
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0.125rem;
+    margin: 0.25rem;
 }
 
 #tray widget {
     background-color: transparent;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #tray menu {
     color: @borderlight;
-    background-color: @mainbackground;
+    background-color: alpha(@mainbackground, 1);
     padding: 0.5rem;
     margin: 0.5rem;
-    border-radius: 0.1rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #tray menu label {
@@ -693,31 +649,36 @@ window#waybar.battery-warning {
     color: @secondarycritical;
 }
 
-#tray>.passive {
-    background-color: transparent;
-    font-size: 2rem;
-}
-
-#tray>.active {
-    border-bottom: 0.125rem solid @greenlight;
-    border-radius: 0.1rem;
-}
-
+#tray>.passive,
+#tray>.active,
 #tray>.needs-attention {
-    border: 0.15rem solid @attention;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: transparent;
+    background-color: alpha(@mainforeground, 0.81);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#tray>.passive:hover,
+#tray>.active:hover,
+#tray>.needs-attention:hover {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: transparent;
+    background-color: alpha(@mainbackground, 0.81);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #network {
     font-size: 1.3rem;
-    /* font-weight: 600; */
     padding: 0 0.5rem 0 0.5rem;
     margin: 0.125rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #bluetooth {
     font-size: 1.3rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 #network.disabled,
@@ -761,16 +722,14 @@ window#waybar.battery-warning {
 #user image {
     background-color: @borderlight;
     padding: 0.3rem;
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 tooltip {
     background-color: alpha(@mainbackground, 0.82);
     margin: 0.5rem;
     border: 0.0625rem solid alpha(@borderlight, 0.62);
-    border-radius: 0.1rem;
-    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 tooltip label {
@@ -781,7 +740,6 @@ tooltip label {
 
 #submap {
     font-size: 0.8rem;
-    /* font-weight: 600; */
     color: alpha(@peachy, 1);
     min-width: 8rem;
     animation: blink 3s steps(12) infinite alternate;
@@ -792,30 +750,26 @@ tooltip label {
     color: alpha(@lighttext, 0.5);
     padding: 0rem;
     margin: 0.125rem 0 0.125rem 0;
-    /* box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset; */
 }
 
-#custom-hyprbars {
+#custom-hyprbars,
+#custom-borderplusplus {
     font-size: 1.3rem;
-    /* font-weight: 600; */
-    border-radius: 0.1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
     padding: 0 0.5rem 0 0.5rem;
     margin: 0.125rem;
-    text-shadow: -0.0625rem -0.0625rem 0.0625rem alpha(@borderlight, 0.3);
-    /* box-shadow: 0 0 0.5rem 0 alpha(@brightlight, 0.3) inset,
-        0 0 0 0.0625rem alpha(@brightlight, 0.3) inset; */
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
 #custom-hyprbars:hover,
+#custom-borderplusplus:hover,
 #custom-hyprbars.Disabled:hover,
-#custom-hyprbars.Enabled:hover {
-    color: alpha(@buttonhover, 1);
+#custom-hyprbars.Enabled:hover,
+#custom-borderplusplus.Disabled:hover,
+#custom-borderplusplus.Enabled:hover {
+    color: alpha(@dl-fg-orange, 1);
     border-radius: 0rem;
     background-color: transparent;
-    box-shadow: 0 -0.5rem alpha(@buttonhover, 0.5) inset;
-    text-shadow: -0.0625rem -0.0625rem 0.0625rem alpha(@borderlight, 0.1);
     background-image: linear-gradient(to top,
             alpha(@mainbackground, 0.2) 10%,
             alpha(@borderlight, 0.1) 100%);
@@ -823,10 +777,12 @@ tooltip label {
     transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
 }
 
-#custom-hyprbars.Disabled {
-    color: alpha(@borderlight, 0.55);
+#custom-hyprbars.Disabled,
+#custom-borderplusplus.Disabled {
+    color: alpha(@mainforeground, 1);
 }
 
-#custom-hyprbars.Enabled {
-    color: alpha(@borderlight, 0.8);
+#custom-hyprbars.Enabled,
+#custom-borderplusplus.Enabled {
+    color: alpha(@dl-fg-orange, 1);
 }

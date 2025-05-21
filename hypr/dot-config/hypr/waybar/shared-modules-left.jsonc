@@ -1,8 +1,12 @@
 {
   "modules-left": [
     "custom/appmenu",
+    // "custom/quicklaunch",
     "custom/search",
-    "hyprland/workspaces"
+    // "custom/fsearch",
+    // "hyprland/workspaces",
+    "group/group-workspaces-tray"
     // "group/group-appicons"
+    // "wlr/tray"
   ]
 }

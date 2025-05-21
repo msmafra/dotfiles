@@ -4,11 +4,8 @@
     font-family: "Inter Variable", "Symbols Nerd Font";
     font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
     font-weight: 600;
+    border-radius: 0;
     animation-timing-function: steps(12);
     animation-duration: 0.4s;
     transition: all 0.4s cubic-bezier(0.79, 0.33, 0.14, 0.53);
-    /* transition-delay: 0ms;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.79, 0.33, 0.14, 0.53); */
 }

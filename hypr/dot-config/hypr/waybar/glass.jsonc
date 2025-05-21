@@ -111,7 +111,7 @@
     "on-click-right": "uwsm app -- nm-connection-editor --show",
     "tooltip": true,
     "format": "{icon}",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "format-wifi": "{icon}",
     "format-icons": [
       "󰤯",

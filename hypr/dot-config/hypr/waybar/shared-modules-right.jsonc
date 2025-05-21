@@ -1,8 +1,13 @@
 {
   "modules-right": [
+    "hyprland/submap",
+    "group/group-privacy",
+    "gamemode",
+    "idle_inhibitor",
+    "custom/hyprbars",
+    "custom/borderplusplus",
     "group/group-tools",
     "power-profiles-daemon",
-    "custom/swaync",
     "bluetooth",
     "network",
     "wireplumber",

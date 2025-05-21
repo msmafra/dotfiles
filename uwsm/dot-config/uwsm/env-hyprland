@@ -4,3 +4,4 @@ export HYPRCURSOR_THEME=Bibata-Modern-Classic
 export HYPRCURSOR_SIZE=48
 # Aquamarine
 #export AQ_DRM_DEVICES=$conf_dir/igpu:$conf_dir/dgpu
+export FILEMANAGER="nautilus"

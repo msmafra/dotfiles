@@ -88,3 +88,18 @@ button:active {
     outline: 0.0625rem dotted alpha(@peachy, 0.4);
     background-color: alpha(@peachy, 0.6);
 }
+
+tooltip {
+    background-color: alpha(@mainbackground, 0.82);
+    margin: 0.5rem;
+    border: 0.0625rem solid alpha(@borderlight, 0.62);
+    border-radius: 0.1rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@borderlight, 0.3) inset,
+        0 0 0 0.0625rem alpha(@borderlight, 0.3) inset;
+}
+
+tooltip label {
+    font-size: 1rem;
+    color: @borderlight;
+    padding: 0 1rem 0 1rem;
+}
