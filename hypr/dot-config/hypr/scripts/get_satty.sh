@@ -6,6 +6,7 @@
 # Copies the PNG icon to $HOME/.local/share/icons
 sattyrizing() {
 
+    local SCRIPT_NAME
     local URL
     local NEW_FILE
     local FILE
@@ -14,11 +15,18 @@ sattyrizing() {
     local DEST_DIR
     local ARTFACT_DIR
 
+    SCRIPT_NAME="$(basename "${0}")"
     FILE="/tmp/satty.tar.gz"
     DEST_DIR="/opt"
     ARTFACT_DIR="${DEST_DIR}/satty"
     URL="https://api.github.com/repos/gabm/Satty/releases/latest"
     NEW_FILE="$(curl -s "${URL}" | grep "browser_download_url" | cut -d\" -f4 | grep ".tar.gz")"
+
+    if [[ $(doas dnf list --installed | grep -Eo "satty") == "satty" ]];then
+        printf "No need for %s script. Satty is installed via DNF" "${SCRIPT_NAME}"
+        exit
+    fi
+    
     if [[ -f "${ARTFACT_DIR}/satty" ]]; then
         GET_VERSION="$(${ARTFACT_DIR}/satty --version | cut -d" " -f2)"
     else

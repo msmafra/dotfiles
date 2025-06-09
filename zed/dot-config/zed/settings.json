@@ -28,19 +28,28 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "buffer_font_family": "SpaceMono Nerd Font",
+  "buffer_font_family": "Zed Plex Mono",
+  // "buffer_font_family": "Geist Mono",
+  // "buffer_font_family": "0xProto",
+  // "buffer_font_family": "SpaceMono Nerd Font Mono",
+  // "buffer_font_family": "JetBrainsMonoNL Nerd Font",
+  // "buffer_font_family": "Adwaita Mono",
+  // "buffer_font_family": "Liberation Mono",
   "buffer_font_features": {
-    // is this really working? I dunno!
     "zero": true,
-    "tnum": true,
-    "ss01": true,
-    "ss02": true,
+    "tnum": false,
+    "ss01": false,
+    "ss02": false,
     "ss03": true,
-    "cv01": true
+    "cv01": false
   },
   "buffer_font_fallbacks": [
+    "Symbols Nerd Font",
+    "SpaceMono Nerd Font Mono",
+    "JetBrainsMonoNL Nerd Font",
+    "Liberation Mono",
+    "Adwaita Mono",
     "JetBrainsMono Nerd Font",
-    "Symbols Nerd Font"
   ],
   "theme": {
     "mode": "system",

@@ -44,8 +44,10 @@ stow -n -v 2 --dotfiles -t ~/
 - Kitty / Alacritty / Ghostty / COSMIC Term / Ptyxis;
 - Nautilus;
 - [COSMIC Files and COSMIC Settings](https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/);
-- [Inter font 4.1](https://rsms.me/inter/);
+- [Inter font 4.1](https://rsms.me/inter);
 - [Iosevka](https://github.com/be5invis/Iosevka);
+- [0xProto font](https://github.com/0xType/0xProto)
+- [Geist Mono/Geist font](https://vercel.com/font)
 - [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet);
 - [Waypaper](https://github.com/anufrievroman/waypaper);
 

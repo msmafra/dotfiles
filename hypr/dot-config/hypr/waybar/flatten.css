@@ -5,7 +5,7 @@
 window#waybar {
     color: alpha(@mainforeground, 1);
     background-color: alpha(@mainbackground, 0.9);
-    border-radius: 0rem 0rem 0.5rem 0.5rem;
+    border-radius: 0rem 0rem 0.15rem 0.15rem;
     background-image: linear-gradient(to bottom left,
             alpha(@secondarybackground, 1) 10%,
             alpha(@secondarybackground, 1) 100%);
@@ -13,10 +13,28 @@ window#waybar {
     /* border: #fff solid 1px; */
 }
 
+#window {
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
+    background-color: alpha(@mainbackground, 0.51);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    margin: 0.25rem;
+    padding: 0.125rem;
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 0.51) 10%,
+            alpha(@secondarybackground, 0.51) 100%);
+    background-blend-mode: overlay;
+    /* border: #fff solid 1px; */
+}
+
+#window label:hover {
+    color: white;
+    background-color: green;
+}
+
 #window label {
     font-size: 1rem;
-    color: alpha(@mainforeground, 0.51);
-    background-color: red;
+    color: alpha(@mainforeground, 0.7);
+    background-blend-mode: color-burn;
 }
 
 .module {
@@ -25,7 +43,7 @@ window#waybar {
 }
 
 label.module {
-    padding: 0 0.0625rem;
+    padding: 0 0.0625rem 0 0.0625rem;
 }
 
 box.module button:hover {
@@ -40,7 +58,7 @@ box.module button:hover {
 .modules-center,
 .modules-right {
     margin: 0rem;
-    padding: 0.25rem 0 0 0;
+    padding: 0.125rem 0 0.125rem 0;
 }
 
 .modules-left widget,
@@ -58,7 +76,7 @@ box.module button:hover {
     margin: 0 0.0625rem 0 0.0625rem;
 }
 
-window#waybar.empty {
+/* window#waybar.empty {
     font-size: 1rem;
     background-color: alpha(@secondarybackground, 0.5);
     background-blend-mode: overlay;
@@ -77,29 +95,117 @@ window#waybar.empty #workspaces button.active {
             alpha(@mainbackground, 0.3) 10%,
             alpha(@borderlight, 0.3) 100%);
     background-blend-mode: color-burn;
+}*/
+
+/* window#waybar.empty .module {
+    font-size: 1rem;
 }
 
-window#waybar.solo {
+window#waybar.empty #workspaces button label,
+window#waybar.empty label {
+    font-size: 1rem;
+} */
+
+/* window#waybar.empty #workspaces,
+window#waybar.empty #workspaces button {
+    padding: 0 0.06125rem 0 0.06125rem;
+    margin: 0;
+} */
+
+window#waybar.empty,
+window#waybar.empty label,
+window#waybar.empty .modules-left,
+window#waybar.empty .modules-right,
+window#waybar.empty .modules-center,
+window#waybar.empty .modules-left widget,
+window#waybar.empty .modules-center widget,
+window#waybar.empty .modules-right widget,
+window#waybar.empty #workspaces,
+window#waybar.empty #workspaces button,
+window#waybar.empty #window,
+window#waybar.empty #window label,
+window#waybar.empty #tray,
+window#waybar.empty #taskbar,
+window#waybar.empty #appmenu,
+window#waybar.empty #taskbar,
+window#waybar.empty #battery,
+window#waybar.empty #bluetooth,
+window#waybar.empty #clock,
+window#waybar.empty #custom-appmenu,
+window#waybar.empty #custom-tools-button,
+window#waybar.empty #gamemode,
+window#waybar.empty #idle_inhibitor,
+window#waybar.empty #keyboard-state,
+window#waybar.empty #language,
+window#waybar.empty #network,
+window#waybar.empty #power-profiles-daemon,
+window#waybar.empty #privacy,
+window#waybar.empty #privacy-item,
+window#waybar.empty #privacy-item.audio-in,
+window#waybar.empty #privacy-item.audio-out,
+window#waybar.empty #privacy-item.screenshare,
+window#waybar.empty #taskbar,
+window#waybar.empty #tray,
+window#waybar.empty .tools-child,
+window#waybar.empty #wireplumber {
     background: transparent;
-    background-color: alpha(@secondarybackground, 0.3);
-    background-blend-mode: multiply;
-    background-image: linear-gradient(to bottom right,
-            alpha(@solo, 0.6) 5%,
-            alpha(@solo, 0.4) 20%);
+    background-color: transparent;
+    box-shadow: none;
+    color: alpha(white, 0.5);
+    /* text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit; */
+    text-shadow: 0.06125rem 0.06125rem 0.125rem alpha(@mainforeground, 0.5), 0.06125rem 0.06125rem 0.125rem alpha(@mainforeground, 0.5);
 }
 
+window#waybar.empty #workspaces button.persistent {
+    border-bottom: 0.06125rem solid #fff;
+}
+
+window#waybar.empty #workspaces button.visible {
+    border-bottom: 0.06125rem solid yellow;
+}
+
+window#waybar.empty #workspaces button.active {
+
+    border-bottom: 0.06125rem solid royalblue;
+
+}
+
+window#waybar.empty #workspaces button.empty {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.3);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.2) 50%,
+            alpha(@borderlight, 0.4) 100%);
+    background-blend-mode: overlay;
+}
+
+window#waybar.empty #workspaces button:hover,
+window#waybar.empty #workspaces button.persistent:hover,
+window#waybar.empty #workspaces button.visible:hover,
+window#waybar.empty #workspaces button.active:hover,
+window#waybar.empty #workspaces button.empty:hover {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 1) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.5);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.4) 50%,
+            alpha(@borderlight, 0.8) 100%);
+    background-blend-mode: overlay;
+}
+
+window#waybar.floating,
 window#waybar.floating .modules-left,
 window#waybar.floating .modules-right,
 window#waybar.floating .modules-center {
-    background: alpha(@alternatebackground, 0.1);
+    background: alpha(@alternatebackground, 0.8);
     background-image: linear-gradient(to bottom right,
-            alpha(@floating, 1) 50%,
-            alpha(@floating, 1) 100%);
+            alpha(@floating, 0.11) 50%,
+            alpha(@floating, 0.11) 100%);
     background-blend-mode: color-dodge;
-}
-
-window#waybar.fullscreen {
-    background-color: alpha(@mainbackground, 0.82);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 window#waybar.swallowing .workspaces {
@@ -377,9 +483,10 @@ window#waybar.swallowing .workspaces {
 #custom-swaync.inhibited-none:hover,
 #custom-swaync.dnd-inhibited-notification:hover,
 #custom-swaync.dnd-inhibited-none:hover {
-    color: alpha(@mainbackground, 0.8);
+    /* color: alpha(@mainbackground, 0.8); */
+    color: alpha(white, 0.8);
     background: transparent;
-    background-color: alpha(@mainforeground, 0.8);
+    /* background-color: alpha(@mainforeground, 0.8); */
 }
 
 #custom-swaync.none {
@@ -535,7 +642,7 @@ window#waybar.swallowing .workspaces {
 
 #group-backlight label,
 #group-tools label,
-#group-audio label,
+/* #group-audio label, */
 #power-profile-daemon {
     font-size: 1.1rem;
 }
@@ -785,4 +892,59 @@ tooltip label {
 #custom-hyprbars.Enabled,
 #custom-borderplusplus.Enabled {
     color: alpha(@dl-fg-orange, 1);
+}
+
+/* teste */
+#pulseaudio {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.1);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.1) 50%,
+            alpha(@borderlight, 0.2) 100%);
+    background-blend-mode: screen;
+    /* padding: 0 10px;
+    margin: 0 10px; */
+    /* border: 1px solid rgba(100, 114, 125, 0.5); */
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.25rem 0 0.25rem 0;
+    /* border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    /* box-shadow:
+        0 -0.0625rem alpha(darkred, 0.51) inset,
+        0 0.0625rem alpha(orange, 0.51) inset; */
+    /* box-shadow: h-offset v-offset blur spread color */
+    /* box-shadow:
+        0 0 0.25rem 0 alpha(@mainforeground, 0.82) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.82) inset; */
+    border-radius: 0 0.35rem 0.2rem 0;
+}
+
+#custom-pulseicon {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.2);
+    /* background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.1) 50%,
+            alpha(@borderlight, 0.2) 100%); */
+    background-blend-mode: overlay;
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0.25rem 0 0.25rem 0;
+    /* box-shadow:
+        0 -0.0625rem alpha(darkred, 0.51) inset,
+        0 0.0625rem alpha(orange, 0.51) inset; */
+    /* box-shadow:
+        0 0 0.25rem 0 alpha(@mainforeground, 0.82) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.82) inset; */
+    border-radius: 0.2rem 0 0 0.35rem;
+    /* border: 1px solid rgba(100, 114, 125, 0.5);
+    border-right: none;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
 }

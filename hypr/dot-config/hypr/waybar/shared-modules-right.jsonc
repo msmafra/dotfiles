@@ -1,5 +1,7 @@
 {
   "modules-right": [
+    // "group/group-workspaces-tray",
+    "group/group-tray",
     "hyprland/submap",
     "group/group-privacy",
     "gamemode",
@@ -10,7 +12,9 @@
     "power-profiles-daemon",
     "bluetooth",
     "network",
-    "wireplumber",
+    // "wireplumber",
+    "group/group-audio",
+    "custom/swaync",
     "group/group-battery",
     "custom/power"
   ]

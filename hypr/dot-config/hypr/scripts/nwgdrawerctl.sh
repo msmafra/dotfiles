@@ -129,7 +129,7 @@ nwg_drawer() {
 }
 usage() {
     printf "Usage: %s <method> <mode> <theme>\n" "${SCRIPT_NAME}"
-    printf "\t%s\n\t%s\n\t%s\n" "<method>: uwsm, hyprland, directly" "<theme>: name without extension e.g. theme file \"drawer-default.css\" so will be \"default\". I will be used for both files json/jsonc and css if any." "<mode>: [standalone | alone | noserver] [normal | open] [search | find] server"
+    printf "\t%s\n\t%s\n\t%s\n" "<method>: uwsm, hyprland, directly" "<theme>: name without extension e.g. theme file \"drawer-default.css\" so will be \"default\". I will be used for both files json/jsonc and css if any." "<mode>: [standalone | alone | noserver], [normal | open], [search | find], [server]"
     printf "Not passing a configuration name for %s, will make it fallback to the defaults: config.jsonc and style.css" "${SCRIPT_NAME}"
 }
 nwg_drawer "${@}"

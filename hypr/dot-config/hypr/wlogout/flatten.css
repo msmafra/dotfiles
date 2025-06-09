@@ -5,7 +5,7 @@
 
 window {
     color: alpha(@mainforeground, 1);
-    background-color: alpha(@mainbackground, 0.9);
+    background-color: alpha(@mainbackground, 0.8);
     border-radius: 0rem;
     background-image: linear-gradient(to bottom left,
             alpha(@secondarybackground, 0.3) 10%,

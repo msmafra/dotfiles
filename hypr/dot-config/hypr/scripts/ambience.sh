@@ -33,6 +33,8 @@ main() {
         USE_BACKEND="${GET_BACKEND}"
     fi
 
+    args
+
     backend_check "${@}"
     image_generation "${@}"
 
@@ -43,6 +45,10 @@ main() {
     unset GET_BACKEND HYPRLAND_PATH WP_BACKENDS WALLPAPER_DIR USE_BACKEND TMP_DIR HYPRLOCK_BG HYPR_DIR not_running are_running WPB RANDOM_PICTURE_PATH mm_options mm_chosen TMP_FILE RANDOM_PICTURE FREQ
     # compgen -v | grep -E "GET_BACKEND|HYPRLAND_PATH|WP_BACKENDS|WALLPAPER_DIR|USE_BACKEND|TMP_DIR|HYPRLOCK_BG|HYPR_DIR|not_running|are_running|WPB|RANDOM_PICTURE_PATH|mm_options|mm_chosen|TMP_FILE|RANDOM_PICTURE|FREQ"
 
+}
+
+usage() {
+    echo Usage
 }
 
 backend_check() {
@@ -144,6 +150,10 @@ image_generation() {
 
     printf "Generating lockscreen version: %s" "${GET_EFFECT:-chromablur}"
     make_magick "${GET_EFFECT:-chromablur}"
+}
+# for restoring the wallpapaer when the lid was close and lidhandle is set to "ignore"
+post_lid_switch() {
+    waypaper --backend "${USE_BACKEND/-daemon/}" --wallpaper "$(waypaper --list | grep -v "We got: en" | jq -r '.[] .wallpaper')"
 }
 
 main "${@}"

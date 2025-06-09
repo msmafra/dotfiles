@@ -1,150 +1,46 @@
-@define-color mainbackground rgb(29, 19, 70);
-@define-color secondarybackground rgb(29, 22, 79);
-@define-color mainforeground rgb(63, 70, 157);
-@define-color secondaryforeground rgb(77, 95, 171);
-@define-color brightext rgb(81, 101, 197);
-@define-color vividtext rgb(67, 79, 255);
-@define-color alternatetext rgb(119, 67, 219);
-@define-color borderlight rgb(81, 101, 197);
-@define-color borderbright rgb(128, 185, 229);
-@define-color alternatebackground rgb(20, 10, 60);
-@define-color lighttext rgb(109, 151, 221);
-@define-color peachy rgb(242, 97, 63);
-@define-color shadow rgb(33, 24, 85);
-@define-color floating rgb(45, 30, 82);
-@define-color solo rgb(22, 37, 111);
-@define-color nothing rgb(45, 44, 131);
-@define-color maincritical rgb(207, 34, 50);
-@define-color secondarycritical rgb(238, 67, 76);
-@define-color rose rgb(255, 220, 222);
-@define-color darkrose rgb(233, 119, 119);
-@define-color darkpink rgb(185, 139, 149);
-@define-color darkerpink rgb(171, 106, 151);
-@define-color darkred rgb(119, 8, 15);
-@define-color mainred rgb(193, 18, 31);
-@define-color darkerred rgb(107, 34, 50);
-@define-color limegreen rgb(0, 246, 0);
-@define-color vividpurple rgb(119, 67, 219);
-@define-color primarycritical rgb(230, 55, 55);
-@define-color quarternarycritical rgb(193, 18, 31);
-@define-color lightcritical rgb(231, 148, 141);
-@define-color defaultbackground rgb(10, 10, 29);
-@define-color primarybackground rgb(6, 8, 21);
-@define-color secondarybackground rgb(8, 10, 11);
-@define-color tertiarybackground rgb(12, 12, 42);
-@define-color quarternarybackground rgb(14, 14, 54);
-@define-color defaulttext rgb(26, 26, 98);
-@define-color primarytext rgb(44, 52, 160);
-@define-color secondarytext rgb(141, 168, 231);
-@define-color tertiarytext rgb(160, 186, 241);
-@define-color quarternarytext rgb(130, 157, 218);
-@define-color newtext rgb(58, 99, 160);
-@define-color bluetext rgb(11, 47, 105);
-@define-color lilac rgb(81, 81, 216);
-@define-color greenish rgb(68, 137, 141);
-@define-color greenishiser rgb(98, 152, 173);
-@define-color attention rgb(51, 28, 55);
-@define-color greenlight rgb(15, 115, 15);
-@define-color discharging rgb(141, 43, 84);
-@define-color focused rgb(72, 125, 192);
-@define-color onscreen rgb(85, 120, 219);
-@define-color persistent rgb(44, 52, 160);
-@define-color buttonhover rgb(130, 130, 218);
-@define-color coffee rgb(74, 73, 71);
-@define-color cappuccino rgb(215, 211, 191);
-@define-color retroblueone rgb(0, 92, 120);
-@define-color pessego rgb(242, 97, 63);
-@define-color laranja rgb(253, 139, 81);
-@define-color abobora rgb(203, 96, 64);
-@define-color blue-shadow rgb(22, 29, 111);
-@define-color almost-brown rgb(200, 76, 5);
-@define-color night-blue rgb(15, 4, 76);
-@define-color deep-blue rgb(7, 2, 38);
-@define-color space-blue rgb(5, 0, 25);
-@define-color teal rgb(0, 153, 144);
-@define-color lime rgb(225, 255, 187);
-@define-color pastel-teal rgb(77, 161, 169);
-@define-color mint rgb(121, 215, 190);
-@define-color navy rgb(33, 53, 85);
-@define-color pastel-navy rgb(62, 88, 121);
-@define-color vivid-navy rgb(0, 26, 110);
-@define-color pastel-vivid-navy rgb(7, 71, 153);
-@define-color bright-blue rgb(1, 204, 255);
-@define-color brighter-blue rgb(117, 209, 255);
-@define-color light-blue rgb(174, 203, 250);
-@define-color bblue rgb(53, 132, 228);
-@define-color vintage-red rgb(201, 104, 104);
-@define-color vintage-yellow rgb(250, 223, 161);
-@define-color vintage-beige rgb(216, 210, 194);
-@define-color cream rgb(255, 244, 234);
-@define-color creamtwo rgb(250, 247, 240);
-@define-color warm-dirt rgb(177, 116, 87);
-@define-color warm-cream rgb(242, 229, 191);
-@define-color light-soil rgb(154, 126, 111);
-@define-color soil rgb(84, 71, 63);
-@define-color dark-soil rgb(74, 73, 71);
-@define-color vintage-teal rgb(126, 172, 181);
-@define-color dark-vintage-teal rgb(37, 113, 128);
-@define-color vintage-blue rgb(71, 147, 175);
-@define-color orange rgb(253, 139, 81);
-@define-color pumpkin rgb(203, 96, 64);
-@define-color peachy rgb(242, 97, 63);
-@define-color warm-yellow rgb(255, 196, 112);
-@define-color warm-peach rgb(221, 87, 70);
-@define-color maroon rgb(139, 50, 44);
-@define-color dark-maroon rgb(61, 3, 1);
-@define-color darker-maroon rgb(151, 49, 49);
-@define-color darkest-maroon rgb(128, 61, 59);
-@define-color marron rgb(72, 30, 20);
-@define-color almost-black rgb(50, 44, 43);
-@define-color red-marron rgb(155, 57, 34);
-@define-color bright-blue rgb(1, 204, 255);
-@define-color brighter-blue rgb(117, 209, 255);
-@define-color light-blue rgb(174, 203, 250);
-@define-color bblue rgb(53, 132, 228);
-@define-color workspacebutton rgb(157, 198, 234);
-/*Dusklight COSMIC theme*/
-@define-color dl-bg-darkest rgb(7, 9, 33);
-@define-color dl-bg-dark rgb(4, 20, 46);
-@define-color dl-bg-normal rgb(25, 29, 55);
-@define-color dl-fg-orange rgb(255, 128, 0);
-@define-color dl-fg-blue rgb(153, 223, 255);
-@define-color dl-fg-gray rgb(233, 248, 255);
-
+/* @import "../hypr/waybar/reset.css"; */
+@import "../hypr/waybar/palette.css";
+/* @import "../hypr/waybar/animations.css"; */
 
 * {
     all: unset;
     font-size: 16px;
     font-family: "Inter Variable", "Symbols Nerd Font";
     font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
-    font-weight: 700;
-    /* animation-timing-function: steps(12);
-    animation-duration: 0.4s;
-    transition: all 0.4s cubic-bezier(0.79, 0.33, 0.14, 0.53); */
-    /* transition-delay: 0ms;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.79, 0.33, 0.14, 0.53); */
+    font-weight: 600;
+    border-radius: 0;
 }
 
-/* @import "animations.css"; */
+/* *:disabled {
+    background-color: #320aFF;
+} */
+
+.blank-window,
+hud,
+nwg-hud,
+box,
+.box,
+vbox,
+hbox {
+    border-color: red;
+    background-color: #20395a;
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
+}
 
 window {
-    font-size: 1rem;
-    color: alpha(@dl-fg-blue, 0.8);
-    background-color: alpha(@dl-bg-darkest, 0.7);
-    border-radius: 0rem;
-    box-shadow:
-        0 0 0.5rem 0 alpha(@dl-fg-orange, 0.81) inset,
-        0 0 0 0.0625rem alpha(@dl-fg-orange, 0.81) inset;
+    color: alpha(@mainforeground, 1);
+    /* background-color: alpha(@mainbackground, 0.9); */
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
     background-image: linear-gradient(to bottom left,
-            alpha(@dl-bg-dark, 1) 10%,
-            alpha(@dl-bg-normal, 1) 100%);
+            alpha(@secondarybackground, 0.3) 10%,
+            alpha(@secondarybackground, 0.3) 100%);
     background-blend-mode: overlay;
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
 }
 
 label {
-    color: alpha(@dl-fg-gray, 0.8);
+    color: alpha(@brighttext, 1);
     font-size: 2rem;
     font-weight: bold;
 }

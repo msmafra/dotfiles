@@ -12,7 +12,17 @@ window {
     background-blend-mode: overlay;
 }
 
+/* *:disabled {
+    background-color: #320aFF;
+} */
+
+.blank-window {
+    border-color: red;
+    background-color: #20395a;
+}
+
 /* search entry */
+#main-entry,
 entry {
     font-size: 1.5rem;
     color: alpha(@borderlight, 0.8);

@@ -55,4 +55,24 @@ waybar_reload() {
     esac
 }
 
+waybar_toggle() {
+    # gets the highest value from the reserved area in which waybar is shown. Format is [ 0, 0, 30, 0]
+    # this will return 0 if waybar is hidden or and integer for the height of waybar
+    local -i reserved_status
+    local workspace_name
+
+    reserved_status="$(hyprctl monitors -j | jq -r '[ .[] | .reserved | max] | max')"
+    workspace_name="Game"
+
+    if test "$(hyprctl activeworkspace -j | jq -r '.name')" = "Gaming"; then
+        echo teste
+    fi
+
+    if [[ "${reserved_status}" -eq 0 ]]; then
+        printf "waybar is hidden (height %s). Reloading to be shown again\n" "${reserved_status}"
+        killall -SIGUSR2 waybar
+
+    fi
+}
+
 waybar_reload "${@}"

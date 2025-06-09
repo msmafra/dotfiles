@@ -4,8 +4,12 @@
     // "custom/quicklaunch",
     "custom/search",
     // "custom/fsearch",
-    // "hyprland/workspaces",
-    "group/group-workspaces-tray"
+    "hyprland/workspaces",
+    "wlr/taskbar",
+    "custom/pulseicon",
+    "pulseaudio"
+    // "group/group-workspaces-tray",
+    // "hyprland/window"
     // "group/group-appicons"
     // "wlr/tray"
   ]
