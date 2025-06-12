@@ -11,7 +11,10 @@ If it is already installed, a simulation/dry-run can be useful since if some fil
 cd ~/Dowloads
 git clone https://github.com/zumnebel/dotfiles
 cd dotfiles
-stow -n -v 2 --dotfiles -t ~/
+# simulate
+stow --simulate --verbose=2 --dotfiles --target=~/
+# try to restore
+stow --verbose=2 --dotfiles --target=~/
 ```
 
 ### What is used here that need to be installed on Fedora Workstation 40 and up

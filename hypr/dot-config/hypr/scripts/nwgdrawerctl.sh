@@ -11,6 +11,7 @@ nwg_drawer() {
     local full_parameters
     local search_parameters
     local server_parameters
+    local -a methods
     local -a modes
 
     if [[ "${#*}" -gt 3 ]]; then
@@ -30,7 +31,13 @@ nwg_drawer() {
     full_parameters="${common_parameters} -pbpoweroff \"systemctl poweroff -i\" -pblock \"loginctl lock-session\" -pbreboot \"systemctl reboot -i\" -pbexit \"loginctl terminate-session ${XDG_SESSION_ID}\""
     search_parameters="-nocats -mt 200 -mr 200 -mb 200 -ml 200 ${common_parameters}"
     server_parameters="-r ${full_parameters}"
+    methods=(
+        "directly"
+        "hyprctl"
+        "uwsm"
+    )
     modes=(
+        "directly"
         "standalone"
         "alone"
         "noserver"
@@ -43,12 +50,12 @@ nwg_drawer() {
         "preload"
     )
 
-    if [[ ! ${modes[*]} =~ ${1} ]]; then
+    if [[ ! "${methods[*]}" =~ ${1} ]]; then
         usage
         exit 1
     fi
 
-    if [[ ! ${modes[*]} =~ ${2} ]]; then
+    if [[ ! "${modes[*]}" =~ ${2} ]]; then
         usage
         exit 1
     fi
@@ -106,7 +113,7 @@ nwg_drawer() {
         printf "Killing %s\n" "${app_name}"
         killall "${app_name}"
         printf "Starting %s with the theme %s via %s as background graphical\n" "${app_name^}" "${theme}" "${method}"
-        case "${3}" in
+        case "${mode}" in
         standalone | alone | noserver)
             nwg-drawer "${full_parameters}"
             ;;
