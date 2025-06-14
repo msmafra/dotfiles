@@ -1,0 +1,10 @@
+[Unit]
+Description=Changes blue light filter levels during the day
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/proton-get check
+
+[Install]
+WantedBy=multi-user.target

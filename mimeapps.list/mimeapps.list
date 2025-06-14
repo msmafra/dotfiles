@@ -1,6 +1,6 @@
 [Default Applications]
-x-scheme-handler/https=re.sonny.Junction.desktop
-x-scheme-handler/http=re.sonny.Junction.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
 image/avif=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 image/webp=org.gnome.Loupe.desktop
@@ -8,6 +8,9 @@ image/jpeg=org.gnome.Loupe.desktop
 video/x-matroska=mpv.desktop
 video/webm=mpv.desktop
 video/mp4=mpv.desktop
+text/html=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
 
 [Added Associations]
 image/avif=org.gnome.Loupe.desktop;
@@ -17,3 +20,5 @@ image/jpeg=org.gnome.Loupe.desktop;
 video/x-matroska=mpv.desktop;
 video/webm=mpv.desktop;
 video/mp4=mpv.desktop;
+x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
+x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;

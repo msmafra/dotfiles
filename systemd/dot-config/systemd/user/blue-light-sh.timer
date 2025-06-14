@@ -1,0 +1,15 @@
+[Unit]
+Description=Changes blue light filter levels during the day
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=1w
+OnCalendar=*-*-* 7:00:00
+ OnCalendar=*-*-* 12:00:00
+ OnCalendar=*-*-* 17:00:00
+ OnCalendar=*-*-* 21:00:00
+ OnCalendar=*-*-* 23:00:00
+
+
+[Install]
+WantedBy=timers.target

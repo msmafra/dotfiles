@@ -1,0 +1,140 @@
+/* #heartBeat {
+    animation: heartBeat 1s cubic-bezier(0.45, 0, 0.55, 1) 0s infinite alternate none;
+} */
+
+@keyframes blink {
+    5% {
+        opacity: 0.125;
+    }
+
+    40% {
+        opacity: 0.6;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Copy this code after the above code */
+/* @keyframes heartBeat {
+    0% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+        transform-origin: center center;
+    }
+    10% {
+        animation-timing-function: ease-in;
+        transform: scale(0.91);
+    }
+    17% {
+        animation-timing-function: ease-out;
+        transform: scale(0.98);
+    }
+    33% {
+        animation-timing-function: ease-in;
+        transform: scale(0.87);
+    }
+    45% {
+        animation-timing-function: ease-out;
+        transform: scale(1);
+    }
+} */
+
+/* #ping {
+    animation: ping 1s cubic-bezier(0.45, 0, 0.55, 1) 0s infinite alternate none;
+} */
+
+/* Copy this code after the above code */
+@keyframes ping {
+    0% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* #shake {
+    animation: shake 1s cubic-bezier(0.45, 0, 0.55, 1) 0s infinite alternate none;
+} */
+
+/* Copy this code after the above code */
+/* @keyframes shake {
+
+
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(10px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+
+    90% {
+        transform: translateX(-8px);
+    }
+} */
+
+/* #vibrate {
+    animation: vibrate 1s cubic-bezier(0.65, 0, 0.35, 1) 0s infinite alternate none;
+} */
+
+/* Copy this code after the above code */
+/* @keyframes vibrate {
+    0% {
+        transform: translate(0);
+    }
+    10% {
+        transform: translate(-2px, -2px);
+    }
+    20% {
+        transform: translate(2px, -2px);
+    }
+    30% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(2px, 2px);
+    }
+    50% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, -2px);
+    }
+    70% {
+        transform: translate(-2px, 2px);
+    }
+    80% {
+        transform: translate(-2px, -2px);
+    }
+    90% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+} */

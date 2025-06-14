@@ -12,9 +12,9 @@ cd ~/Dowloads
 git clone https://github.com/zumnebel/dotfiles
 cd dotfiles
 # simulate
-stow --simulate --verbose=2 --dotfiles --target=~/
+stow --simulate --verbose=2 --dotfiles --target=~/ <package_nae>
 # try to restore
-stow --verbose=2 --dotfiles --target=~/
+stow --verbose=2 --dotfiles --target=~/ <package_name>
 ```
 
 ### What is used here that need to be installed on Fedora Workstation 40 and up

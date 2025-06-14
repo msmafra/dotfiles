@@ -1,0 +1,11 @@
+[Unit]
+Description=Changes blue light filter levels during the day
+After=network.target
+
+[Service]
+Type=oneshot
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland" ""
+ExecStart=notify-send --urgency=normal "Blue light script" "this is set by the blue_light.sh script"
+
+[Install]
+WantedBy=multi-user.target
