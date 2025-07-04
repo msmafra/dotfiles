@@ -1,0 +1,50 @@
+@import url("palette.css");
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: "Inter Variable", "Symbols Nerd Font Mono";
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv09", "cv10, "cv11", "cpsp", "case"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.1s;
+    transition: all 0.1s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    font-weight: 900;
+}
+
+#backlight {
+    color: white;
+}
+
+#backlight-slider {
+    background-color: transparent;
+    padding: 0 0.125rem 0 0.125rem;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    min-width: 1rem;
+    min-height: 15rem;
+    border-radius: 0rem;
+    background-color: @newtext;
+}
+
+#backlight-slider slider,
+#backlight-slider slider {
+    min-width: 1rem;
+    color: alpha(black, 0.7);
+    background-color: alpha(black, 0.7);
+}
+/* #backlight-slider slider:hover */
+/* #backlight-slider highlight:hover */
+#backlight-slider trough:hover {
+    /* min-width: 1rem;
+    min-height: 15rem; */
+    border-radius: 0rem;
+    background-color: @newtext;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    min-height: 1rem;
+    border-radius: 0rem;
+    background-color: @secondarytext;
+}

@@ -1,0 +1,44 @@
+@import url("../waybar/palette.css");
+* {
+	all: unset;
+	font-size: 16px;
+	font-family: 'Inter Variable', 'Symbols Nerd Font';
+	font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+	animation-timing-function: steps(12);
+	animation-duration: 0.3s;
+	transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+	border-radius: 0.5rem;
+}
+window {
+        background-color: rgba(6, 8, 21, 0.85);
+}
+/* Outer bar container, takes all the window width/height */
+#outer-box {
+	margin: 0rem;
+}
+/* Inner bar container, surrounds buttons */
+#inner-box {
+	background-color: rgba(6, 8, 21, 0.85);
+	border-radius: 0.5rem;
+	border-style: none;
+	border-width: 0.0625rem;
+	border-color: rgba (156, 142, 122, 0.7);
+	padding: 0.25rem;
+	margin: 0.25rem;
+}
+
+button, image {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+button {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin: 0.25rem;
+}
+
+button:hover {
+	background-color: rgba(130, 157, 218, 0.51);
+}

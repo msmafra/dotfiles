@@ -1,0 +1,17 @@
+[Unit]
+Description=KDE Connect service
+Documentation=https://community.kde.org/KDEConnect
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/kdeconnect-indicator
+ExecStop=killall -SIGUSR1 $MAINPID
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+#[Install]
+#WantedBy=graphical-session.target
+
+

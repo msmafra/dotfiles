@@ -1,0 +1,950 @@
+@import url("reset.css");
+@import url("palette.css");
+@import url("animations.css");
+
+window#waybar {
+    color: alpha(@mainforeground, 1);
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0rem 0rem 0.15rem 0.15rem;
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 1) 10%,
+            alpha(@secondarybackground, 1) 100%);
+    background-blend-mode: overlay;
+    /* border: #fff solid 1px; */
+}
+
+#window {
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
+    background-color: alpha(@mainbackground, 0.51);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    margin: 0.25rem;
+    padding: 0.125rem;
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 0.51) 10%,
+            alpha(@secondarybackground, 0.51) 100%);
+    background-blend-mode: overlay;
+    /* border: #fff solid 1px; */
+}
+
+#window label:hover {
+    color: white;
+    background-color: green;
+}
+
+#window label {
+    font-size: 1rem;
+    color: alpha(@mainforeground, 0.7);
+    background-blend-mode: color-burn;
+}
+
+.module {
+    font-size: 1.4rem;
+    background: transparent;
+}
+
+label.module {
+    padding: 0 0.0625rem 0 0.0625rem;
+}
+
+box.module button:hover {
+    color: #fff;
+}
+
+#custom-power {
+    color: alpha(@secondaryforeground, 1);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 0rem;
+    padding: 0.125rem 0 0.125rem 0;
+}
+
+.modules-left widget,
+.modules-center widget,
+.modules-right widget {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    background: transparent;
+    background-color: alpha(@mainbackground, 0.21);
+}
+
+.modules-left label,
+.modules-center label,
+.modules-right label {
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0 0.0625rem 0 0.0625rem;
+}
+
+/* window#waybar.empty {
+    font-size: 1rem;
+    background-color: alpha(@secondarybackground, 0.5);
+    background-blend-mode: overlay;
+}
+
+window#waybar.empty #clock,
+window#waybar.empty #workspaces button {
+    color: alpha(@borderlight, 0.51);
+}
+
+window#waybar.empty #workspaces button.visible,
+window#waybar.empty #workspaces button.active {
+    color: alpha(@borderlight, 0.51);
+    background-color: alpha(@mainbackground, 0.4);
+    background-image: linear-gradient(to top,
+            alpha(@mainbackground, 0.3) 10%,
+            alpha(@borderlight, 0.3) 100%);
+    background-blend-mode: color-burn;
+}*/
+
+/* window#waybar.empty .module {
+    font-size: 1rem;
+}
+
+window#waybar.empty #workspaces button label,
+window#waybar.empty label {
+    font-size: 1rem;
+} */
+
+/* window#waybar.empty #workspaces,
+window#waybar.empty #workspaces button {
+    padding: 0 0.06125rem 0 0.06125rem;
+    margin: 0;
+} */
+
+window#waybar.empty,
+window#waybar.empty label,
+window#waybar.empty .modules-left,
+window#waybar.empty .modules-right,
+window#waybar.empty .modules-center,
+window#waybar.empty .modules-left widget,
+window#waybar.empty .modules-center widget,
+window#waybar.empty .modules-right widget,
+window#waybar.empty #workspaces,
+window#waybar.empty #workspaces button,
+window#waybar.empty #window,
+window#waybar.empty #window label,
+window#waybar.empty #tray,
+window#waybar.empty #taskbar,
+window#waybar.empty #appmenu,
+window#waybar.empty #taskbar,
+window#waybar.empty #battery,
+window#waybar.empty #bluetooth,
+window#waybar.empty #clock,
+window#waybar.empty #custom-appmenu,
+window#waybar.empty #custom-tools-button,
+window#waybar.empty #gamemode,
+window#waybar.empty #idle_inhibitor,
+window#waybar.empty #keyboard-state,
+window#waybar.empty #language,
+window#waybar.empty #network,
+window#waybar.empty #power-profiles-daemon,
+window#waybar.empty #privacy,
+window#waybar.empty #privacy-item,
+window#waybar.empty #privacy-item.audio-in,
+window#waybar.empty #privacy-item.audio-out,
+window#waybar.empty #privacy-item.screenshare,
+window#waybar.empty #taskbar,
+window#waybar.empty #tray,
+window#waybar.empty .tools-child,
+window#waybar.empty #wireplumber {
+    background: transparent;
+    background-color: transparent;
+    box-shadow: none;
+    color: alpha(white, 0.5);
+    /* text-shadow: h-shadow v-shadow blur-radius color|none|initial|inherit; */
+    text-shadow: 0.06125rem 0.06125rem 0.125rem alpha(@mainforeground, 0.5), 0.06125rem 0.06125rem 0.125rem alpha(@mainforeground, 0.5);
+}
+
+window#waybar.empty #workspaces button.persistent {
+    border-bottom: 0.06125rem solid #fff;
+}
+
+window#waybar.empty #workspaces button.visible {
+    border-bottom: 0.06125rem solid yellow;
+}
+
+window#waybar.empty #workspaces button.active {
+
+    border-bottom: 0.06125rem solid royalblue;
+
+}
+
+window#waybar.empty #workspaces button.empty {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.3);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.2) 50%,
+            alpha(@borderlight, 0.4) 100%);
+    background-blend-mode: overlay;
+}
+
+window#waybar.empty #workspaces button:hover,
+window#waybar.empty #workspaces button.persistent:hover,
+window#waybar.empty #workspaces button.visible:hover,
+window#waybar.empty #workspaces button.active:hover,
+window#waybar.empty #workspaces button.empty:hover {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 1) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.5);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.4) 50%,
+            alpha(@borderlight, 0.8) 100%);
+    background-blend-mode: overlay;
+}
+
+window#waybar.floating,
+window#waybar.floating .modules-left,
+window#waybar.floating .modules-right,
+window#waybar.floating .modules-center {
+    background: alpha(@alternatebackground, 0.8);
+    background-image: linear-gradient(to bottom right,
+            alpha(@floating, 0.11) 50%,
+            alpha(@floating, 0.11) 100%);
+    background-blend-mode: color-dodge;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+window#waybar.swallowing .workspaces {
+    box-shadow: 0 0 0.5rem 0 alpha(@peachy, 1) inset,
+        0 0 0 0.0625rem alpha(@peachy, 1) inset;
+}
+
+#workspaces {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0.03125rem;
+    background: transparent;
+    background-color: alpha(@mainbackground, 0.21);
+}
+
+#workspaces label {
+    font-size: 1rem;
+}
+
+#workspaces label:hover {
+    font-size: 1.8rem;
+}
+
+#workspaces button {
+    color: alpha(@secondaryforeground, 1);
+    padding: 0 0.3125rem 0 0.3125rem;
+    margin: 0.25rem;
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
+    background-image: linear-gradient(to bottom right,
+            alpha(@mainbackground, 0.2) 50%,
+            alpha(@borderlight, 0.1) 100%);
+    background-blend-mode: color-burn;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#workspaces button:hover,
+#workspaces button.persistent:hover,
+#workspaces button.visible:hover,
+#workspaces button.active:hover,
+#workspaces button.empty:hover {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 1) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.5);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.4) 50%,
+            alpha(@borderlight, 0.8) 100%);
+    background-blend-mode: overlay;
+}
+
+#workspaces button.visible {
+    color: alpha(@mainbackground, 0.7);
+    background-color: alpha(@secondaryforeground, 0.7);
+    background-blend-mode: overlay;
+}
+
+#workspaces button.active {
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 0.7);
+    background-image: linear-gradient(to top,
+            alpha(@borderlight, 0.15) 10%,
+            alpha(@borderlight, 0.15) 100%);
+    background-blend-mode: overlay;
+}
+
+#workspaces button.special {
+    color: @mainforeground;
+}
+
+#workspaces button.urgent {
+    background-color: alpha(@peachy, 0.85);
+    box-shadow: 0 -0.0625rem alpha(@peachy, 0.85) inset;
+}
+
+#workspaces button.empty {
+    color: alpha(@secondaryforeground, 0.3);
+    background-color: alpha(@borderlight, 0.1);
+    background-image: linear-gradient(to top,
+            alpha(@borderlight, 0.1) 10%,
+            alpha(@borderlight, 0.1) 100%);
+    box-shadow: 0 -0.0625rem 0 alpha(@borderlight, 0.1) inset;
+    background-blend-mode: multiply;
+}
+
+#workspaces button.urgent:hover {
+    color: alpha(@mainred, 1);
+}
+
+#workspaces button.hidden {
+    color: alpha(@peachy, 1);
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#custom-appmenu,
+#custom-tools-button,
+#gamemode,
+#idle_inhibitor,
+#keyboard-state,
+#language,
+#network,
+#power-profiles-daemon,
+#privacy,
+#privacy-item,
+#privacy-item.audio-in,
+#privacy-item.audio-out,
+#privacy-item.screenshare,
+#taskbar,
+#tray,
+#wireplumber {
+    color: alpha(@secondaryforeground, 1);
+    background-color: transparent;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#wireplumber {
+    font-size: 1.5rem;
+}
+
+#taskbar {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0 0.125rem 0 0.125rem;
+    margin: 0 0.0625rem 0 0.0625rem;
+}
+
+#taskbar label {
+    padding: 0 0.05rem 0 0.05rem;
+    margin: 0rem;
+}
+
+#taskbar button {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0 0.0625rem 0 0.0625rem;
+}
+
+#taskbar button:hover {
+    box-shadow: 0 -0.5rem alpha(@borderlight, 0.3) inset;
+}
+
+#taskbar button.active:hover {
+    box-shadow: 0 -0.5rem alpha(@borderlight, 0.3) inset;
+}
+
+#taskbar button.active {
+    background-color: transparent;
+}
+
+#taskbar button.minimized {
+    background-color: @mainbackground;
+}
+
+#taskbar button.maximized {
+    background-color: transparent;
+}
+
+#taskbar button.fullscreen {
+    background-color: @borderlight;
+}
+
+#taskbar.empty {
+    background-color: transparent;
+}
+
+#group-dockish,
+#group-appicons {
+    padding: 0.01rem;
+    margin: 0.01rem;
+}
+
+#group-privacy {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0.3rem;
+}
+
+#privacy {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#privacy:hover {
+    box-shadow: 0 -0.5rem alpha(@darkerred, 0.3) inset;
+}
+
+#privacy-item {
+    padding: 0 0.25rem 0 0.25rem;
+}
+
+#privacy-item.screenshare,
+#privacy-item.audio-in,
+#privacy-item.audio-out {
+    color: alpha(@dl-fg-orange, 1);
+    animation: blink 3s steps(12) infinite alternate;
+}
+
+#backlight-slider {
+    padding: 0 0.25rem 0 0.25rem;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    background-color: alpha(@borderlight, 1);
+    min-height: 0.625rem;
+    min-width: 15rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    background-color: alpha(@borderlight, 1);
+    min-width: 0.25rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#clock {
+    font-size: 0.9rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    box-shadow: none;
+}
+
+#battery:hover,
+#backlight:hover,
+#wireplumber:hover,
+#custom-swaync:hover,
+#custom-tools-button:hover,
+#network:hover,
+#network.ethernet:hover,
+#network.disabled:hover,
+#network.disconnected:hover,
+#network.wifi:hover,
+#network.linked:hover,
+#bluetooth:hover,
+#bluetooth.pairable:hover,
+#bluetooth.disabled:hover,
+#bluetooth.off:hover,
+#bluetooth.on:hover,
+#bluetooth.connected:hover,
+#bluetooth.discoverable:hover,
+#bluetooth.discovering:hover {
+    color: alpha(@secondaryforeground, 1);
+    background-color: transparent;
+}
+
+#idle_inhibitor {
+    font-size: 1rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0 0.125rem 0 0.125rem;
+    margin: 0.0625rem;
+}
+
+#idle_inhibitor:hover {
+    background-blend-mode: color-burn;
+}
+
+#idle_inhibitor.activated {
+    opacity: 1;
+}
+
+#idle_inhibitor.deactivated {
+    opacity: 0.4;
+}
+
+#custom-swaync,
+#custom-swaync.notification {
+    color: alpha(@secondaryforeground, 0.31);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#custom-swaync.none:hover,
+#custom-swaync.notification:hover,
+#custom-swaync.dnd-notification:hover,
+#custom-swaync.inhibited-notification:hover,
+#custom-swaync.inhibited-none:hover,
+#custom-swaync.dnd-inhibited-notification:hover,
+#custom-swaync.dnd-inhibited-none:hover {
+    /* color: alpha(@mainbackground, 0.8); */
+    color: alpha(white, 0.8);
+    background: transparent;
+    /* background-color: alpha(@mainforeground, 0.8); */
+}
+
+#custom-swaync.none {
+    color: alpha(@borderlight, 1);
+}
+
+#custom-swaync.dnd-notification {
+    color: alpha(@borderlight, 0.8);
+}
+
+#custom-swaync.dnd-none {
+    color: alpha(@borderlight, 0.8);
+}
+
+#custom-swaync.inhibited-notification,
+#custom-swaync.inhibited-none,
+#custom-swaync.dnd-inhibited-notification,
+#custom-swaync.dnd-inhibited-none {
+    color: alpha(@borderlight, 0.8);
+}
+
+#power-profiles-daemon {
+    font-size: 1.2rem;
+}
+
+#power-profiles-daemon:hover {
+    color: alpha(@limegreen, 1);
+}
+
+#power-profiles-daemon.performance {
+    font-size: 1.2rem;
+    color: alpha(@peachy, 1);
+}
+
+#power-profiles-daemon.performance:hover {
+    color: alpha(@maincritical, 1);
+}
+
+#power-profiles-daemon.balanced {
+    font-size: 1.2rem;
+    color: alpha(@brightext, 1);
+}
+
+#power-profiles-daemon.balanced:hover {
+    color: alpha(@vividtext, 1);
+}
+
+#power-profiles-daemon.power-saver {
+    font-size: 1.2rem;
+    color: alpha(@brightext, 1);
+}
+
+#power-profiles-daemon.power-saver:hover {
+    color: alpha(@greenish, 1);
+}
+
+#custom-kill {
+    color: alpha(@maincritical, 1);
+    padding: 0 0.25rem 0 0.25rem;
+}
+
+#custom-kill:hover {
+    color: alpha(@darkrose, 1);
+    background-color: transparent;
+}
+
+#custom-appmenu,
+#custom-power {
+    font-size: 1.2rem;
+    /* font-weight: 600; */
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#custom-appmenu {
+    font-weight: 700;
+    padding: 0 1rem 0 1rem;
+    margin: 0 0.25rem 0 0;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#custom-power {
+    padding: 0 0.7rem 0 0.7rem;
+    margin: 0 0.0625rem 0 0.0625rem;
+}
+
+#custom-power:hover {
+    color: alpha(@peachy, 1);
+}
+
+#custom-appmenu:hover {
+    color: alpha(@lighttext, 1);
+}
+
+/* border-radius: 0.2rem 0.35rem 0.2rem 0.35rem; */
+#custom-appmenu:hover,
+#custom-power:hover {
+    background-color: transparent;
+    /* background-blend-mode: screen, multiply; */
+    background-blend-mode: lighten;
+    background-image: linear-gradient(to top left,
+            alpha(@secondaryforeground, 0.4) 0%,
+            alpha(@mainforeground, 0.4) 100%);
+}
+
+#custom-clipboard_list {
+    color: alpha(@rose, 1);
+}
+
+#custom-hyprpicker {
+    color: alpha(@groundblue, 1);
+}
+
+#custom-wallpaper {
+    color: alpha(@lightteal, 1);
+}
+
+#custom-backup {
+    color: alpha(@workspacebutton, 1);
+}
+
+#custom-search,
+#custom-fsearch,
+#custom-quicklaunch,
+#custom-kill,
+#custom-hyprpicker,
+#custom-clipboard_list,
+#custom-backup,
+#custom-myxer {
+    font-size: 1.3rem;
+    font-weight: 600;
+    background-color: transparent;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0.5rem 0 0.125rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#custom-search:hover,
+#custom-fsearch:hover,
+#custom-quicklaunch:hover,
+#custom-tools-button:hover,
+#custom-hyprpicker:hover,
+#custom-clipboard_list:hover,
+#custom-backup:hover,
+#custom-myxer:hover {
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 1);
+}
+
+.tools-child {
+    background: transparent;
+    background-color: alpha(red, 0.6);
+}
+
+#group-backlight label,
+#group-tools label,
+/* #group-audio label, */
+#power-profile-daemon {
+    font-size: 1.1rem;
+}
+
+.drawer-child {
+    padding: 0 0.25rem 0 0.25rem;
+    background: transparent;
+}
+
+#temperature {
+    color: alpha(@darkred, 1);
+}
+
+#temperature.critical {
+    background-color: alpha(@mainred, 1);
+}
+
+#cpu {
+    color: alpha(@alternatetext, 1);
+}
+
+#disk {
+    color: alpha(@borderlight, 1);
+}
+
+#memory {
+    color: alpha(@yellow, 1);
+}
+
+#group-battery {
+    margin: 0 0.125rem 0 0.125rem;
+}
+
+#battery {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 0.0625rem;
+}
+
+#battery,
+#battery.capacity {
+    background-color: transparent;
+    padding: 0.0625rem;
+}
+
+#battery.capacity {
+    font-size: 0.7rem;
+}
+
+#battery.charging,
+#battery.capacity .charging {
+    color: @borderlight;
+    animation: blink 4s steps(12) infinite alternate;
+}
+
+#battery.half:not(.charging) {
+    color: @discharging;
+    animation: blink 4s steps(12) infinite alternate;
+}
+
+#battery.warning:not(.charging),
+#battery.capacity .warning:not(.charging) {
+    color: alpha(@orange, 1);
+    animation: blink 4s steps(12) infinite alternate;
+}
+
+#battery.critical:not(.charging) {
+    color: alpha(@maincritical, 1);
+    animation: blink 4s steps(12) infinite alternate;
+}
+
+#battery.discharging {
+    color: alpha(@borderlight, 1);
+    animation: blink 4s steps(12) infinite alternate;
+}
+
+window#waybar.battery-critical {
+    background-color: alpha(@quarternarycritical, 0.8);
+}
+
+window#waybar.battery-warning {
+    background-color: alpha(@laranja, 0.1);
+}
+
+#tray {
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0.125rem;
+    margin: 0.25rem;
+}
+
+#tray widget {
+    background-color: transparent;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#tray menu {
+    color: @borderlight;
+    background-color: alpha(@mainbackground, 1);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#tray menu label {
+    font-size: 0.9rem;
+    padding: 0.25rem;
+    margin: 0.5rem;
+}
+
+#tray menu label:hover {
+    color: @secondarycritical;
+}
+
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: transparent;
+    background-color: alpha(@mainforeground, 0.81);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#tray>.passive:hover,
+#tray>.active:hover,
+#tray>.needs-attention:hover {
+    padding: 0.25rem;
+    margin: 0.25rem;
+    background-color: transparent;
+    background-color: alpha(@mainbackground, 0.81);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#network {
+    font-size: 1.3rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.125rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#bluetooth {
+    font-size: 1.3rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+#network.disabled,
+#bluetooth.disabled {
+    color: alpha(@peachy, 0.3);
+}
+
+#network.disconnected,
+#bluetooth.off {
+    color: alpha(@peachy, 0.7);
+}
+
+#network.wifi,
+#bluetooth.on {
+    color: alpha(@secondaryforeground, 0.7);
+}
+
+#network.linked,
+#bluetooth.connected {
+    color: alpha(@secondaryforeground, 0.7);
+}
+
+#bluetooth.discoverable,
+#bluetooth.discovering {
+    color: alpha(@secondaryforeground, 1);
+}
+
+#network.ethernet,
+#bluetooth.pairable {
+    color: alpha(@secondaryforeground, 0.7);
+}
+
+#gamemode.running {
+    color: alpha(@secondaryforeground, 1);
+}
+
+#user image .avatar {
+    font-size: 0.7rem;
+}
+
+#user image {
+    background-color: @borderlight;
+    padding: 0.3rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+tooltip {
+    background-color: alpha(@mainbackground, 0.82);
+    margin: 0.5rem;
+    border: 0.0625rem solid alpha(@borderlight, 0.62);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+tooltip label {
+    font-size: 1rem;
+    color: @borderlight;
+    padding: 0 1rem 0 1rem;
+}
+
+#submap {
+    font-size: 0.8rem;
+    color: alpha(@peachy, 1);
+    min-width: 8rem;
+    animation: blink 3s steps(12) infinite alternate;
+}
+
+#custom-separator {
+    font-size: 0.3rem;
+    color: alpha(@lighttext, 0.5);
+    padding: 0rem;
+    margin: 0.125rem 0 0.125rem 0;
+}
+
+#custom-hyprbars,
+#custom-borderplusplus {
+    font-size: 1.3rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.125rem;
+    transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+}
+
+#custom-hyprbars:hover,
+#custom-borderplusplus:hover,
+#custom-hyprbars.Disabled:hover,
+#custom-hyprbars.Enabled:hover,
+#custom-borderplusplus.Disabled:hover,
+#custom-borderplusplus.Enabled:hover {
+    color: alpha(@dl-fg-orange, 1);
+    border-radius: 0rem;
+    background-color: transparent;
+    background-image: linear-gradient(to top,
+            alpha(@mainbackground, 0.2) 10%,
+            alpha(@borderlight, 0.1) 100%);
+    background-blend-mode: color-burn;
+    transition: all 0.6s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+}
+
+#custom-hyprbars.Disabled,
+#custom-borderplusplus.Disabled {
+    color: alpha(@mainforeground, 1);
+}
+
+#custom-hyprbars.Enabled,
+#custom-borderplusplus.Enabled {
+    color: alpha(@dl-fg-orange, 1);
+}
+
+/* teste */
+#pulseaudio {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.1);
+    background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.1) 50%,
+            alpha(@borderlight, 0.2) 100%);
+    background-blend-mode: screen;
+    /* padding: 0 10px;
+    margin: 0 10px; */
+    /* border: 1px solid rgba(100, 114, 125, 0.5); */
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0.25rem 0 0.25rem 0;
+    /* border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    /* box-shadow:
+        0 -0.0625rem alpha(darkred, 0.51) inset,
+        0 0.0625rem alpha(orange, 0.51) inset; */
+    /* box-shadow: h-offset v-offset blur spread color */
+    /* box-shadow:
+        0 0 0.25rem 0 alpha(@mainforeground, 0.82) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.82) inset; */
+    border-radius: 0 0.35rem 0.2rem 0;
+}
+
+#custom-pulseicon {
+    color: alpha(@buttonhover, 1);
+    box-shadow: 0 -0.0625rem alpha(@lightborder, 0.4) inset;
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.2);
+    /* background-image: linear-gradient(to bottom right,
+            alpha(@secondaryforeground, 0.1) 50%,
+            alpha(@borderlight, 0.2) 100%); */
+    background-blend-mode: overlay;
+    padding: 0 0.25rem 0 0.25rem;
+    margin: 0.25rem 0 0.25rem 0;
+    /* box-shadow:
+        0 -0.0625rem alpha(darkred, 0.51) inset,
+        0 0.0625rem alpha(orange, 0.51) inset; */
+    /* box-shadow:
+        0 0 0.25rem 0 alpha(@mainforeground, 0.82) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.82) inset; */
+    border-radius: 0.2rem 0 0 0.35rem;
+    /* border: 1px solid rgba(100, 114, 125, 0.5);
+    border-right: none;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
+}

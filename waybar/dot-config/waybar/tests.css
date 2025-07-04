@@ -1,0 +1,311 @@
+* {
+    all: unset;
+    font-size: 13px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+    font-weight: 700;
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    border-radius: 0rem;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 1);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: #f8f8f8;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty {
+    background-color: @secondarybackround;
+    background-blend-mode: multiply;
+    opacity: 0.3;
+}
+
+window#waybar.solo {
+    background-blend-mode: multiply;
+    background-image: linear-gradient(to bottom right, rgba(25, 35, 125, 0.98) 50%, rgba(50, 70, 250, 0.98) 100%);
+}
+
+window#waybar.kitty {
+    background-color: aqua;
+    background-image: linear-gradient(to bottom right, rgba(0, 255, 0, 0.2) 50%, rgba(0, 186, 0, 0.61) 100%);
+}
+
+window#waybar.chromium {
+    background-color: #ff0000;
+    border: none;
+}
+
+tooltip {
+    background-color: #152622;
+    border: #2a5c45 0.125rem solid;
+}
+
+tooltip label {
+    color: #dddddd;
+    font-size: 1.2rem;
+    padding: 0 1rem 0 1rem;
+}
+
+#taskbar button,
+#workspaces button {
+    padding: 0 5px;
+    min-width: 15px;
+    background-color: transparent;
+    /* background-color: #555555; */
+    color: #f8f8f8;
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -3px #f8f8f8;
+    opacity: 1;
+}
+
+#workspaces button.focused {
+    background-color: rgba(100, 114, 125, 0.5);
+    box-shadow: inset 0 -3px #f8f8f8;
+}
+
+#workspaces button.active {
+    background-color: rgba(100, 114, 125, 0.5);
+    box-shadow: inset 0 -3px #f8f8f8;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: rgba(100, 114, 125, 0.5);
+    border-bottom: 3px solid #f8f8f8;
+}
+
+#taskbar button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 -3px #f8f8f8;
+}
+
+#window,
+#custom-adaptive-sync,
+#custom-window-close,
+#bluetooth,
+#custom-weather,
+#clock,
+#custom-clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#language,
+#mpd {
+    padding: 0 10px;
+    margin: 0 4px;
+    color: #f8f8f8;
+}
+
+#custom-menu-button {
+    padding-top: 0px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 7px;
+
+    margin-top: -8px;
+    margin-right: 4px;
+    margin-bottom: -8px;
+    margin-left: 4px;
+
+    font-size: 24px;
+}
+
+#taskbar {
+    padding: 0 0px;
+    margin: -4px 4px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#window,
+#custom-clock,
+#clock {
+    background-color: rgba(100, 114, 125, 0.5);
+}
+
+#battery {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #f8f8f8;
+    background-color: rgba(38, 166, 91, 0.5);
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(255, 255, 255, 1);
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #f8f8f8;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: rgba(46, 204, 113, 0.5);
+    color: #000000;
+}
+
+#memory {
+    background-color: rgba(155, 89, 182, 0.5);
+}
+
+#disk {
+    background-color: rgba(150, 75, 0, 0.5);
+}
+
+#backlight {
+    background-color: rgba(144, 177, 177, 0.5);
+}
+
+#network {
+    background-color: rgba(41, 128, 185, 0.5);
+}
+
+#network.disconnected {
+    background-color: rgba(245, 60, 60, 0.5);
+}
+
+#pulseaudio {
+    background-color: rgba(241, 196, 15, 0.5);
+    color: #000000;
+}
+
+#pulseaudio.muted {
+    background-color: rgba(144, 177, 177, 0.5);
+    color: #2a5c45;
+}
+
+#custom-media {
+    background-color: rgba(102, 204, 153, 0.5);
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: rgba(102, 204, 153, 0.5);
+}
+
+#custom-media.custom-vlc {
+    background-color: rgba(255, 160, 0, 0.5);
+}
+
+#temperature {
+    background-color: rgba(240, 147, 43, 0.5);
+}
+
+#temperature.critical {
+    background-color: rgba(235, 77, 75, 0.5);
+}
+
+#tray {
+    background-color: rgba(45, 52, 54, 0.5);
+}
+
+#idle_inhibitor {
+    background-color: rgba(45, 52, 54, 0.5);
+}
+
+#idle_inhibitor.activated {
+    background-color: rgba(236, 240, 241, 0.5);
+    color: #2d3436;
+}
+
+#mpd {
+    background-color: rgba(102, 204, 153, 0.5);
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: rgba(245, 60, 60, 0.5);
+}
+
+#mpd.stopped {
+    background-color: rgba(144, 177, 177, 0.5);
+}
+
+#mpd.paused {
+    background-color: rgba(81, 163, 122, 0.5);
+}
+
+#language {
+    background-color: rgba(0, 176, 147, 0.5);
+    /*
+    * padding: 0 5px;
+    * margin: 0 5px;
+    * min-width: 16px;
+    */
+}
+
+#custom-menu-button {
+    background-color: rgba(217, 88, 95, 0.5);
+}
+
+#bluetooth {
+    background-color: rgba(19, 62, 191, 0.5);
+}
+
+#custom-window-close {
+    background-color: rgba(255, 102, 102, 0.5);
+}
+
+#custom-adaptive-sync {
+    background-color: rgba(34, 119, 34, 0.5);
+}
+
+#custom-weather {
+    background-color: rgba(45, 52, 54, 0.5);
+}

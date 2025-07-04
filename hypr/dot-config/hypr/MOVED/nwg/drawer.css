@@ -1,0 +1,74 @@
+window {
+    background-color: rgba(6, 8, 21, 0.8);
+    color: rgba(160, 186, 241, 0.6);
+    font-family: 'Inter Variable';
+}
+
+/* search entry */
+entry {
+    background-color: rgba(6, 8, 21, 0.6);
+}
+
+label {
+    font-size: 16px;
+}
+image, img {
+    background: transparent;
+    border: none;
+}
+button {
+    font-size: 16px;
+    color: rgba(160, 186, 241, 0.6);
+    border: none;
+    border: solid 2px rgba(6, 8, 21, 0.3);
+    border-radius: 8px;
+    background: none;
+    background-color: rgba(6, 8, 21, 0.3);
+    /* background-repeat: no-repeat; */
+    /* background-position: left; */
+    /* background-size: 1%; */
+    /* text-shadow: none; */
+}
+button:hover {
+    font-size: 16px;
+    color: rgba(6, 8, 21, 0.6);
+    border: none;
+    border: solid 2px rgba(160, 186, 241, 1.0);
+    background: none;
+    background-color: rgba(160, 186, 241, 1.0);
+    /* background-repeat: no-repeat; */
+    /* background-position: left; */
+    /* background-size: 1%; */
+    /* text-shadow: none; */
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 10px 0 10px;
+}
+
+#pinned-box {
+    padding-bottom: 5px;
+    border: solid 2px rgba(160, 186, 241, 0.13);
+    background-color: rgba(6, 8, 21, 0.3);
+    border-radius: 8px;
+}
+
+#files-box {
+    padding: 15px;
+    border: solid 2px rgba(160, 186, 241, 1.0);
+    border-radius: 8px;
+}
+/* from my nwggrid css file*/
+#searchbox {
+    background: none;
+    border-color: rgba(160, 186, 241, 1);
+    color: rgba(160, 186, 241, 1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#math-label {
+    background-color: rgba(160, 186, 241, 1);
+    color: rgba(6, 8, 21, 1);
+    font-size: 64px;
+}

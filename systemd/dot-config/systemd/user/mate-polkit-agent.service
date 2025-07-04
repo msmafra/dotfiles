@@ -1,0 +1,13 @@
+[Unit]
+Description=Integrates polkit authentication for MATE desktop
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/libexec/polkit-mate-authentication-agent-1
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

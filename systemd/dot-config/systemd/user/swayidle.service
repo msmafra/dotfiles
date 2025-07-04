@@ -1,0 +1,18 @@
+[Unit]
+Description=An idle daemon for wayland compositors
+Documentation=man:swayidle(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+# ConditionEnvironment requires systemd v247 to work correctly
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+BusName=org.freedesktop.ScreenSaver
+ExecStart=/usr/bin/swayidle -w -d
+Restart=on-failure
+# ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:niri" ""
+
+[Install]
+WantedBy=graphical-session.target

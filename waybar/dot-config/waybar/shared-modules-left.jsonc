@@ -1,0 +1,20 @@
+{
+  "modules-left": [
+    "custom/niri-overview",
+    "custom/appmenu",
+    "custom/quicklaunch",
+    // "custom/search",
+    // "custom/fsearch",
+    // "hyprland/workspaces",
+    "group/group-workspaces-taskbar"
+    // "niri/workspaces",
+    // "niri/window",
+    // "wlr/taskbar"
+    // "custom/pulseicon",
+    // "pulseaudio"
+    // "group/group-workspaces-tray"
+    // "hyprland/window"
+    // "group/group-appicons"
+    // "wlr/tray"
+  ]
+}

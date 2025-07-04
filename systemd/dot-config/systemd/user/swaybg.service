@@ -1,0 +1,13 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swaybg --mode fill --image "%h/.cache/compositors-shared/backdrop-image"
+# ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:niri" ""
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

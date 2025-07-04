@@ -1,7 +1,7 @@
-# Hyprland dotfiles and such (WIP) ... endlessly... probably 😜
+# Niri and Hyprland dotfiles and such (WIP) ... endlessly... probably 😜
 
 ## My dot files
-This is all done over Fedora Workstation 40 (now 42). So Gnome is used to set everything and is kept installed in case of "rare" (😅) breaking change on Hyprland side.
+This is all done over Fedora Workstation 42. So Gnome is used to set everything and is kept installed in case of "rare" (😅) breaking change on Hyprland side.
 
 https://github.com/user-attachments/assets/b8375f97-4df1-4d8d-85f7-69ab288239b7
 
@@ -21,7 +21,7 @@ stow --verbose=2 --dotfiles --target=~/ <package_name>
 - Atuin
 - Starship
 - stow
-- doas (or sudo);
+- doas (pkexec, run0 or sudo);
 - [uwsm](https://github.com/Vladimir-csp/uwsm);
 - Hyprland;
 - Hyprbars;
@@ -39,7 +39,7 @@ stow --verbose=2 --dotfiles --target=~/ <package_name>
 - [nm-applet (network-manager-applet)](https://gitlab.gnome.org/GNOME/network-manager-applet);
 - [pavucontrol](https://flathub.org/apps/org.pulseaudio.pavucontrol);
 - [Myxer](https://github.com/Aurailus/Myxer);
-- [nwg-drawer](https://github.com/nwg-piotr/nwg-drawer). Manually compiled v0.6.0 or up since it's not available via COPR [2025-02-13];
+- [nwg-drawer](https://github.com/nwg-piotr/nwg-drawer). Manually compiled v0.7.1 or up since it's not available via COPR [2025-06-27];
 - [nwg-displays (must have a separate workspaces.conf file)](https://github.com/nwg-piotr/nwg-displays);
 - [nwg-clipman](https://github.com/nwg-piotr/nwg-clipman);
 - [swaync (SwayNotificationCenter)](https://github.com/ErikReider/SwayNotificationCenter);
@@ -52,14 +52,15 @@ stow --verbose=2 --dotfiles --target=~/ <package_name>
 - [0xProto font](https://github.com/0xType/0xProto)
 - [Geist Mono/Geist font](https://vercel.com/font)
 - [Nerd Fonts](https://www.nerdfonts.com/cheat-sheet);
-- [Waypaper](https://github.com/anufrievroman/waypaper);
+- [Wpaperd](https://github.com/danyspin97/wpaperd);
 
 
 ### Some helpful links
 1) https://cubic-bezier.com/
 1) https://easings.net
-1) https://https://www.cssportal.com/css-cubic-bezier-generator/
-1) https://wiki.hyprland.org/0.47.0/Configuring/Animations/#animation-tree
+1) https://www.cssportal.com/css-cubic-bezier-generator/
+!) https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
+1) https://wiki.hyprland.org/0.49.0/Configuring/Animations/#animation-tree
 1) https://colorhunt.co/palette/
 
 ### Enabling the COPRs
@@ -67,20 +68,15 @@ Unfortunately, not all packages are available, or updates are reasonably quick e
 
 ```
 doas dnf copr enable pgdev/ghostty -y
-
 doas dnf copr enable peterwu/iosevka -y
-
 doas dnf copr enable solopasha/hyprland -y
-
 doas dnf copr enable tofik/nwg-shell -y
-
 doas dnf copr enable atim/starship -y
 ```
 
 For some wild reason, DNF doesn't accept (or wasn't at the time) to install the hyprland and hyprland-plugins packages, or individual hyprland plugins, on the same installation command line.
 ```
 doas dnf install hyprland -y
-
 doas dnf install hyprland-plugin-hyprbars -y
 ```
 
@@ -89,7 +85,7 @@ doas dnf install hyprland-plugin-hyprbars -y
 To use PPM with Satty  gdk-pixbuf2-modules-extra is needed. It can be installed directly your with the vips package
 
 ```
-doas dnf -y install stow hyprlock hypridle hyprpaper hyprlock hyprshot hyprdim hyprsunset cliphist waybar waypaper blueman network-manager-applet xwaylandvideobridge udiskie mpv feh zoxide jq qt6ct qt5ct qt6-qtwayland qt5-qtwayland copyq lsd ImageMagick GraphicsMagick swww wlogout wl-paste wl-clipboard wl-copy nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk micro restic bat cosmic-term starship swaync cargo satty vips uwsm breeze-gtk plasma-breeze
+doas dnf -y install stow hyprlock hypridle hyprpaper hyprlock hyprshot hyprdim hyprsunset cliphist waybar blueman network-manager-applet xwaylandvideobridge udiskie mpv feh zoxide jq qt6ct qt5ct qt6-qtwayland qt5-qtwayland copyq lsd ImageMagick GraphicsMagick swww wlogout wl-paste wl-clipboard wl-copy nwg-clipman nwg-shell-config nwg-drawer python-psutil fd brightnessctl btrbk micro restic bat cosmic-term starship swaync cargo satty vips uwsm breeze-gtk plasma-breeze xfce-polkit lxqt-policykit
 ```
 
 ### Installing Atuin.

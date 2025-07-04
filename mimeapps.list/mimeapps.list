@@ -22,3 +22,4 @@ video/webm=mpv.desktop;
 video/mp4=mpv.desktop;
 x-scheme-handler/sms=org.gnome.Shell.Extensions.GSConnect.desktop;
 x-scheme-handler/tel=org.gnome.Shell.Extensions.GSConnect.desktop;
+text/markdown=org.kde.ghostwriter;

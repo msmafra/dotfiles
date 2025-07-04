@@ -23,9 +23,9 @@ export __GLX_VENDOR_LIBRARY_NAME="nvidia"
 export __GL_VRR_ALLOWED="1"
 export __GL_GSYNC_ALLOWED="1"
 # VAAPI
-_EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
+export _EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/10_nvidia.json"
 # Tests
 export _GTK_THEME_VARIANT="dark"
 export QT_WAYLAND_DECORATION="Adwaita-dark"
 export ELECTRON_OZONE_PLATFORM_HINT=auto
-PATH="$HOME/.local/bin:$HOME/bin:/opt:$PATH"
+export PATH="$HOME/.local/bin:$HOME/bin:/opt:$PATH"

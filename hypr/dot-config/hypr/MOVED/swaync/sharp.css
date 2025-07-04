@@ -1,0 +1,646 @@
+@import "../waybar/reset.css";
+@import "../waybar/palette.css";
+@import "../waybar/animations.css";
+
+window {
+    font-size: 1rem;
+    color: alpha(@mainforeground, 1);
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0rem;
+    /* box-shadow:
+        0 0 0.5rem 0 alpha(@mainforeground, 0.2) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.2) inset; */
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 1) 10%,
+            alpha(@secondarybackground, 1) 100%);
+    background-blend-mode: darken;
+    box-shadow: 0 -0.125rem alpha(@mainforeground, 0.2) inset,
+        0 -0.125rem alpha(@mainforeground, 0.2) inset;
+}
+
+trough highlight {
+    background: alpha(@secondaryforeground, 1);
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+scale trough {
+    margin: 0rem 1rem;
+    background-color: alpha(@alternatebackground, 1);
+    min-height: 0.5rem;
+    min-width: 5rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+slider {
+    background-color: alpha(@alternatebackground, 1);
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3);
+}
+
+.floating-notifications.background .notification-row .notification-background {
+    border-radius: 0rem;
+    color: alpha(@secondaryforeground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3);
+    margin-top: 1rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+    padding: 0.5rem;
+    border-radius: 0rem;
+}
+
+.floating-notifications.background.notification-row .notification-background .notification.low {
+    color: alpha(@mainforeground, 1);
+    background-color: @secondarybackground;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.low .notification-content .summary {
+    font-weight: 500;
+    color: @mainforeground;
+    padding: 0.125rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.low .notification-content .time,
+.floating-notifications.background .notification-row .notification-background .notification.low .notification-content .body {
+    color: @mainforeground;
+    padding: 0.25rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.critical {
+    box-shadow: 0 0 0.5rem 0 alpha(@darkred, 1) inset, 0 0 0 0.0625rem alpha(@mainred, 1) inset;
+    background-color: alpha(@darkred, 1);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.critical .notification-content .summary {
+    font-weight: 700;
+    color: alpha(@darkrose, 1);
+    padding: 0.125rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification.critical .notification-content .time,
+.floating-notifications.background .notification-row .notification-background .notification.critical .notification-content .body {
+    color: alpha(@rose, 1);
+    padding: 0.5rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content {
+    margin: 0.5rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
+    color: alpha(@secondaryforeground, 1);
+    padding: 0.4rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .time {
+    color: alpha(@vividtext, 1);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
+    color: alpha(@secondaryforeground, 1);
+    padding: 0.4rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
+    min-height: 3rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
+    border-radius: 0rem;
+    color: alpha(@secondaryforeground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    margin: 0.5rem;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    color: alpha(@secondaryforeground, 1);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@secondaryforeground, 1);
+    color: alpha(@alternatebackground, 1);
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button {
+    margin: 0.5rem;
+    padding: 0.125rem;
+    border-radius: 0rem;
+    color: alpha(@alternatebackground, 1);
+    background-color: alpha(@darkpink, 1);
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:hover {
+    background-color: alpha(@darkerpink, 1);
+    color: alpha(@alternatebackground, 1);
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:active {
+    background-color: alpha(@darkpink, 1);
+    color: alpha(@alternatebackground, 1);
+}
+
+.control-center {
+    color: alpha(@secondaryforeground, 1);
+    background-color: alpha(@alternatebackground, 0.2);
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+    border-radius: 0rem;
+    margin: 0rem;
+    padding: 1rem;
+}
+
+.control-center .widget-title,
+.control-center .widget-dnd,
+.control-center .widget-backlight,
+.control-center .widget-volume {
+    border-bottom: solid 0.0625rem alpha(@secondaryforeground, 0.2);
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2) inset;
+    padding: 0.25rem;
+}
+
+.control-center .widget-title>label {
+    color: alpha(@secondaryforeground, 1);
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.control-center .widget-title button {
+    border-radius: 0rem;
+    color: alpha(@secondaryforeground, 1);
+    background-color: @mainbackground;
+    padding: 0.5rem;
+}
+
+.control-center .widget-title button:hover {
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+    background-color: transparent;
+    color: @mainforeground;
+}
+
+.control-center .widget-title button:active {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@secondaryforeground, 1);
+    color: alpha(@alternatebackground, 1);
+}
+
+.control-center .notification-row .notification-background {
+    border-radius: 0rem;
+    color: alpha(@secondaryforeground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    box-shadow: inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+    margin-top: 1rem;
+}
+
+.control-center .notification-row .notification-background .notification {
+    padding: 0.5rem;
+    border-radius: 0rem;
+}
+
+.control-center .notification-row .notification-background .notification.low {
+    color: alpha(@mainforeground, 1);
+    background-color: @secondarybackground;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.control-center .notification-row .notification-background .notification.low .notification-content .summary {
+    font-weight: 500;
+    color: @mainforeground;
+    padding: 0.125rem;
+}
+
+.control-center .notification-row .notification-background .notification.low .notification-content .time,
+.control-center .notification-row .notification-background .notification.low .notification-content .body {
+    color: @mainforeground;
+    padding: 0.25rem;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+    box-shadow: 0 0 0.5rem 0 alpha(@darkred, 1) inset, 0 0 0 0.0625rem alpha(@mainred, 1) inset;
+    background-color: alpha(@darkred, 1);
+}
+
+.control-center .notification-row .notification-background .notification.critical .notification-content .summary {
+    font-weight: 700;
+    color: alpha(@darkrose, 1);
+    padding: 0.125rem;
+}
+
+.control-center .notification-row .notification-background .notification.critical .notification-content .time,
+.control-center .notification-row .notification-background .notification.critical .notification-content .body {
+    color: alpha(@rose, 1);
+    padding: 0.5rem;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+    margin: 0.5rem;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .summary {
+    color: alpha(@vividtext, 0.6);
+    padding: 0.4rem;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .time {
+    color: alpha(@vividtext, 1);
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .body {
+    color: alpha(@vividtext, 1);
+    padding: 0.4rem;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* {
+    min-height: 3rem;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
+    border-radius: 0rem;
+    color: alpha(@secondaryforeground, 1);
+    background-color: alpha(@secondarybackground, 1);
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    margin: 0.5rem;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    color: alpha(@secondaryforeground, 1);
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@secondaryforeground, 1);
+    color: alpha(@secondaryforeground, 1);
+}
+
+.control-center .notification-row .notification-background .close-button {
+    margin: 0.5rem;
+    padding: 0.125rem;
+    border-radius: 0rem;
+    color: alpha(@alternatebackground, 1);
+    background-color: alpha(@darkerpink, 1);
+}
+
+.close-button {
+    border-radius: 0rem;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+    background-color: alpha(@darkpink, 1);
+    color: alpha(@alternatebackground, 1);
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+    background-color: alpha(@darkpink, 1);
+    color: alpha(@alternatebackground, 1);
+}
+
+.control-center .notification-row .notification-background:hover {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@alternatebackground, 1);
+    color: alpha(@vividtext, 1);
+}
+
+.control-center .notification-row .notification-background:active {
+    box-shadow: inset 0 0 0 0.0625rem alpha(@alternatebackground, 1);
+    background-color: alpha(@secondaryforeground, 1);
+    color: alpha(@secondaryforeground, 1);
+}
+
+.notification.critical progress {
+    background-color: alpha(@darkpink, 1);
+}
+
+.notification.low progress,
+.notification.normal progress {
+    background-color: alpha(@alternatebackground, 1);
+}
+
+.control-center-dnd {
+    margin-top: 0.25rem;
+    border-radius: 0rem;
+    border: 0.0625rem solid alpha(@alternatebackground, 1);
+    box-shadow: none;
+    padding: 0.25rem;
+}
+
+.control-center-dnd:checked {
+    background: transparent;
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+.control-center-dnd slider {
+    background: transparent;
+    border-radius: 0rem;
+}
+
+.widget-dnd {
+    margin: 0.25rem;
+    padding: 0.5rem;
+}
+
+.widget-dnd label {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+}
+
+.widget-dnd>switch {
+    font-size: 0.8rem;
+    border-radius: 0rem;
+    border: solid 0.0625rem alpha(@secondaryforeground, 0.2);
+    box-shadow: none;
+    background-color: @mainbackground;
+}
+
+.widget-dnd>switch:checked {
+    background: alpha(@alternatebackground, 1);
+}
+
+/* slider button */
+.widget-dnd>switch slider {
+    background: alpha(@alternatebackground, 1);
+    border-radius: 0rem;
+    border: 0.0625rem solid alpha(@secondaryforeground, 0.2);
+}
+
+.widget-mpris .widget-mpris-player {
+    background: alpha(@alternatebackground, 1);
+    border: 0.0625rem solid alpha(@secondaryforeground, 0.2);
+    padding: 0.5rem;
+    border-radius: 0rem;
+    margin: 0.5rem;
+}
+
+.widget-mpris .widget-mpris-title {
+    font-size: 1.1rem;
+}
+
+.widget-mpris .widget-mpris-subtitle {
+    font-size: 0.8rem;
+}
+
+.control-center .widget-label>label {
+    color: alpha(@secondaryforeground, 1);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.widget-dnd,
+.widget-title {
+    font-size: 1rem;
+    background-color: alpha(@alternatebackground, 0.45);
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0rem;
+}
+
+.control-center .widget-volume,
+.control-center .widget-backlight {
+    margin: 0.5rem;
+}
+
+.widget-volume,
+.widget-backlight {
+    background-color: @mainbackground;
+    padding: 0 0.1rem 0 0.1rem;
+    margin: 0 0.1rem 0 0.1rem;
+    border-radius: 0rem;
+}
+
+.widget-volume button,
+.widget-backlight button {
+    background-color: @mainbackground;
+    padding: 0 0.1rem 0 0.1rem;
+    margin: 0 0.1rem 0 0.1rem;
+}
+
+.widget-volume label,
+.widget-backlight label {
+    font-size: 1.5rem;
+    color: alpha(@secondaryforeground, 1);
+    padding: 0.1rem;
+    margin: 0.1rem;
+    border-radius: 0rem;
+}
+
+.widget-volume trough,
+.widget-backlight trough {
+    min-height: 0.9rem;
+    min-width: 15rem;
+    border-radius: 0rem;
+    background-color: alpha(@vividtext, 1);
+}
+
+.widget-volume highlight,
+.widget-backlight highlight {
+    font-size: 5rem;
+    background: alpha(@secondaryforeground, 1);
+    border-radius: 0rem;
+}
+
+.widget-backlight .KB {
+    padding-bottom: 1rem;
+}
+
+.image {
+    padding-right: 0.5rem;
+}
+
+tooltip {
+    background: alpha(@alternatebackground, 0.85);
+    border: 0.0625rem solid alpha(@mainforeground, 0.85);
+    border-radius: 0rem;
+}
+
+tooltip label {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+/* GRID */
+
+.control-center .widget-buttons-grid {
+    background-color: alpha(@brighttext, 0.1);
+    border-bottom: solid 0.0625rem alpha(@borderbright, 0.2);
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.widget-buttons-grid button {
+    background-color: transparent;
+    padding: 0 0.3rem 0 0.3rem;
+    margin: 0 0.0625rem 0 0.0625rem;
+    border-radius: 0rem;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+    font-size: 2.5rem;
+}
+
+.widget-buttons-grid {
+    border-radius: 0rem;
+    padding: 0.341rem;
+    background-color: @mainbackground;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.widget-buttons-grid>flowbox {
+    padding: 0;
+    border-radius: 0rem;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:first-child {
+    margin-left: unset;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    border-radius: 0rem;
+    min-width: 4rem;
+    padding: 0.125rem;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button label {
+    color: alpha(@mainforeground, 1)
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background-color: transparent;
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+    background-color: #ff9f34;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked label {
+    color: #14141B;
+}
+
+/* GRID End */
+
+/* menu bar  */
+.control-center .widget-menubar {
+    background-color: transparent;
+    border-radius: 0rem;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.widget-menubar>box>.menu-button-bar>button>label {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.widget-menubar>box>.menu-button-bar> :last-child {
+    color: alpha(@darkerred, 1);
+}
+
+.widget-buttons-grid,
+.widget-menubar {
+    border-radius: 0rem;
+    padding: 0.341rem;
+    background-color: @mainbackground;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.2) inset, inset 0 0 0 0.0625rem alpha(@secondaryforeground, 0.2);
+}
+
+.widget-buttons-grid>flowbox,
+.widget-menubar>flowbox {
+    padding: 0;
+    border-radius: 0rem;
+}
+
+/* menu bar end */
+
+.widget-menubar>button>label {
+    background-color: @mainbackground;
+    padding: 0.125rem;
+    margin: 0.125rem;
+    border-radius: 0rem;
+    box-shadow: 0 0 0.125rem 0 alpha(@mainforeground, 0.1) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.1) inset;
+}
+
+.powermode-buttons>button>label,
+.power-buttons>button>label {
+    font-size: 1.3rem;
+}
+
+.powermode-buttons button:nth-child(1) {
+    color: alpha(@limegreen, 0.5);
+}
+
+.powermode-buttons button:nth-child(2) {
+    color: alpha(@vividpurple, 1);
+}
+
+.powermode-buttons button:nth-child(3) {
+    color: alpha(@darkrose, 1);
+}
+
+.powermode-buttons button:nth-child(1):hover {
+    color: alpha(@limegreen, 1);
+}
+
+.powermode-buttons button:nth-child(2):hover {
+    color: alpha(@vividtext, 1);
+}
+
+.powermode-buttons button:nth-child(3):hover {
+    color: alpha(@maincritical, 1);
+}
+
+.powermode-buttons>button {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 0rem;
+    box-shadow: 0 0 0.25rem 0 alpha(@mainforeground, 0.1) inset, 0 0 0 0.125rem alpha(@secondaryforeground, 0.1) inset;
+}
+
+.powermode-buttons>button:hover {
+    color: alpha(@limegreen, 1);
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+    background-color: transparent;
+}
+
+.powermode-buttons,
+.power-buttons {
+    background-color: transparent;
+    padding: 0.25rem;
+    margin: 0.25rem;
+    border-radius: 0rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+}
+
+.power-buttons>button {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 0rem;
+    box-shadow: 0 0 0.25rem 0 alpha(@mainforeground, 0.1) inset, 0 0 0 0.125rem alpha(@secondaryforeground, 0.1) inset;
+}
+
+.power-buttons>button:hover {
+    box-shadow: 0 0 0.5rem 0 alpha(@mainforeground, 0.3) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.3) inset;
+    background-color: transparent;
+    color: @mainforeground;
+}
+
+.topbar-buttons {
+    border-radius: 0rem;
+}
+
+.topbar-buttons>button {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.topbar-buttons label {
+    font-size: 1.5rem;
+}

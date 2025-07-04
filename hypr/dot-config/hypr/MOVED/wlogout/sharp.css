@@ -1,0 +1,64 @@
+/* inspired by https://github.com/stefonarch/lxqt-wlogout/blob/master/style.css */
+@import "../waybar/reset.css";
+@import "../waybar/palette.css";
+@import "../waybar/animations.css";
+
+window {
+    background-color: alpha(@alternatebackground, 0.5);
+}
+
+button {
+    color: alpha(@vividtext, 0.5);
+    background: transparent;
+    background-color: alpha(@alternatebackground, 0.6);
+    box-shadow:
+        0 0 0.5rem 0 alpha(@lighttext, 0.4) inset,
+        0 0 0 0.125rem alpha(@vividtext, 0.4) inset;
+    background-blend-mode: overlay;
+    border: solid 0.0625rem alpha(@buttonhover, 1);
+    border-radius: 0.1rem;
+    margin: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: 30%;
+}
+
+button:hover {
+    color: alpha(@lighttext, 1);
+    background: transparent;
+    background-color: alpha(@mainforeground, 0.6);
+    box-shadow:
+        0 0 0.5rem 0 alpha(@lighttext, 0.4) inset,
+        0 0 0 0.125rem alpha(@vividtext, 0.4) inset;
+    background-blend-mode: normal;
+    border: solid 0.0625rem alpha(@lighttext, 0.75);
+    border-radius: 0.1rem;
+    margin: 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 30%;
+}
+
+#lock {
+    background-image: image(url("icons/lock-new.png"));
+}
+
+#logout {
+    background-image: image(url("icons/logout-new.png"));
+}
+
+#suspend {
+    background-image: image(url("icons/suspend-new.png"));
+}
+
+#hibernate {
+    background-image: image(url("icons/hibernate-new.png"));
+}
+
+#shutdown {
+    background-image: image(url("icons/shutdown-new.png"));
+}
+
+#reboot {
+    background-image: image(url("icons/reboot-new.png"));
+}

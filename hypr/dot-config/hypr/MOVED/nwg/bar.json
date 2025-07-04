@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Capture Screen",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh screen",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  },
+  {
+    "label": "Capture Screen",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh screen",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  },
+  {
+    "label": "Capture Window",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh window",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  },
+  {
+    "label": "Capture Region",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh region",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  },
+  {
+    "label": "Capture Quick",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh quick",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  },
+  {
+    "label": "Capture Output",
+    "exec": "uwsm app -- $HOME/scripts/screen_capture.sh",
+    "icon": "/usr/share/icons/hicolor/64x64/apps/com.system76.CosmicScreenshot.svg"
+  }
+]

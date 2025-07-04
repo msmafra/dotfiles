@@ -1,0 +1,19 @@
+[Unit]
+Description=Modern wallpaper daemon for Wayland
+Documentation=man:wpaperd(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+# ConditionEnvironment requires systemd v247 to work correctly
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/wpaperd
+ExecStop=killall -SIGUSR1 $MAINPID
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+#[Install]
+#WantedBy=graphical-session.target
+
+

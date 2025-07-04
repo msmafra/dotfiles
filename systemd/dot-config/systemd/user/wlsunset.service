@@ -1,0 +1,17 @@
+[Unit]
+Description=An application to enable a blue-light filter on Hyprland.
+Documentation=https://wiki.hyprland.org/Hypr-Ecosystem/hyprsunset/
+PartOf=graphical-session.target
+Requires=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wlsunset -t 5000 -S 5:05 -s 18:30
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:niri" ""
+Slice=session.slice
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

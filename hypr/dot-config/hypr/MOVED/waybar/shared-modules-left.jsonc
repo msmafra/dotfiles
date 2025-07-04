@@ -1,0 +1,18 @@
+{
+  "modules-left": [
+    "custom/appmenu",
+    // "custom/quicklaunch",
+    "custom/search",
+    // "custom/fsearch",
+    "hyprland/workspaces",
+    "niri/workspaces",
+    // "niri/window",
+    "wlr/taskbar",
+    "custom/pulseicon",
+    "pulseaudio"
+    // "group/group-workspaces-tray",
+    // "hyprland/window"
+    // "group/group-appicons"
+    // "wlr/tray"
+  ]
+}

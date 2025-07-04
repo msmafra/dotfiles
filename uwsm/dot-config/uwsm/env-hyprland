@@ -1,7 +1,8 @@
 # For UWSM ~/.config/uwsm/env-hyprland
+export FILEMANAGER="nautilus"
 # Cursor
 export HYPRCURSOR_THEME=Bibata-Modern-Classic
 export HYPRCURSOR_SIZE=48
 # Aquamarine
-#export AQ_DRM_DEVICES=$conf_dir/igpu:$conf_dir/dgpu
-export FILEMANAGER="nautilus"
+export AQ_DRM_DEVICES="/dev/dri/card1:/dev/dri/card0"
+

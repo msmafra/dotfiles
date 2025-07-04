@@ -1,0 +1,124 @@
+@import "../waybar/palette.css";
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s ease;
+    border-radius: 0.25rem;
+}
+
+
+/* Recommended if panel "height" unset or smaller then your theme default button height */
+button {
+    margin: 0.125rem;
+}
+
+/* SwayTaskBar and SwayWorkspaces use custom widgets, that need this and the next name
+   to highlight currently focused task / workspace. */
+#task-box {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+#task-box-focused {
+    background-color: rgba (255, 255, 255, 0.12);
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+
+/***** MODIFY TO YOUR TASTE *****/
+
+/* Sample button in sample config w/ no background nor border */
+#button-custom {
+    background: rgba (110, 110, 110, 1.0);
+}
+
+/* Top panel in sample config uses this name */
+#panel-top {
+    background-color: @tertiarybackground;
+    color: @primarytext;
+}
+
+/* Bottom panel in sample config uses this name */
+#panel-bottom {
+    background: #101010;
+    color: rgba(160, 186, 241, 1);
+}
+
+/* Controls window in sample config uses this name */
+#controls-window {
+    border-radius: 0.5rem;
+    background: @tertiarybackground;
+    color: rgba(160, 186, 241, 1);
+    border: solid 0.125rem rgba(160, 186, 241, 1);
+}
+
+#controls-window scale value {
+    color: rgba(160, 186, 241, 1);
+}
+
+/* Brightness slider popup window in sample config uses this name */
+#brightness-popup {
+    border-radius: 0.5rem;
+    background: rgba(6, 8, 21, 1);
+    color: rgba(160, 186, 241, 1);
+}
+
+#brightness-popup box {
+    padding: 1rem;
+}
+
+/* Executors usually behave better in monospace fonts */
+/* #executor-label {
+    font-family: 'Inter Variable';
+} */
+
+/* and so does the Clock */
+/* #clock {
+    font-family: 'Inter Variable';
+    font-size: 1rem;
+} */
+
+/* Sample executor-weather uses "css-name": "weather" */
+#weather {
+    font-size: 1rem;
+}
+
+/* dwl-tags module */
+#dwl-tag-box {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem
+}
+
+#dwl-tag-occupied {
+    font-family: 'Inter Variable';
+    color: rgba(160, 186, 241, 1);
+    background-color: #006699;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+#dwl-tag-free {
+    font-family: 'Inter Variable';
+    color: rgba(160, 186, 241, 1);
+    background-color: rgba (32, 50, 90, 1.0);
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+#dwl-tag-urgent {
+    font-family: 'Inter Variable';
+    color: rgba(160, 186, 241, 1);
+    background-color: #ee6600;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+
+#dwl-tag-selected {
+    border: solid 0.125rem;
+    border-color: #81a1c1
+}

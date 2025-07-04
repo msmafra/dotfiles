@@ -1,0 +1,15 @@
+[Unit]
+Description=Hyprland's idle daemon
+Documentation=https://wiki.hyprland.org/Hypr-Ecosystem/hyprdim
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/hyprdim --strength 0.5 --duration 100 --fade 150 --bezier "cubic-bezier(0.83, 0, 0.17, 1)"
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

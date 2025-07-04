@@ -1,0 +1,133 @@
+@import "../waybar/reset.css";
+@import "../waybar/palette.css";
+@import "../waybar/animations.css";
+
+window {
+    color: alpha(@mainforeground, 1);
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0rem;
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 0.3) 10%,
+            alpha(@secondarybackground, 0.3) 100%);
+    background-blend-mode: overlay;
+}
+
+/* *:disabled {
+    background-color: #320aFF;
+} */
+
+.blank-window {
+    border-color: red;
+    background-color: #20395a;
+}
+
+/* search entry */
+#main-entry,
+entry {
+    font-size: 1.5rem;
+    color: alpha(@borderlight, 0.8);
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
+    background-color: alpha(@mainforeground, 0.1);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+image {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+button {
+    color: alpha(@borderlight, 1);
+    box-shadow: 0 -0.0625rem alpha(@borderlight, 0.2) inset;
+    background-color: alpha(@mainbackground, 0.4);
+    background-blend-mode: color-burn;
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
+}
+
+button:hover {
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 0.7);
+    background-image: linear-gradient(to top,
+            alpha(@borderlight, 0.15) 10%,
+            alpha(@borderlight, 0.15) 100%);
+    background-blend-mode: overlay;
+}
+
+button:focus {
+    color: alpha(@buttonhover, 1);
+    background-color: transparent;
+    background-image: linear-gradient(to top,
+            alpha(@mainbackground, 0.4) 10%,
+            alpha(@borderlight, 0.3) 100%);
+    background-blend-mode: color-burn;
+}
+
+button:active {
+    color: alpha(@mainbackground, 1);
+    background-color: alpha(@mainforeground, 0.7);
+    background-image: linear-gradient(to top,
+            alpha(@borderlight, 0.15) 10%,
+            alpha(@borderlight, 0.15) 100%);
+    background-blend-mode: overlay;
+    outline: 0.0625rem dotted alpha(@borderbright, 0.4);
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 0.25rem 0 0.25rem;
+    padding: 0.5rem;
+    background-color: red;
+}
+
+#pinned-box {
+    padding-bottom: 0.3125rem;
+    background-color: alpha(@alternatebackground, 0.3);
+}
+
+#files-box {
+    /* padding: 0.3125rem; */
+    border: solid 0.125rem alpha(@mainforeground, 1.0);
+    margin: 0 0 2rem 0;
+    padding: 0 0 2rem 0;
+}
+
+#files-box button {
+    color: alpha(@borderlight, 0.51);
+    background-color: alpha(@mainbackground, 0.4);
+    /* background-image: linear-gradient(to top,
+            alpha(@mainbackground, 0.3) 10%,
+            alpha(@borderlight, 0.3) 100%); */
+    background-blend-mode: color-burn;
+    /* border-radius: 0.2rem 0.35rem 0.2rem 0.35rem; */
+    border-radius: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    box-shadow: 0 0 0.0625rem 0 alpha(@mainforeground, 0.1) inset, 0 0 0 0.0625rem alpha(@secondaryforeground, 0.1) inset;
+}
+
+#math-label {
+    background-color: alpha(@mainforeground, 1);
+    color: alpha(@defaultbackground, 1);
+    font-size: 4rem;
+}
+
+tooltip {
+    background-color: alpha(@mainbackground, 0.9);
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border: 0.0625rem solid alpha(@borderlight, 0.6);
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
+}
+
+tooltip label {
+    font-size: 1rem;
+    color: alpha(@borderlight, 1);
+    padding: 0 1rem 0 1rem;
+}

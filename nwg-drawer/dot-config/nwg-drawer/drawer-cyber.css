@@ -1,0 +1,121 @@
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: "Iosevka", "Symbols Nerd Font";
+    font-feature-settings: '"tnum", "ss01", "ss02", "ss07", "ss08", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
+    font-weight: 900;
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    caret-color: @abobora;
+}
+
+@import url("../waybar/palette.css");
+@import url("../waybar/animations.css");
+
+/* * {
+    all: unset;
+    font-size: 16px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    caret-color: @abobora;
+} */
+
+window {
+    color: alpha(@laranja, 0.6);
+    background-color: alpha(@deep-blue, 0.8);
+    border-radius: 0.2rem;
+    box-shadow:
+        0 0 0.5rem 0 alpha(@laranja, 0.5) inset,
+        0 0 0 0.0625rem alpha(@laranja, 0.5) inset;
+    text-shadow: -1px -1px 1px alpha(@abobora, 0.1);
+}
+
+/* search entry */
+entry {
+    font-size: 1.5rem;
+    background-color: alpha(@space-blue, 0.6);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.0625rem 0 @laranja inset, 0 0 0 0.0625rem alpha(@abobora, 1) inset;
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+image {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+button {
+    font-size: 1.5rem;
+    color: @laranja;
+    border-radius: 0.2rem;
+    padding: 0 0.8rem 0 0.8rem;
+    margin: 0.5rem;
+    box-shadow:
+        0 0 0.5rem 0 alpha(@laranja, 0.1) inset,
+        0 0 0 0.0625rem alpha(@laranja, 0.1) inset;
+}
+
+button:hover {
+    font-size: 1.5rem;
+    color: darker(@laranja);
+    box-shadow:
+        0 0 0.5rem 0 alpha(@laranja, 0.5) inset,
+        0 0 0 0.0625rem alpha(@laranja, 0.5) inset;
+    text-shadow: -1px -1px 1px alpha(@abobora, 0.1);
+    background-blend-mode: multiply;
+    background-image: linear-gradient(to top,
+            alpha(@abobora, 0.2) 10%,
+            alpha(@pessego, 0.1) 100%);
+}
+
+button:focus {
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.0625rem 0 @laranja inset, 0 0 0 0.0625rem alpha(@abobora, 1) inset;
+    outline: 0.25rem dotted @laranja;
+    background-image: linear-gradient(to bottom right, alpha(@space-blue, 0.1) 0%, darker(@laranja) 100%);
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 0.25rem 0 0.25rem;
+    padding: 0.125rem;
+    box-shadow:
+        0 0 0.5rem 0 alpha(@laranja, 0.1) inset,
+        0 0 0 0.0625rem alpha(@laranja, 0.1) inset;
+}
+
+#pinned-box {
+    padding-bottom: 0.3125rem;
+    background-color: alpha(@space-blue, 0.3);
+    border-radius: 0.2rem;
+    box-shadow: 0 0 0.5rem 0 alpha(@laranja, 0.2) inset, 0 0 0 0.125rem alpha(@abobora, 0.5) inset;
+}
+
+#files-box {
+    padding: 0.3125rem;
+    border: solid 0.125rem alpha(@laranja, 1);
+    border-radius: 0.2rem;
+}
+
+#math-label {
+    font-size: 4rem;
+    color: @space-blue;
+    background-color: @laranja;
+    border-radius: 0.2rem;
+}
+
+button:active {
+    border-radius: 0.2rem;
+    outline: 0.0625rem dotted @pessego;
+    background-color: @pessego;
+}

@@ -1,0 +1,17 @@
+[Unit]
+Description=A status icon application for blueman
+Documentation=https://github.com/blueman-project/blueman
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/blueman-tray
+ExecStop=killall -SIGUSR1 $MAINPID
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+#[Install]
+#WantedBy=graphical-session.target
+
+

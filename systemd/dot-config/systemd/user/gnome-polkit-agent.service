@@ -1,0 +1,13 @@
+[Unit]
+Description=PolicyKit agent for LXQt desktop suite
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/bash -c "~/scripts/polkit-gnome-authentication-agent-1"
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

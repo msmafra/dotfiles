@@ -1,0 +1,13 @@
+[Unit]
+Description=Efficient animated wallpaper daemon for wayland, controlled at runtime
+Documentation=man:swww-daemon(1)
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/swww-daemon
+ExecStop=killall -SIGUSR1 $MAINPID
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+Restart=on-failure
+
+#[Install]
+#WantedBy=graphical-session.target

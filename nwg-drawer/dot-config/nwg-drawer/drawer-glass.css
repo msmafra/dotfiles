@@ -1,0 +1,155 @@
+@import "../waybar/palette.css";
+
+* {
+    all: unset;
+    font-size: 16px;
+    font-family: 'Inter Variable', 'Symbols Nerd Font';
+    font-feature-settings: '"zero", "tnum", "ss01", "ss02", "ss03", "cv01"';
+    animation-timing-function: steps(12);
+    animation-duration: 0.3s;
+    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    caret-color: @newtext;
+}
+
+window {
+    color: rgba(160, 186, 241, 0.6);
+    background-color: rgba(6, 8, 21, 0.8);
+    border-radius: 0.5rem;
+    /* box-shadow: 0 0 0.25rem 0 rgba(160, 186, 241, 0.2) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.2) inset; */
+
+    box-shadow: 0 0 0.0625rem 0 @tertiarytext inset, 0 0 0 0.0625rem rgba(141, 168, 231, 1) inset;
+    background-image: linear-gradient(to top left, rgba(6, 8, 21, 0.2) 0%, rgba(12, 12, 42, 0.2) 100%);
+}
+
+/* search entry */
+entry {
+    font-size: 1.5rem;
+    background-color: rgba(6, 8, 21, 0.6);
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.25rem 0 rgba(160, 186, 241, 0.2) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.2) inset;
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+image {
+    background: transparent;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+button {
+    font-size: 1.5rem;
+    color: rgb(157, 198, 234);
+    border-radius: 0.5rem;
+    padding: 0 0.8rem 0 0.8rem;
+    margin: 0.5rem;
+    box-shadow: 0 0 0.5rem 0 rgba(22, 22, 80, 0.1) inset, 0 0 0 0.0625rem rgba(72, 125, 192, 0.1) inset;
+}
+
+button:hover {
+    font-size: 1.5rem;
+    /* color: @buttonhover; */
+    color: darker(rgb(157, 198, 234));
+    text-shadow: none;
+    box-shadow: 0 0 0.5rem 0 @tertiarytext inset, 0 0 0 0.125rem rgba(141, 168, 231, 1) inset;
+
+    background-blend-mode: multiply;
+    background-image: linear-gradient(to bottom right, rgba(6, 8, 21, 0.2) 0%, rgba(160, 186, 241, 0.2) 10%);
+}
+
+button:focus {
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.0625rem 0 @tertiarytext inset, 0 0 0 0.0625rem rgba(141, 168, 231, 1) inset;
+    outline: 0.25rem dotted @newtext;
+    background-image: linear-gradient(to bottom right, rgba(6, 8, 21, 0.1) 0%, darker(@tertiarytext) 100%);
+}
+
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 0.25rem 0 0.25rem;
+    padding: 0.125rem;
+    box-shadow: 0 0 0.5rem 0 rgba(22, 22, 80, 0.1) inset, 0 0 0 0.0625rem rgba(72, 125, 192, 0.1) inset;
+}
+
+#pinned-box {
+    padding-bottom: 0.3125rem;
+    background-color: rgba(6, 8, 21, 0.3);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0 rgba(160, 186, 241, 0.2) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.5) inset;
+}
+
+#files-box {
+    padding: 0.3125rem;
+    border: solid 0.125rem rgba(160, 186, 241, 1.0);
+    border-radius: 0.5rem;
+}
+
+#math-label {
+    border-radius: 0.5rem;
+    background-color: @tertiarytext;
+    color: @defaultbackground;
+    font-size: 4rem;
+}
+
+/*
+## TESTS ##
+https: //gnome.pages.gitlab.gnome.org/gtk/gtk4/css-properties.html
+*/
+
+/* :focus {
+    border-radius: 0.5rem;
+    outline: 0.0625rem dotted greenyellow;
+}
+
+:active {
+    border-radius: 0.5rem;
+    outline: 0.0625rem dotted red;
+} */
+
+/* button { */
+/* border-radius: 0.5rem; */
+/* outline: dotted 0.0625rem @quarternarytext; */
+/* background-blend-mode: difference, normal; */
+/* }  */
+/* button:hover {
+    background-image: linear-gradient(to right, rgba(6, 8, 21, 0.3) 0%, rgba(160, 186, 241, 0.3) 100%);
+} */
+
+button:active {
+    border-radius: 0.5rem;
+    outline: 0.0625rem dotted red;
+    background-color: red;
+}
+
+.frame {
+    background-image: linear-gradient(to bottom, rgba(6, 8, 21, 0.15) 0%, rgba(160, 186, 241, 0.15) 100%);
+    box-shadow: 0 0 0.5rem 0 rgba(160, 186, 241, 0.25) inset, 0 0 0 0.125rem rgba(141, 168, 231, 0.35) inset;
+}
+
+.frame .left {
+    background-color: white;
+    min-width: 2rem;
+}
+
+.top {
+    background-image: linear-gradient(to top, rgba(6, 8, 21, 0.1) 0%, rgba(160, 186, 241, 0.1) 100%);
+}
+
+.right,
+.left {
+    background-color: bisque;
+    border-top: red 4px solid;
+    border-right: green 4px solid;
+    border-bottom: white 4px solid;
+    border-left: blue 4px solid;
+    min-width: 2rem;
+}
+
+.bottom {
+    background-image: linear-gradient(to bottom, rgba(6, 8, 21, 0.1) 0%, rgba(160, 186, 241, 0.1) 100%);
+}

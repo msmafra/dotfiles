@@ -24,7 +24,7 @@ vbox,
 hbox {
     border-color: red;
     background-color: #20395a;
-    border-radius: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
 
 window {

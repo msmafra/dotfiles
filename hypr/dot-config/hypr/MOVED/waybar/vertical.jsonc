@@ -1,0 +1,47 @@
+{
+  "id": "sidestatusbar",
+  "position": "left",
+  "layer": "top",
+  // "output": "eDP-1",
+  // "output": "HDMI-A-1",
+  // "height": 12,
+  // "margin": 5, // will look like kde floating panel
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "include": ["$HOME/.config/hypr/waybar/output.jsonc"],
+  "modules-left": ["clock"],
+  "modules-right": [
+    "backlight",
+    "pulseaudio/slider",
+    "wireplumber",
+    "backlight/slider",
+  ],
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["󰹐", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+    "scroll-step": 1,
+    "tooltip": true,
+    "tooltip-format": "Click to control the brightness",
+  },
+  "backlight/slider": {
+    "device": "nvidia_0",
+    "min": 5,
+    "max": 100,
+    "orientation": "vertical",
+  },
+  "pulseaudio/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation": "inherit",
+  },
+  "group/group-backlight": {
+    "orientation": "inherit",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 800,
+      "children-class": "drawer-child",
+      "transition-left-to-right": false,
+    },
+    "modules": ["backlight", "backlight/slider", "volume/slider"],
+  },
+}

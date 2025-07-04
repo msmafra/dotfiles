@@ -1,0 +1,36 @@
+@define-color vintage-red rgb(201, 104, 104);
+@define-color vintage-yellow rgb(250, 223, 161);
+@define-color vintage-beige rgb(216, 210, 194);
+
+@define-color cream rgb(255, 244, 234);
+@define-color creamtwo rgb(250, 247, 240);
+
+@define-color warm-dirt rgb(177, 116, 87);
+@define-color warm-cream rgb(242, 229, 191);
+
+@define-color light-soil rgb(154, 126, 111);
+@define-color soil rgb(84, 71, 63);
+@define-color dark-soil rgb(74, 73, 71);
+
+@define-color vintage-teal rgb(126, 172, 181);
+@define-color dark-vintage-teal rgb(37, 113, 128);
+@define-color vintage-blue rgb(71, 147, 175);
+
+@define-color orange rgb(253, 139, 81);
+@define-color pumpkin rgb(203, 96, 64);
+@define-color warm-yellow rgb(255, 196, 112);
+@define-color warm-peach rgb(221, 87, 70);
+@define-color maroon rgb(139, 50, 44);
+
+@define-color dark-maroon rgb(61, 3, 1);
+@define-color darker-maroon rgb(151, 49, 49);
+@define-color darkest-maroon rgb(128, 61, 59);
+@define-color marron rgb(72, 30, 20);
+@define-color almost-black rgb(50, 44, 43);
+@define-color peachy rgb(242, 97, 63);
+@define-color red-marron rgb(155, 57, 34);
+
+@define-color bright-blue rgb(1, 204, 255);
+@define-color brighter-blue rgb(117, 209, 255);
+@define-color light-blue rgb(174, 203, 250);
+@define-color bblue rgb(53, 132, 228);

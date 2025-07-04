@@ -1,0 +1,9 @@
+[Unit]
+Description=Set a random wallpaper with waypaper
+
+[Service]
+Type=oneshot
+ExecStart=waypaper --backend swww
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "wlroots:sway:Wayfire:labwc:Hyprland:niri" ""
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,125 @@
+{
+    "id": "bottomstatusbar",
+    "position": "bottom",
+    "layer": "bottom",
+    "height": 12,
+    // "margin": 5, // will look like kde floating panel
+    "exclusive": true,
+    "reload_style_on_change": true,
+    "include": [
+        "$HOME/.config/hypr/waybar/output.jsonc"
+    ],
+    "modules-center": [
+        "group/group-appicons"
+        // "wlr/taskbar"
+        // "clock",
+        // "idle_inhibitor",
+        // "group/group-privacy",
+        // "privacy",
+        // "gamemode"
+        // "hyprland/submap"
+    ],
+    "modules-right": [
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "active-only": true, // setting this to true will not show named workspaces
+        "all-outputs": false,
+        "show-special": true,
+        "special-visible-only": true,
+        "sort-by": "default",
+        "on-click": "activate",
+        "include": [
+            "$HOME/.config/hypr/waybar/workspaces.jsonc"
+        ],
+        "format": "{icon}",
+        // "format": "{name}: {icon}",
+        // "format": "{name} {windows}",
+        "format-window-separator": " | ",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": "",
+            "urgent": "",
+            "active": "󰁆",
+            "default": ""
+        },
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "",
+            "title<.*twitch.*>": "󰕃",
+            "class<org.mozilla.Firefox>": "󰈹",
+            "class<Chromium>": "",
+            "class<Vivaldi-stable>": "󰖟",
+            "class<kitty>": "",
+            "class<discord>": "",
+            "class<Alacritty>": "",
+            "class<code|codium|code-oss>": "󰨞"
+        }
+    },
+    "hyprland/window": {
+        "separate-outputs": true,
+        "format": "{}",
+        "icon": true,
+        "icon-size": 12
+    },
+    "group/group-appicons": {
+        "orientation": "horizontal",
+        "drawer": {
+            "click-to-reveal": false,
+            "transition-duration": 500,
+            "children-class": "drawer-child",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "wlr/taskbar",
+            "tray"
+        ]
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "all-outputs": "false",
+        "icon-size": 16,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "minimize"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5,
+        "show-passive-items": true,
+        "smooth-scrolling-threshold": 1,
+        "reverse-direction": true
+    },
+    "clock": {
+        "timezone": "America/Sao_Paulo",
+        "format": "{:L%a %d %R}",
+        // "format": "{:L%a %d\n%R}",
+        "today-format": "<b>{}</b>",
+        "on-click": "gnome-calendar",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 6,
+            "weeks-pos": "left",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "{}",
+                "days": "{}",
+                "weeks": "{}",
+                "weekdays": "{}",
+                "today": "{}"
+            }
+        }
+    }
+}

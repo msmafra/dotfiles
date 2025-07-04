@@ -1,0 +1,23 @@
+@import "../hypr/waybar/reset.css";
+@import "../hypr/waybar/palette.css";
+@import "../hypr/waybar/animation.css";
+
+window {
+    font-size: 1rem;
+    color: alpha(@mainforeground, 1);
+    background-color: alpha(@mainbackground, 0.9);
+    border-radius: 0rem;
+    box-shadow:
+        0 0 0.5rem 0 alpha(@mainforeground, 0.2) inset,
+        0 0 0 0.0625rem alpha(@mainforeground, 0.2) inset;
+    background-image: linear-gradient(to bottom left,
+            alpha(@secondarybackground, 1) 10%,
+            alpha(@secondarybackground, 1) 100%);
+    background-blend-mode: darken;
+}
+
+label {
+    color: alpha(@mainforeground, 1);
+    font-size: 2rem;
+    font-weight: bold;
+}

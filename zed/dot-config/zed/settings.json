@@ -28,7 +28,7 @@
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
-  "buffer_font_family": "Zed Plex Mono",
+  "buffer_font_family": "Zed Mono NF",
   // "buffer_font_family": "Geist Mono",
   // "buffer_font_family": "0xProto",
   // "buffer_font_family": "SpaceMono Nerd Font Mono",
@@ -44,17 +44,19 @@
     "cv01": false
   },
   "buffer_font_fallbacks": [
+  //   "Geist Mono",
+  //   "0xProto",
     "Symbols Nerd Font",
-    "SpaceMono Nerd Font Mono",
-    "JetBrainsMonoNL Nerd Font",
-    "Liberation Mono",
-    "Adwaita Mono",
-    "JetBrainsMono Nerd Font",
+  //   "SpaceMono Nerd Font Mono",
+  //   "JetBrainsMonoNL Nerd Font",
+  //   "Liberation Mono",
+  //   "Adwaita Mono",
+  //   "JetBrainsMono Nerd Font",
   ],
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Tokyo Night Storm"
+    "dark": "One Dark"
   },
   "always_treat_brackets_as_autoclosed": false,
   "prettier": {

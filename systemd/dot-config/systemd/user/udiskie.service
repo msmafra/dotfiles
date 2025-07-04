@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/udiskie --menu-update-workaround --menu-checkbox-workaround --automount --notify --smart-tray --file-manager xdg-open
+Restart=on-failure

@@ -1,0 +1,13 @@
+{
+  "modules-center": [
+    // "custom/hyprbars",
+    // "hyprland/workspaces",
+    // "group/group-dockish",
+    "clock",
+    // "custom/swaync"
+    "idle_inhibitor"
+    // "group/group-privacy",
+    // "gamemode",
+    // "hyprland/submap"
+  ]
+}

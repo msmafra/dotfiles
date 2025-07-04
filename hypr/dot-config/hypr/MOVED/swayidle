@@ -1,0 +1,7 @@
+timeout 7200 "~/scripts/ambience.sh"
+timeout 150 "brightnessctl --save set 10" resume "brightnessctl --restore"
+timeout 150 "brightnessctl --save --device=rgb:kbd_backlight set 0" resume "brightnessctl --save --device=rgb:kbd_backlight set 0"
+timeout 300 "loginctl lock-session"
+timeout 600 "~/scripts/monitorctl.sh"
+timeout 1800 "systemctl suspend" resume "loginctl lock-session"
+before-sleep "swaylock --ignore-empty-password -f -c 000000 -i ~/.cache/wm_share_dir/lock-screen-image"

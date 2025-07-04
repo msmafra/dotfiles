@@ -1,0 +1,94 @@
+@import url("reset.css");
+@import url("palette.css");
+@import url("animations.css");
+
+window#waybar {
+    font-size: 1rem;
+    background-color: alpha(@almost-black, 0.92);
+    color: @warm-peach;
+    min-height: 0.0625rem;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    /* min-width: calc(1920px / 5); */
+    background: transparent;
+    border-radius: 0rem;
+    min-height: 0.0625rem;
+}
+
+.modules-left widget,
+.modules-center widget,
+.modules-right widget {
+    color: @bluetext;
+    border-radius: 0rem;
+    background-color: alpha(blue, 0.85);
+}
+
+.modules-left label,
+.modules-center label,
+.modules-right label {
+    min-width: calc((1920px / 5) - 1rem);
+    padding: 0 0.005rem 0 0.005rem;
+}
+
+#workspaces {
+    background-color: transparent;
+    border-radius: 0rem;
+    padding: 0rem;
+}
+
+#workspaces button {
+    min-width: calc(1920px / 5);
+}
+
+#workspaces label {
+    font-size: 0.125rem;
+    font-weight: bold;
+}
+
+#workspaces button:hover label {
+    font-size: 5rem;
+}
+#workspaces button:hover {
+    background-color: alpha(@vintage-blue, 0.82);
+    min-height: 3rem;
+}
+
+#workspaces button {
+    min-width: 3rem;
+    min-height: 0.0625rem;
+    color: @warm-cream;
+    border-radius: 0rem;
+    padding: 0 0.0625rem 0 0.0625rem;
+    /* margin: 0.0025rem; */
+    background-color: alpha(@almost-black, 0.73);
+}
+
+#workspaces button.persistent {
+    color: alpha(@persistent, 0.25);
+}
+
+#workspaces button.urgent {
+    background-color: @vintage-red;
+}
+
+#workspaces button.empty {
+    color: @nothing;
+}
+
+#workspaces button.visible {
+    color: @bblue;
+    background-color: alpha(@vintage-teal, 1);
+}
+
+#workspaces button.active {
+    color: @bblue;
+    background-color: alpha(@vintage-blue, 1);
+}
+
+#workspaces button.special {
+    color: @vintage-blue;
+    background-color: @dark-soil;
+}

@@ -1,0 +1,21 @@
+{
+  "modules-right": [
+    // "group/group-workspaces-tray",
+    "group/group-tray",
+    "hyprland/submap",
+    "group/group-privacy",
+    "gamemode",
+    "idle_inhibitor",
+    "custom/hyprbars",
+    "custom/borderplusplus",
+    "group/group-tools",
+    "power-profiles-daemon",
+    "bluetooth",
+    "network",
+    // "wireplumber",
+    "group/group-audio",
+    "custom/swaync",
+    "group/group-battery",
+    "custom/power"
+  ]
+}
