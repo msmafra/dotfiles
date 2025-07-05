@@ -1,19 +1,20 @@
 * {
     all: unset;
     font-size: 16px;
-    font-family: "Iosevka", "Symbols Nerd Font";
+    font-family: "0xProto", "Symbols Nerd Font";
     font-feature-settings: '"tnum", "ss01", "ss02", "ss07", "ss08", "cv01", "cv05", "cv08", "cv10", "cv11", "cpsp", "case"';
-    font-weight: 900;
+    /* font-weight: 700; */
     animation-timing-function: steps(12);
-    animation-duration: 0.3s;
-    transition: all 0.3s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    animation-duration: 1s;
+    transition: all 1s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    text-shadow: -1px -1px 4px alpha(red, 1);
 }
 
 @import url("palette.css");
 @import url("animations.css");
 
 window#waybar {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     color: alpha(@laranja, 1);
     background-color: alpha(@space-blue, 0.9);
     box-shadow:
@@ -114,7 +115,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #window label {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
     font-weight: 600;
     color: alpha(@laranja, 0.7);
 }
@@ -163,14 +164,14 @@ window#waybar.swallowing .workspaces {
     padding: 0.125rem;
 }
 
-#workspaces label {
-    font-size: 1rem;
-    font-weight: 900;
-}
-
-#workspaces button {
+/* #workspaces label {
     font-size: 2rem;
     font-weight: 900;
+} */
+
+#workspaces button {
+    /* font-size: 2rem; */
+    /* font-weight: 900; */
     color: alpha(@laranja, 0.82);
     border-radius: 0.2rem;
     padding: 0.25rem;
@@ -252,7 +253,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #taskbar label {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     padding: 0 0.05rem 0 0.05rem;
     margin: 0rem;
 }
@@ -349,7 +350,7 @@ window#waybar.swallowing .workspaces {
 }
 
 #clock {
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 800;
     border-radius: 0.2rem;
 }
@@ -367,9 +368,9 @@ window#waybar.swallowing .workspaces {
 #custom-tools-button {
     color: alpha(@laranja, 1);
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 700;
     background: transparent;
-    padding: 0 0.5rem 0 0.5rem;
+    padding: 0 0.25rem 0 0.25rem;
 }
 
 #backlight label,
@@ -380,7 +381,7 @@ window#waybar.swallowing .workspaces {
 #gamemode label,
 #network label,
 #keyboard-state label {
-    font-size: 3rem;
+    font-size: 1rem;
 }
 
 #backlight:hover,
@@ -397,8 +398,8 @@ window#waybar.swallowing .workspaces {
     font-weight: 900;
     background-color: transparent;
     border-radius: 0.5rem;
-    padding: 0 0.25rem 0 0.25rem;
-    margin: 0.25rem;
+    padding: 0 0.25rem;
+    margin: 0 0.25rem;
 }
 
 #idle_inhibitor:hover {
@@ -454,11 +455,11 @@ window#waybar.swallowing .workspaces {
     color: alpha(@pessego, 1);
 }
 
-#power-profiles-daemon,
+/* #power-profiles-daemon,
 #power-profiles-daemon.power-saver,
 #power-profiles-daemon.performance {
-    font-size: 1.2rem;
-}
+    font-size: 1rem;
+} */
 
 #power-profiles-daemon:hover,
 #power-profiles-daemon.performance:hover,
@@ -467,9 +468,9 @@ window#waybar.swallowing .workspaces {
     color: @defaultcritical;
 }
 
-#power-profiles-daemon.balanced {
+/* #power-profiles-daemon.balanced {
     font-size: 1.2rem;
-}
+} */
 
 #custom-kill {
     color: @secondarycritical;
@@ -482,17 +483,17 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-appmenu {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: alpha(@laranja, 0.5);
-    margin: 0 0.5rem 0 0;
-    padding: 0 1.1rem 0 1rem;
+    margin: 0 0.25rem 0 0;
+    padding: 0 1rem;
     border-radius: 0.2rem;
 }
 
 #custom-power {
-    font-size: 1.5rem;
-    font-weight: 900;
+    font-size: 2rem;
+    /* font-weight: 900; */
     color: alpha(@laranja, 1);
     padding: 0 0 0 0.5rem;
     margin: 0 0.0625rem 0 0.0625rem;
@@ -503,15 +504,15 @@ window#waybar.swallowing .workspaces {
 }
 
 #custom-appmenu:hover {
-    color: @greenish;
+    /* color: @greenish; */
     background-color: transparent;
-    box-shadow:
+    /* box-shadow:
         0 0 0.0625rem 0 alpha(@pessego, 0.5) inset,
-        0 0 0 0.0625rem alpha(@abobora, 0.5) inset;
-    background-blend-mode: screen, multiply;
-    background-image: linear-gradient(to top left,
+        0 0 0 0.0625rem alpha(@abobora, 0.5) inset; */
+    /* background-blend-mode: screen, multiply; */
+    /* background-image: linear-gradient(to top left,
             alpha(@abobora, 0.2) 0%,
-            alpha(@laranja, 0.4) 100%);
+            alpha(@laranja, 0.4) 100%); */
     border-radius: 0.2rem;
 }
 
@@ -528,7 +529,6 @@ window#waybar.swallowing .workspaces {
 #custom-clipboard_list,
 #custom-backup,
 #custom-myxer {
-    font-size: 1rem;
     background-color: transparent;
     border-radius: 0.2rem;
 }
@@ -547,8 +547,8 @@ window#waybar.swallowing .workspaces {
 #group-backlight label,
 #group-tools label,
 #group-audio label,
-#power-profile-daemon {
-    font-size: 1.1rem;
+#power-profile-daemon label {
+    font-size: 1.2rem;
 }
 
 .drawer-child {
@@ -744,6 +744,25 @@ tooltip label {
     box-shadow:
         0 0 0.5rem 0 alpha(@pessego, 0.2) inset,
         0 0 0 0.0625rem alpha(@abobora, 0.2) inset;
+}
+
+#custom-quicklaunch {
+    font-size: 2rem;
+    padding: 0 0.5rem;
+    margin: 0;
+}
+
+#custom-niri-overview {
+    font-size: 2.3rem;
+    padding: 0 0.5rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+#custom-appmenu:hover,
+#custom-quicklaunch:hover,
+#custom-niri-overview:hover {
+    color: alpha(rgb(44, 144, 200), 1);
+    text-shadow: -1px -1px 5px alpha(rgb(44, 144, 200), 1);
 }
 
 test {

@@ -25,21 +25,20 @@
       "$HOME/.config/compositors-shared/waybar/shared-workspaces.jsonc"
     ],
     "format": "{name}",
-    // "format-window-separator": " | ",
     "format-icons": {
-      "1": "I",
-      "2": "II",
-      "3": "III",
-      "4": "IV",
-      "5": "V",
-      "6": "VI",
-      "7": "VII",
-      "8": "VIII",
-      "9": "IX",
-      "10": "X",
-      "urgent": "!",
-      "active": "*",
-      "default": ""
+      "1": "󱨈",
+      "2": "󱨈",
+      "3": "󱨈",
+      "4": "󱨈",
+      "5": "󱨈",
+      "6": "󱨈",
+      "7": "󱨈",
+      "8": "󱨈",
+      "9": "󱨈",
+      "10": "󱨈",
+      "urgent": "󱨇",
+      "active": "󱨇",
+      "default": "󱨈"
     }
   },
   "hyprland/window": {
@@ -60,9 +59,44 @@
   "hyprland/language": {
     "format": "{short} {variant}"
   },
+  "niri/workspaces": {
+    "all-outputs": false,
+    "current-only": false,
+    "disable-click": false,
+    // "format": "{icon} {name} {index}",
+    "format": "{icon} {value}",
+    "format-icons": {
+      "1": "󱨈",
+      "2": "󱨈",
+      "3": "󱨈",
+      "4": "󱨈",
+      "5": "󱨈",
+      "6": "󱨈",
+      "7": "󱨈",
+      "8": "󱨈",
+      "9": "󱨈",
+      "10": "󱨈",
+      // "Gaming": "󱤵",
+      // "Game": "󱎓",
+      "Stream": "󰔊",
+      "Chat": "󰍨",
+      "focused": "󱨇",
+      "active": "󱨇",
+      "default": "󱨈"
+    }
+  },
+  "niri/window": {
+    "format": "{}",
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 12
+  },
   "clock": {
     "timezone": "America/Sao_Paulo",
-    "format": "{:L%a %d de %b %R}",
+    // "format": "{:L%a %d de %b %T}",
+    "format": "{:L%a %d %R}",
+    // "format": "{:L%R\n<small>%a %d %b</small>}",
+    "interval": 60,
     "today-format": "<b>{}</b>",
     "on-click": "uwsm app -- $HOME/scripts/calendar.sh",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
@@ -80,6 +114,20 @@
         "today": "{}"
       }
     }
+  },
+  "custom/niri-overview": {
+    "escape": true,
+    "interval": 1,
+    "exec": "$HOME/scripts/niri-overview.sh",
+    "on-click": "$HOME/scripts/niri-overview.sh toggle",
+    "format": "{icon}",
+    "format-icons": {
+      "Enabled": "󰮶",
+      "Disabled": "󰮻"
+    },
+    "return-type": "json",
+    "tooltip": true,
+    "tooltip-format": "{}\nClick to toggle Niri's Overview."
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -105,13 +153,17 @@
       "unlocked": ""
     }
   },
-  "network": {
+  "network#wifi": {
+    "interface": "wlp0s20f3",
     "interval": 60,
     "on-click": "uwsm app -- cosmic-settings network",
     "on-click-right": "uwsm app -- nm-connection-editor --show",
     "tooltip": true,
     "format": "{icon}",
-    // "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "format-linked": "󰤩",
+    "format-disconnected": "󰤭",
+    "format-disabled": "󰤮",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "format-wifi": "{icon}",
     "format-icons": [
       "󰤯",
@@ -120,11 +172,24 @@
       "󰤥",
       "󰤨"
     ],
-    "format-linked": "󰌘",
-    "format-ethernet": "",
-    "format-disconnected": "󰲛",
     "tooltip-format": "{ifname} via {gwaddr}",
     "tooltip-format-wifi": "{icon} {essid} ({frequency}GHz 󰹤: {signalStrength}%/{signaldBm}dBm)",
+    "tooltip-format-linked": "{ifname} (No IP)",
+    "tooltip-format-disconnected": "Disconnected!"
+  },
+  "network": {
+    "interface": "enp8s0",
+    "interval": 60,
+    "on-click": "uwsm app -- cosmic-settings network",
+    "on-click-right": "uwsm app -- nm-connection-editor --show",
+    "tooltip": true,
+    "format": "{icon}",
+    "format-linked": "󰛵",
+    "format-ethernet": "󰱓",
+    "format-disconnected": "󰅛",
+    "format-disabled": "󰲛",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{ifname} via {gwaddr}",
     "tooltip-format-linked": "{ifname} (No IP)",
     "tooltip-format-ethernet": "{ifname} via {gwaddr} - {bandwidthUpBytes}/{bandwidthDownBytes}/{bandwidthTotalBytes}",
     "tooltip-format-disconnected": "Disconnected!"
@@ -171,7 +236,7 @@
     ]
   },
   "group/group-backlight": {
-    "orientation": "horizontal",
+    "orientation": "inherit",
     "drawer": {
       "click-to-reveal": true,
       "transition-duration": 600,
@@ -186,13 +251,27 @@
   "group/group-workspaces-tray": {
     "orientation": "inherit",
     "drawer": {
-      "click-to-reveal": false,
+      "click-to-reveal": true,
       "transition-duration": 600,
       "children-class": "drawer-child",
       "transition-left-to-right": true
     },
     "modules": [
       "hyprland/workspaces",
+      "niri/workspaces",
+      "tray"
+    ]
+  },
+  "group/group-tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 600,
+      "children-class": "drawer-child",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "custom/tray-icon",
       "tray"
     ]
   },
@@ -223,9 +302,10 @@
   "group/group-tools": {
     "orientation": "inherit",
     "drawer": {
+      "click-to-reveal": true,
       "transition-duration": 600,
       "children-class": "tools-child",
-      "transition-left-to-right": false
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/tools-button",
@@ -239,10 +319,10 @@
   "group/group-battery": {
     "orientation": "inherit",
     "drawer": {
-      "click-to-reveal": false,
+      "children-class": "battery-drawer",
+      "click-to-reveal": true,
       "transition-duration": 600,
-      "children-class": "drawer-child",
-      "transition-left-to-right": true
+      "transition-left-to-right": false
     },
     "modules": [
       "battery",
@@ -429,7 +509,8 @@
   "custom/appmenu": {
     "format": "{icon}",
     "format-icons": [
-      ""
+      "󰑝"
+      // ""
       // ""
       // ""
       // ""
@@ -450,7 +531,7 @@
     "on-click-release": "uwsm app -- flatpak run io.github.cboxdoerfer.FSearch"
   },
   "custom/quicklaunch": {
-    "format": "󱓟",
+    "format": "",
     "tooltip": false,
     "on-click-release": "uwsm app -s a -- fuzzel --config $HOME/.config/hypr/fuzzel/fuzzel.ini"
   },
@@ -464,7 +545,7 @@
   },
   "custom/swaync": {
     "tooltip": false,
-    "format": "{icon}",
+    "format": "󰶹",
     "format-icons": {
       "notification": "󰚢",
       "none": "󰍡",
