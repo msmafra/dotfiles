@@ -68,6 +68,7 @@ box.module button:hover {
 .modules-right {
     margin: 0 0.125rem 0 0.125rem;
     padding: 0 0.125rem 0 0.125rem;
+    border-radius: 0.2rem 0.35rem 0.2rem 0.35rem;
 }
 
 .modules-left widget,
@@ -409,7 +410,7 @@ window#waybar.swallowing .workspaces {
 #privacy-item.audio-in,
 #privacy-item.audio-out {
     color: alpha(@dl-fg-orange, 1);
-    animation: blink 3s steps(12) infinite alternate;
+    animation: blink 3s steps(24) infinite alternate;
 }
 
 #backlight-slider {
@@ -750,36 +751,47 @@ window#waybar.swallowing .workspaces {
 #battery.charging,
 #battery.capacity .charging {
     color: @borderlight;
-    animation: blink 4s steps(12) infinite alternate;
+    animation: blink 4s steps(24) infinite alternate;
 }
 
 #battery.half:not(.charging) {
     color: @discharging;
-    animation: blink 4s steps(12) infinite alternate;
+    animation: blink 4s steps(24) infinite alternate;
 }
 
 #battery.warning:not(.charging),
 #battery.capacity .warning:not(.charging) {
     color: alpha(@orange, 1);
-    animation: blink 4s steps(12) infinite alternate;
+    animation: blink 4s steps(24) infinite alternate;
 }
 
 #battery.critical:not(.charging) {
     color: alpha(@maincritical, 1);
-    animation: blink 4s steps(12) infinite alternate;
+    animation: blink 4s steps(24) infinite alternate;
 }
 
 #battery.discharging {
     color: alpha(@borderlight, 1);
-    animation: blink 4s steps(12) infinite alternate;
+    animation: blink 4s steps(24) infinite alternate;
 }
 
-window#waybar.battery-critical {
+
+/* window#waybar.battery-critical {
     background-color: alpha(@quarternarycritical, 0.8);
 }
 
 window#waybar.battery-warning {
     background-color: alpha(@laranja, 0.1);
+} */
+
+.battery-critical .modules-right {
+    background-color: alpha(@quarternarycritical, 0.5);
+    animation: blink 1s steps(24) infinite alternate;
+}
+
+.battery-warning .modules-right {
+    background-color: alpha(@laranja, 0.1);
+    animation: blink 4s steps(24) infinite alternate;
 }
 
 #tray {
@@ -890,7 +902,7 @@ tooltip label {
     /* font-size: 0.8rem; */
     color: alpha(@peachy, 1);
     min-width: 8rem;
-    animation: blink 3s steps(12) infinite alternate;
+    animation: blink 3s steps(24) infinite alternate;
 }
 
 #custom-separator {
